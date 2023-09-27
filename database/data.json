@@ -1,0 +1,118 @@
+{"listfilm" : [
+        {
+            "id":"1",
+            "name":"Harry Potter",
+            "time":"180 minute",
+            "date":"30/10/2023",
+            "Actors":"Herimone Granger, Harry Potter, Lord Voldemort...",
+            "Director": "J.K.Rowling, Rowli Ng J.K",
+            "image":"../image/Harry potter.png",
+            "Content":  "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry",
+            "video":"../trailer/Harry potter.mp4"
+        },
+        {
+            "id":"2",
+            "name":"Avatar 2",
+            "time":"120 minute",
+            "date":"30/10/2023",
+            "Actors": "Sam Worthington, Zoe Saldana, Stephen Lang, Kate Winslet, Cliff Curtis, Victo Lopez...",
+            "Director":"Jame Cameron",
+            "image":"../image/Avata 2.png",
+            "Content":  "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+            "video":"../trailer/Avatar_ Dòng Chảy Của Nước _ Official Trailer.mp4"
+        },
+        {
+            "id":"3",
+            "name":"MORBIUS",
+            "time":"180 minute",
+            "date":"30/10/2023",
+            "Actors":"Jared Leto, Jared Harries, Tyress Gibson, Matt Smith, ...",
+            "Director":"Daniel Espinosa",
+            "image":"../image/Morrbius.png",
+            "Content":"Biochemist Michael Morbius tries to cure himself of a rare blood disease, but he inadvertently infects himself with a form of vampirism instead.",
+            "video":"../trailer/MORBIUS.mp4"
+        },
+        {
+            "id":"4",
+            "name":"The Avengers",
+            "time":"180 minute",
+            "date":"30/10/2023",
+            "Actors":"Robert Downey Jr., Chris Evans, Tom Hiddleston, Chris Hemsworth,...",
+            "Director":"Joss Whedon",
+            "image":"/image/The Avanger.png",
+            "Content":"The fantasy film tells about a group of superheroes with specail abilities including: Iron man, God of Thunder, captain American, Hulk, Black Widow collective known as SHIELD. The purpose of SHIELD is to protect Earth from the destructive plots of evil forces form beyond the earth, whose leader is Loki, the trickster god and also the yuonger brother of the God of Thunder.",
+            "video":"/trailer/The avenger.mp4"
+        },
+        {
+            "id":"5",
+            "name":"The Force Awakens ",
+            "time":"240 minute",
+            "date":"30/10/2023",
+            "Actors":"Daisy Ridley, John Boyega, Harrison Ford, Oscar Isaac, Kiran Shah,...",
+            "Director":"J.J. Abrams",
+            "image":"/image/The Force Avakens.png",
+            "Content":"As a new threat to the galaxy rises, Rey, a desert scavenger, and Finn, an ex-stormtrooper, must join Han Solo and Chewbacca to search for the one hope of restoring peace.",
+            "video":"/trailer/Star Wars_ The Force Awakens Official Teaser.mp4"
+        },
+        {
+            "id":"6",
+            "name":" The Terminator 1984",
+            "time":"120 minute",
+            "date":"29/10/2023",
+            "Actors":"Arnold Schwarzenegger, Linda Hamiton, Michael Biehn, Earl Boen, Dick Miler,..",
+            "Director":"James Cameron",
+            "image":"/image/The Terminator 1984.png",
+            "Content":" A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvation.",
+            "video":"/trailer/The Terminator (1984) Trailer.mp4"
+
+        },
+        {
+            "id":"7",
+            "name":"Honey sweet",
+            "time":"120 minute",
+            "date":"29/10/2023",
+            "Actors":"Arnold Schwarzenegger, Linda Hamiton, Michael Biehn, Earl Boen, Dick Miler,..",
+            "Director":"James Cameron",
+            "image":"/image/honey.png",
+            "Content":" A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvation.",
+            "video":"/trailer/Honey Sweet - Official Trailer [ซับไทย].mp4"
+
+        },
+        {
+            "id":"8",
+            "name":"One Piece",
+            "time":"120 minute",
+            "date":"29/10/2023",
+            "Actors":"Arnold Schwarzenegger, Linda Hamiton, Michael Biehn, Earl Boen, Dick Miler,..",
+            "Director":"James Cameron",
+            "image":"/image/One piece.png",
+            "Content":" A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvation.",
+            "video":"/trailer/One Piece Trailer - Hoạt Hình Tiếng Việt.mp4"
+        }
+    ],
+    "user":[
+        {
+            "email":"hoanghung2003@gmail.com",
+            "password":"12345"
+        },
+        {
+            "email":"duchung2003@gmail.com",
+            "password":"12345"
+        },
+        {
+            "email":"hungtran@gmail.com",
+            "password":"12345"
+        },
+        {
+            "email":"nguyenmyduyen@gmail.com",
+            "password":"12345"
+        }  
+    ],
+    "admin":[
+        {
+            "email":"levietcuong@gmail.com",
+            "password":"12345"
+        }
+    ]
+
+}

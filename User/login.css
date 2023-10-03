@@ -195,3 +195,11 @@ hr{
     box-sizing: border-box;
     justify-content: flex-start;
 }
+p{
+    color:white;
+    text-align: center;
+}
+p a{
+    color:red;
+    text-decoration: none;
+}

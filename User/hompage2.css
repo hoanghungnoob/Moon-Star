@@ -140,11 +140,16 @@ body {
     outline: none;
     padding-left: 20px;
 }
+.input-container button{
+    border: none;
+    background: none;
+    
+}
 .input-container i{
     box-sizing: border-box;
-    margin-left: 10px; 
-   
+    margin: 5px; 
     font-size: 25px;
+    color:white;
 }
 .menu {
     position: relative;
@@ -275,8 +280,11 @@ hr{
 }
 h5{
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 p{
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 25px;
 }
 input{

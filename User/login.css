@@ -150,6 +150,54 @@ button[type="submit"]:hover {
 }
 
 
+footer{
+    height: 628px;
+    flex-shrink: 0;
+    background-color: #000000;
+    padding: 70px;
+    box-sizing: border-box;
+}
+.logo img{
+    width: 416.481px;
+    height: 141px;
+    flex-shrink: 0;
+    background: url(<path-to-image>),  cover no-repeat;
+}
+hr{
+    height: 1px;
+    width: 100%;
+    background-color: #ffffff;
+}
+.information{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: #FFF;
+}
+.footer-head{
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.footer-paragrap{
+    color: #FFF;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.about,
+.infor,
+.Contact{
+    padding: 10px  50px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+
+
 p {
     text-align: center;
+
 }

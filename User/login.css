@@ -149,6 +149,7 @@ button[type="submit"]:hover {
     background-color: #f13105;
 }
 
+
 footer{
     height: 628px;
     flex-shrink: 0;
@@ -194,6 +195,11 @@ hr{
     padding: 10px  50px;
     box-sizing: border-box;
     justify-content: flex-start;
+
+
+p {
+    text-align: center;
+
 }
 p{
     color:white;

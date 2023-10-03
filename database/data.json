@@ -91,22 +91,22 @@
   ],
   "user": [
     {
-        "id":"1",
+      "id": "1",
       "email": "hoanghung2003@gmail.com",
       "password": "12345"
     },
     {
-        "id":"2",
+      "id": "2",
       "email": "duchung2003@gmail.com",
       "password": "12345"
     },
     {
-        "id":"3",
+      "id": "3",
       "email": "hungtran@gmail.com",
       "password": "12345"
     },
     {
-        "id":"4",
+      "id": "4",
       "email": "nguyenmyduyen@gmail.com",
       "password": "12345"
     }
@@ -117,22 +117,19 @@
       "email": "levietcuong@gmail.com",
       "password": "12345"
     }
-
   ],
   "comingSoon": [
     {
-        "id": "1",
-        "name": "Giao lộ 8675",
-        "time": "107 minute",
-        "date": "ComingSoon",
-        "Actors": "Isaac, Rocker Nguyễn,La Thành, Emma Lê, Lợi Trần, Ngọc Hồ",
-        "Director": "Tân DS",
-
-        "image": "../imagecoming/giaolo8675.jpg",
-
-        "Content": "The movie revolves around the story about the young people despite appearing at different contexts and Face your own problems, everyone have the same thing in commonyoung people are standing in front of the ''mountain'' must be conqueredself."
-      },
-      {
+      "id": "1",
+      "name": "Giao lộ 8675",
+      "time": "107 minute",
+      "date": "ComingSoon",
+      "Actors": "Isaac, Rocker Nguyễn,La Thành, Emma Lê, Lợi Trần, Ngọc Hồ",
+      "Director": "Tân DS",
+      "image": "../imagecoming/giaolo8675.jpg",
+      "Content": "The movie revolves around the story about the young people despite appearing at different contexts and Face your own problems, everyone have the same thing in commonyoung people are standing in front of the ''mountain'' must be conqueredself."
+    },
+    {
       "id": "2",
       "name": "The Exorcist: Believer",
       "time": "111 minute",
@@ -140,65 +137,68 @@
       "Actors": "Jennifer Nettles, Ellen Burstyn, Leslie Odom Jr.",
       "Director": "David Gordon Green",
       "image": "../imagecoming/quyam.jpg",
-
       "Content": "The sequel to the 1973 film follows a 12-year-old girl possessed by a mysterious demonic entity, forcing her mother to seek the help of two priests to save her."
     },
     {
-        "id": "3",
-        "name": "Dune",
-        "time": "123 minute",
-        "date": "comingSoon",
-        "Actors": "Timothée Chalamet, Rebecca Ferguson, Zendaya",
-        "Director": "Denis Villeneuve",
-
-        "image": "../imagecoming/dune.jpg",
-
-        "Content": "It is an epic, emotional journey of Paul Atreides - an outstandingly talented young man born with a great mission beyond his own understanding. Paul had to travel to the most dangerous planet in the Universe to ensure the future of his family and his people. When cruel forces begin to engage in conflict to monopolize the planet's most valuable resource - the precious fuel capable of activating humanity's greatest potential - only those who Only by conquering your fear can you survive..."
-      },
-      {
-        "id": "4",
-        "name": "Love again",
-        "time": "180 minute",
-        "date": "ComingSoon",
-        "Actors": "Priyanka Chopra Jonas, Sam Heughan, Russell Tovey",
-        "Director": "Jim Strouse",
-
-        "image": "../imagecoming/loveagain.jpg",
-
-        "Content": "Love will come to those who believe. #LoveAgainMovie, a healing movie for those who have been, are and will be in love. Starring Priyanka Chopra and Sam Heughan, plus Céline Dion and her new song."
-      },
-      {
-        "id": "5",
-        "name": "Kraven the Hunter",
-        "time": "125 minute",
-        "date": "ComingSoon",
-        "Actors": "Aaron Taylor-Johnson, Russell Crowe, Ariana DeBose",
-        "Director": "J.C. Chandor",
-
-        "image": "../imagecoming/kravethehunter.jpg",
-
-        "Content": "Russian immigrant Sergei Kravinoff is on a mission to prove that he is the world's greatest hunter."
-      },
-      {
-        "id": "6",
-        "name": "Kumanthong",
-        "time": "180 minute",
-        "date": "ComingSoon",
-        "Actors": "Kuan Denkhun Ngamnet, Pinky Savika Chaiyadej, Care Panisara Rikulsurakan",
-        "Director": "Thitipan Raksasat",
-
-        "image": "../imagecoming/kumathong.jpg",
-
-        "Content": "Ging took his son on vacation to a wooden house in the middle of the forest. However, the boy was kidnapped in the middle of the night. After many search efforts, the only clue in the case pointed to a man named In, who worked as a mortician at the temple."
-      }
+      "id": "3",
+      "name": "Dune",
+      "time": "123 minute",
+      "date": "comingSoon",
+      "Actors": "Timothée Chalamet, Rebecca Ferguson, Zendaya",
+      "Director": "Denis Villeneuve",
+      "image": "../imagecoming/dune.jpg",
+      "Content": "It is an epic, emotional journey of Paul Atreides - an outstandingly talented young man born with a great mission beyond his own understanding. Paul had to travel to the most dangerous planet in the Universe to ensure the future of his family and his people. When cruel forces begin to engage in conflict to monopolize the planet's most valuable resource - the precious fuel capable of activating humanity's greatest potential - only those who Only by conquering your fear can you survive..."
+    },
+    {
+      "id": "4",
+      "name": "Love again",
+      "time": "180 minute",
+      "date": "ComingSoon",
+      "Actors": "Priyanka Chopra Jonas, Sam Heughan, Russell Tovey",
+      "Director": "Jim Strouse",
+      "image": "../imagecoming/loveagain.jpg",
+      "Content": "Love will come to those who believe. #LoveAgainMovie, a healing movie for those who have been, are and will be in love. Starring Priyanka Chopra and Sam Heughan, plus Céline Dion and her new song."
+    },
+    {
+      "id": "5",
+      "name": "Kraven the Hunter",
+      "time": "125 minute",
+      "date": "ComingSoon",
+      "Actors": "Aaron Taylor-Johnson, Russell Crowe, Ariana DeBose",
+      "Director": "J.C. Chandor",
+      "image": "../imagecoming/kravethehunter.jpg",
+      "Content": "Russian immigrant Sergei Kravinoff is on a mission to prove that he is the world's greatest hunter."
+    },
+    {
+      "id": "6",
+      "name": "Kumanthong",
+      "time": "180 minute",
+      "date": "ComingSoon",
+      "Actors": "Kuan Denkhun Ngamnet, Pinky Savika Chaiyadej, Care Panisara Rikulsurakan",
+      "Director": "Thitipan Raksasat",
+      "image": "../imagecoming/kumathong.jpg",
+      "Content": "Ging took his son on vacation to a wooden house in the middle of the forest. However, the boy was kidnapped in the middle of the night. After many search efforts, the only clue in the case pointed to a man named In, who worked as a mortician at the temple."
+    },
+    {
+      "id":"7",
+      "name":"Thành phố ngủ gật",
+      "time":"73 minutes",
+      "date":"ComingSoon",
+      "Actors":"Quốc Toàn, Minh Hiền, Đức Trí, Tạ Xuân Tuế, Ba Trường,...",
+      "Director":"Lương Đình Dũng" ,
+      "image":"../imagecoming/thanhphongugat.jpg",
+      "Content":"Nhân vật chính là một chàng thanh niên 26 tuổi, sống đơn độc giữa trung tâm thành phố nhộn nhịp, mưu sinh bằng nghề mổ gà. Một ngày, sự xuất hiện của nhóm giang hồ và một cô gái điếm đã tác động đến cuộc sống của anh. Điều đó đã làm cho bản năng hoang dã của chàng thanh niên trỗi dậy không kiểm soát."
+    },
+    {
+      "id":"8",
+      "name":"AQUAMAN",
+      "time": "100 minutes",
+      "date": "ComingSoon",
+      "Actors": "Jason Momoa, Ben Affleck, Patrick Wilson,...",
+      "Director": "James Wan",
+      "image": "../imagecoming/aquaman.jpg"
+    }
   ],
-
-
-  "listbooking":[
-
-  ],
-  
-  "userlist":[
-
-  ]
+  "listbooking": [],
+  "userlist": []
 }

@@ -98,7 +98,8 @@ h1 {
     margin-bottom: 20px;
     color:#fff
 }
-p {
+.head {
+    text-align: center;
     color: white;
 }
 span{
@@ -148,8 +149,7 @@ button[type="submit"]:hover {
     background-color: #f13105;
 }
 
+
 p {
     text-align: center;
 }
-
-/* footer */

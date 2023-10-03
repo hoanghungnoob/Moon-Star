@@ -67,3 +67,4 @@ function listProduct(listfilm) {
 // Gọi hàm getListFilm và truyền hàm listProduct làm callback
 getListFilm(listProduct);
 
+

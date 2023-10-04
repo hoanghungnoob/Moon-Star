@@ -109,6 +109,27 @@
       "id": "4",
       "email": "nguyenmyduyen@gmail.com",
       "password": "12345"
+    },
+    {
+      "name": "hung",
+      "pnumber": "12312432",
+      "email": "sfg",
+      "password": "123",
+      "id": "9wZ3_Ec"
+    },
+    {
+      "id": "6mUxjcJs2",
+      "name": "hoang",
+      "pnumber": "164534564",
+      "email": "hung@gmail.com",
+      "password": "123"
+    },
+    {
+      "name": "hung",
+      "pnumber": "4",
+      "email": "husf@",
+      "password": "123",
+      "id": "kOvvITt"
     }
   ],
   "admin": [
@@ -180,18 +201,18 @@
       "Content": "Ging took his son on vacation to a wooden house in the middle of the forest. However, the boy was kidnapped in the middle of the night. After many search efforts, the only clue in the case pointed to a man named In, who worked as a mortician at the temple."
     },
     {
-      "id":"7",
-      "name":"Thành phố ngủ gật",
-      "time":"73 minutes",
-      "date":"ComingSoon",
-      "Actors":"Quốc Toàn, Minh Hiền, Đức Trí, Tạ Xuân Tuế, Ba Trường,...",
-      "Director":"Lương Đình Dũng" ,
-      "image":"../imagecoming/thanhphongugat.jpg",
-      "Content":"Nhân vật chính là một chàng thanh niên 26 tuổi, sống đơn độc giữa trung tâm thành phố nhộn nhịp, mưu sinh bằng nghề mổ gà. Một ngày, sự xuất hiện của nhóm giang hồ và một cô gái điếm đã tác động đến cuộc sống của anh. Điều đó đã làm cho bản năng hoang dã của chàng thanh niên trỗi dậy không kiểm soát."
+      "id": "7",
+      "name": "Thành phố ngủ gật",
+      "time": "73 minutes",
+      "date": "ComingSoon",
+      "Actors": "Quốc Toàn, Minh Hiền, Đức Trí, Tạ Xuân Tuế, Ba Trường,...",
+      "Director": "Lương Đình Dũng",
+      "image": "../imagecoming/thanhphongugat.jpg",
+      "Content": "Nhân vật chính là một chàng thanh niên 26 tuổi, sống đơn độc giữa trung tâm thành phố nhộn nhịp, mưu sinh bằng nghề mổ gà. Một ngày, sự xuất hiện của nhóm giang hồ và một cô gái điếm đã tác động đến cuộc sống của anh. Điều đó đã làm cho bản năng hoang dã của chàng thanh niên trỗi dậy không kiểm soát."
     },
     {
-      "id":"8",
-      "name":"AQUAMAN",
+      "id": "8",
+      "name": "AQUAMAN",
       "time": "100 minutes",
       "date": "ComingSoon",
       "Actors": "Jason Momoa, Ben Affleck, Patrick Wilson,...",

@@ -144,6 +144,15 @@ button[type="submit"] {
     align-items: center;
     margin-left: 35%;
 }
+#dontaccount{
+    color:white;
+    text-align: center;
+    
+}
+#dontaccount a{
+    color:red;
+    text-decoration: none;
+}
 
 button[type="submit"]:hover {
     background-color: #f13105;
@@ -195,17 +204,6 @@ hr{
     padding: 10px  50px;
     box-sizing: border-box;
     justify-content: flex-start;
+}
 
 
-p {
-    text-align: center;
-
-}
-p{
-    color:white;
-    text-align: center;
-}
-p a{
-    color:red;
-    text-decoration: none;
-}

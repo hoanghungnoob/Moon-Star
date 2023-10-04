@@ -144,6 +144,15 @@ button[type="submit"] {
     align-items: center;
     margin-left: 35%;
 }
+#dontaccount{
+    color:white;
+    text-align: center;
+    
+}
+#dontaccount a{
+    color:red;
+    text-decoration: none;
+}
 
 button[type="submit"]:hover {
     background-color: #f13105;
@@ -162,6 +171,8 @@ footer{
     height: 141px;
     flex-shrink: 0;
     background: url(<path-to-image>),  cover no-repeat;
+
+
 }
 hr{
     height: 1px;
@@ -197,7 +208,5 @@ hr{
     justify-content: flex-start;
 
 
-p {
-    text-align: center;
 
-}
+

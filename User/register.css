@@ -1,10 +1,10 @@
 
 
 body{
-    display: flex;
+    /* display: flex; */
     
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     background-image:linear-gradient(
         rgba(0,0,0,0.6),
         rgba(0,0,0,0.6)), url("https://m.media-amazon.com/images/M/MV5BNmU1ZDY2MTMtYTBhZi00MTk3LTlmNzEtYzc1ZTQ3MjRkNDFjXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_.jpg");
@@ -89,7 +89,7 @@ span{
 }
 
 .container{
-    margin:200px auto;
+    margin:200px auto 0;
     max-width: 700px;
     width: 100%;
     background-color: #171414;
@@ -196,3 +196,59 @@ form .button input {
     text-align: center;
     color: #fff;
 }
+
+
+ footer{
+        position: relative;
+        top:100px;
+        height: 628px;
+        flex-shrink: 0;
+        background-color: #000000;
+        padding: 70px;
+        box-sizing: border-box;
+    }
+    .logo img{
+        width: 416.481px;
+        height: 141px;
+        flex-shrink: 0;
+        background: url(<path-to-image>),  cover no-repeat;
+    }
+    hr{
+        height: 1px;
+        width: 100%;
+        background-color: #ffffff;
+    }
+    .information{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: #FFF;
+    }
+    .footer-head{
+        color: #FFF;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .footer-paragrap{
+        color: #FFF;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .about,
+    .infor,
+    .Contact{
+        padding: 10px  50px;
+        box-sizing: border-box;
+    }
+    h5{
+        margin-top: 10px;
+    }
+    p{
+        font-size: 25px;
+    }
+    input{
+        height:40px;
+    } 

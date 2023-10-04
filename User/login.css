@@ -171,6 +171,8 @@ footer{
     height: 141px;
     flex-shrink: 0;
     background: url(<path-to-image>),  cover no-repeat;
+
+
 }
 hr{
     height: 1px;
@@ -204,6 +206,7 @@ hr{
     padding: 10px  50px;
     box-sizing: border-box;
     justify-content: flex-start;
-}
+
+
 
 

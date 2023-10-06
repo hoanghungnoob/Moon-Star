@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../doan"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Moon-Star"
+	}
+}

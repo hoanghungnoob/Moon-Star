@@ -91,45 +91,40 @@
   ],
   "user": [
     {
-      "id": "1",
-      "email": "hoanghung2003@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "2",
-      "email": "duchung2003@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "3",
-      "email": "hungtran@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "4",
+      "id": "1000-1234",
+      "name": "duyen",
+      "lname": "nguyen",
+      "phone": "0123456789",
+      "gender": "female",
       "email": "nguyenmyduyen@gmail.com",
       "password": "12345"
     },
     {
+      "id": "bf61-d54d",
       "name": "hung",
-      "pnumber": "12312432",
-      "email": "sfg",
-      "password": "123",
-      "id": "9wZ3_Ec"
+      "lastname": "hoang",
+      "pnumber": "034567890",
+      "email": "hoanghung@gmail.com",
+      "password": "12345",
+      "gender": ""
     },
     {
-      "id": "6mUxjcJs2",
-      "name": "hoang",
-      "pnumber": "164534564",
-      "email": "hung@gmail.com",
-      "password": "123"
+      "id": "c94c-e73e",
+      "name": "hung",
+      "lastname": "Duc",
+      "pnumber": "0111111111",
+      "email": "duchung@gmail.com",
+      "password": "12345",
+      "gender": ""
     },
     {
-      "name": "hung",
-      "pnumber": "4",
-      "email": "husf@",
-      "password": "123",
-      "id": "kOvvITt"
+      "id": "f262-0116",
+      "name": "Van",
+      "lastname": "Tran",
+      "pnumber": "023456789",
+      "email": "vantran@gmail.com",
+      "password": "12345",
+      "gender": ""
     }
   ],
   "admin": [

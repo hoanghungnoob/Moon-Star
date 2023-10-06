@@ -13,24 +13,17 @@
 
     }
     body {
-        font-family: Arial, sans-serif;
-        
         margin: 0;
         padding: 0;
         background-image: linear-gradient(
             rgba(0,0,0,0.6),
             rgba(0,0,0,0.6)),
-            url(../image/avarta.jpg);
+            url(../image/backgrounddetail.jpg);
         background-size: cover;
         background-position: center;
         
     }
-  
-
-    .container{
-        background-image: url(../image/backgrounddetail.jpg);
-    }
-
+    /* css navbar */
     .navbar {
         display: flex;
         height:100px;
@@ -53,7 +46,7 @@
         -webkit-backdrop-filter: blur(50px);
         backdrop-filter: blur(50px);
         z-index: -1;
-
+    
     }
     .navbar a {
         text-decoration: none;
@@ -73,59 +66,70 @@
         outline: none;
         padding-left: 20px;
     }
+    .input-container button{
+        border: none;
+        background: none;
+        
+    }
     .input-container i{
         box-sizing: border-box;
-        margin-left: 10px; 
+        margin: 5px; 
         font-size: 25px;
+        color:white;
     }
-    .login .button-login {
-        height: 40px;
-        border-radius: 20px;
-        background-color: black;
-        border-color: white;
-        width: 150px;
-
-    }
-
-    .login .button-login a {
-        color: white;
-    }
-
-    .login .button-register {
-        height: 40px;
-        border-radius: 20px;
-        background-color: red;
-        border-color: red;
-        width: 150px;
-    }
-
-    .login .button-register a {
-        color: white;
+    .menu {
+        position: relative;
+        display: inline-block;
+        margin-right: 100px;
     }
     
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        z-index: 10;
+    }
+    
+    .menu:hover .submenu {
+        display: block;
+    }
+    .submenu button{
+        background: none;
+        border: none;
+        outline: none;
+    
+    }
+    .submenu button a{
+        color: white;
+        font-size: 25px;
+    }
+    
+    .menu span i{
+        box-sizing: border-box;
+        border:1px solid white;
+        border-radius: 50%;
+        font-size: 25px;
+        width: 50px;
+        height: 50px;
+        padding-top: 10px;
+        text-align: center;
+    
+    }
+    
+    /* Css deatil */
     .detail{
         width: 85%;
         margin: 150px auto 0;
         display: flex;
-        
         padding: 40px 50px;
         position: relative;
     }
-    /* .detail::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-image: url(../image/backgrounddetail.jpg);
-        background-repeat:no-repeat;
-        background-size: 100% 100%  ;
-        z-index: -1;
-        filter: opacity(50%);
-    } */
+
     .detail-img{
-        width: 29%;
         color: #fff;
         text-align: center;
         margin-right: 2%;
@@ -133,30 +137,129 @@
     }
     .detail-img img{
         width: 100%;
-        height: 643px;
-        border:1px solid red;
-        border-radius: 10px;
     }
     .detail-content{
         width: 69%;
         color: #fff;
-        font-size: 33px;
+        font-size: 30px;
+    }
+    .detail_item{
+        display: flex;
     }
     .detail-img h2{
         margin: 0;
     }
+   
     .detail-btn{
         background-color: red;
-        width: 421px;
-        height: 103px   ;
+        width: 250px;
+        height: 80px;
         border-radius: 30px;
-        font-size: 40px;
+        font-size: 25px;
         color: #fff;
-        float: right;
+        float:right;
         position: relative;
-        top: 200px;
+        top: 100px;
         outline: none;
     }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        
+        border:none;
+        outline: none;
+        text-align: center;
+    }
+    
+    .modal.active {
+        display: block;
+    }
+    
+    /* CSS cho nút đóng modal */
+    .close {
+        position: absolute;
+        top: 20px;
+        right:40px;
+        color:white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .close span{
+        margin-right: 20px;
+        justify-content: end;
+    }
+    
+    .close:hover {
+        color: #e74c3c;
+    }
+    
+    /* CSS cho nội dung modal (trong ví dụ này, iframe) */
+    .modal-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    /* CSS cho trang chi tiết */
+    #main {
+        transition: opacity 0.3s; /* Hiệu ứng khi trang bị mờ đi */
+    }
+    
+    .detail-btn {
+        cursor: pointer;
+    }
+    /* Css footer */
+    footer{
+        position: relative;
+        top:100px;
+        height: 628px;
+        flex-shrink: 0;
+        background-color: #000000;
+        padding: 70px;
+        box-sizing: border-box;
+    }
+    .logo img{
+        width: 416.481px;
+        height: 141px;
+        flex-shrink: 0;
+        background: url(<path-to-image>),  cover no-repeat;
+    }
+    hr{
+        height: 1px;
+        width: 100%;
+        background-color: #ffffff;
+    }
+    .information{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: #FFF;
+    }
+    .footer-head{
+        color: #FFF;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .footer-paragrap{
+        color: #FFF;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .about,
+    .infor,
+    .Contact{
+        padding: 10px  50px;
+        box-sizing: border-box;
+    }
+
+
+
 
 
     

@@ -196,3 +196,7 @@ form .button input {
     text-align: center;
     color: #fff;
 }
+p a{
+    color:red;
+    text-decoration: none;
+}

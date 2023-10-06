@@ -198,6 +198,7 @@ form .button input {
 }
 
 
+
  footer{
         position: relative;
         top:100px;
@@ -251,4 +252,8 @@ form .button input {
     }
     input{
         height:40px;
-    } 
+    }
+p a{
+    color:red;
+    text-decoration: none;
+}

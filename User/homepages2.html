@@ -8,7 +8,7 @@
 
 
     <link rel="stylesheet" href="hompage2.css">
-    <title>Document</title>
+    <title>Home Page</title>
     <style>
         
 
@@ -24,7 +24,7 @@
             <a href="#booking">Booking</a>
             <div class="input-container">
                 <input type="text" id="search" class="search" placeholder="Search">
-                <i class="fa fa-search" aria-hidden="true" onclick="search()"></i>
+                <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
             </div>
             <a href="#listbooking">List Booking</a>
             <div class="menu">
@@ -37,7 +37,6 @@
                     </li>
                 </ul>
             </div>
-
         </nav>
 
         <div class="slideshow-container">
@@ -101,7 +100,7 @@
         <div class="listproduct">
             <div class="option-listproduct">
                 <input type="button" value="Movie is showing">
-                <input type="button" value="Upcoming movie" onclick="comingSoon()">
+                <input type="button" value="Upcoming movie" onclick="window.location.href='Comingsoon.html'">
             </div>
             <div class="listproduct-1" onload="getListFilm()">
                 <!-- <div >

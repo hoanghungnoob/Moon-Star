@@ -4,21 +4,22 @@ function getListFilm(callback) {
     .then(response => response.json())
     .then(data => {
       // Lấy mảng "listfilm" từ dữ liệu JSON
-      const listfilm = data.listfilm;
-      data.listfilm
+      const comingSoon = data.comingSoon;
+      data.comingSoon
 
       // Gọi hàm callback và truyền giá trị "listfilm" vào nó
-      callback(listfilm);
+      callback(comingSoon);
     })
     .catch(error => {
       console.error('Lỗi khi đọc tệp JSON:', error);
     });
 }
+
 // Hàm để hiển thị danh sách phim lên màn hình
-function listProduct(listfilm) {
+function listProduct(comingSoon) {
   const itemContainer = document.getElementById("item");
   
-  listfilm.forEach(item => {
+  comingSoon.forEach(item => {
     const filmCard = document.createElement("div");
     filmCard.classList.add("film-card");
     
@@ -35,27 +36,8 @@ function listProduct(listfilm) {
     const details = document.createElement("p");
     details.textContent = `${item.time} | ${item.date}`;
     
-    const buttonsContainer = document.createElement("div");
-    buttonsContainer.classList.add("buttons-container");
-    
-    const detailButton = document.createElement("input");
-    detailButton.type = "button";
-    detailButton.value = "Detail";
-    detailButton.addEventListener("click", function() {
-      // Xử lý sự kiện khi nhấn nút "Detail"
-      // Đặt logic xử lý ở đây
-    });
-    
-    const bookingButton = document.createElement("input");
-    bookingButton.type = "button";
-    bookingButton.value = "Booking Now";
-    
-    buttonsContainer.appendChild(detailButton);
-    buttonsContainer.appendChild(bookingButton);
-    
     cardBody.appendChild(title);
     cardBody.appendChild(details);
-    cardBody.appendChild(buttonsContainer);
     
     filmCard.appendChild(image);
     filmCard.appendChild(cardBody);
@@ -66,5 +48,3 @@ function listProduct(listfilm) {
 
 // Gọi hàm getListFilm và truyền hàm listProduct làm callback
 getListFilm(listProduct);
-
-

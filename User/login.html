@@ -9,8 +9,8 @@
 </head>
 <body>
     <nav class="navbar" style="height:100px;">
-        <div class="img"><img src="../image/logo.png" alt="" style="padding-left: 50px;"></div>
-        <a href="#home">Home</a>
+        <div class="img"><img src="./Image/image 2.png" alt="" style="padding-left: 50px;"></div>
+        <a href="homepages.html">Home</a>
         <a href="#booking">Booking</a>
         <div class="input-container">
             <input type="text" id="search" class="search" placeholder="Search">
@@ -29,7 +29,7 @@
     </nav>
     <div class="login-container">
         <h1>Log in</h1>
-        <p>Enter Email and password to log in.</p>
+        <p class="head">Enter Email and password to log in.</p>
         <form id="loginForm">
             <div class="form-group">
                 <label for="Email">Email</label>
@@ -43,14 +43,35 @@
         
             <button type="submit"><b>Log in</b></button>
         </form>
-        <p>Don't have an account? <a href="register.html">Create account</a></p>
-        
+        <p id="dontaccount">Don't have an account? <a href="register.html">Create account</a></p>
     </div>
+    <footer>
+        <div class="logo">
+            <img src="../image/logo.png" alt="">
+        </div>
+        <hr>
+        <div class="information">
+            <div class="about">
+                <p class="footer-head">About Us</p>
+                <p class="footer-paragrap">We are team build this website with the help of Mr. Le Viet Cuong</p>
+            </div>
+            <div class="infor">
+                <p class="footer-head">More infor</p>
+                <p class="footer-paragrap">
+                    Team has 4 member consist of: Hoang Huu Hung, Nguyen Thi My Duyen,
+                    Tran Duc Hung, Tran Phan Thanh Van</p>
+            </div>
+            <div class="Contact">
+                <p class="footer-head">Contact Us</p>
+                <p class="footer-paragrap">Passerellesnumeriques Viet Nam
+                    Call:+84123465789
+                    Mail:a@gmail.infor</p>
+
+            </div>
+        </div>
+    </footer>
 
     <script>
-        
-
-        
         const form = document.getElementById("loginForm");
         form.addEventListener("submit", function(event) {
             event.preventDefault(); 

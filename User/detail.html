@@ -1,79 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="detail.css">
-    <title>Document</title>
+    <title>Detail</title>
 </head>
+
 <body>
-    <div class="container">
-        <nav class="navbar" style="height:100px;">
-            <div class="img"><img src="../image/logo.png" alt="" style="padding-left: 50px;"></div>
-            <a href="#home">Home</a>
-            <a href="#booking">Booking</a>
-            <div class="input-container">
-                <input type="text" id="search" class="search" placeholder="Search">
-                <i class="fa fa-search" aria-hidden="true" onclick="search()"></i>
+
+    <nav class="navbar" style="height:100px;">
+        <div class="img"><img src="../image/logo.png" alt="" style="padding-left: 50px;"></div>
+        <a href="homepages2.html">Home</a>
+       
+        <div class="input-container">
+            <input type="text" id="search" class="search" placeholder="Search">
+            <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
+        </div>
+        <a href="#listbooking">List Booking</a>
+        <div class="menu">
+            <span><i class="fa fa-solid fa-user"></i> </span>
+            <ul class="submenu">
+                <li>
+                    <button>
+                        <a target="_self" href="homepages.html">Logout</a>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main id="main">
+        <div class="detail">
+            <div class="detail-img">
+                <img id="film_img" alt="">
+                <h2 id="film_name" class="detail-title"></h2>
             </div>
-            <a href="#listbooking">List Booking</a>
-    
-            <div class="login"style="padding-right: 50px;" >
-                <button class="button-login">
-                    <a target="_self" href="login.html">Login</a>
-                </button>
-                <button class="button-register">
-                    <a target="_self" href="register.html">Register</a>
-                </button>
+            <div class="detail-content">
+                <div class="detail_item">
+                    <p><strong>Actors: </strong></p>
+                    <p id="film_actor"></p>
+                </div>
+                <div class="detail_item">
+                    <p><strong>Director: </strong></p>
+                    <p id="film_director"> </p>
+                </div>
+                <div class="detail_item">
+                    <p><strong>Content: </strong></p>
+                    <p id="film_content"></p>
+                </div>
+                <div>
+                    <button id="booking" class="detail-btn">Booking Now</button>
+                    <button id="trailer" class="detail-btn">Watch the Trailer</button>
+                </div>
+                
+
             </div>
-        </nav>
-        <main id="main">
-            <div class="detail">
-                <div class="detail-img">
-                    <img src="https://th.bing.com/th/id/OIF.tDrXnfTNCrDY6jLDcjCCgw?w=200&h=300&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="">
-                    <h2 class="detail-title">MORBIUS</h2>
-                </div>
-                <div class="detail-content">
-                    <div class="detail-content">
-                    <p><strong>Actors: </strong></p><p id="actor">Jared Leto, Jared Harries, Tyress Gibson, Matt Smith, ...</p>
-                    <p><strong>Director: </strong>Daniel Espinosa</p>
-                    
-                    <p><strong>Content: </strong>Biochemist Michael Morbius tries to cure himself of a rare blood disease, but he inadvertently infects himself with a form of vampirism instead</p>
-                    
-                    <button class="detail-btn">Watch the Trailer</button>
-                </div>
+    </main>
     
-    
-            </div>
-        </main>
-    
-        <footer>
-            <div class="logo">
-                <img src="../image/logo.png" alt="">
-            </div>
-            <hr>
-            <div class="information">
-                <div class="about">
-                    <p class="footer-head">About Us</p>
-                    <p class="footer-paragrap">We are team build this website with the help of Mr. Le Viet Cuong</p>
-                </div>
-                <div class="infor">
-                    <p class="footer-head">More infor</p>
-                    <p class="footer-paragrap">
-                        Team has 4 member consist of: Hoang Huu Hung, Nguyen Thi My Duyen,
-                        Tran Duc Hung, Tran Phan Thanh Van</p>
-                </div>
-                <div class="Contact">
-                    <p class="footer-head">Contact Us</p>
-                    <p class="footer-paragrap">Passerellesnumeriques Viet Nam
-                        Call:+84123465789
-                        Mail:a@gmail.infor</p>
-    
-                </div>
-            </div>
-        </footer>
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <iframe id="videoFrame" width="1000px" height="600px" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
+    <!-- Booking now -->
+
     
+<!-- Footer -->
+    <footer>
+        <div class="logo">
+            <img src="../image/logo.png" alt="">
+        </div>
+        <hr>
+        <div class="information">
+            <div class="about">
+                <p class="footer-head">About Us</p>
+                <p class="footer-paragrap">We are team build this website with the help of Mr. Le Viet Cuong</p>
+            </div>
+            <div class="infor">
+                <p class="footer-head">More infor</p>
+                <p class="footer-paragrap">
+                    Team has 4 member consist of: Hoang Huu Hung, Nguyen Thi My Duyen,
+                    Tran Duc Hung, Tran Phan Thanh Van</p>
+            </div>
+            <div class="Contact">
+                <p class="footer-head">Contact Us</p>
+                <p class="footer-paragrap">Passerellesnumeriques Viet Nam
+                    Call:+84123465789
+                    Mail:a@gmail.infor</p>
+
+            </div>
+        </div>
+    </footer>
+    <!-- Lấy các thông tin -->
+    <script src="detail.js"></script>
+
+
 </body>
+
 </html>

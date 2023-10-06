@@ -1,110 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
-    
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.6)),
-        url(../image/avarta.jpg);
-    background-size: cover;
-    background-position: center;
-    
-}
-.navbar {
-    display: flex;
-    height:100px;
-    background-color: rgba(16,20,27,.3);
-    color: white;
-    justify-content: space-between;
-    align-items: center;
+/* CSS cho modal */ 
+.modal {
+    display: none;
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
-}
-.navbar::after{
-    content: "";
-    position: absolute; 
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-    z-index: -1;
-
-}
-.navbar a {
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-}
-.navbar a:hover{
-    color:red;
-}
-.input-container{
-    display: flex-inline;
-}
-.input-container input[type="text"]{
-    border-radius: 5px;
-    height:40px;
-    width: 300px;
-    outline: none;
-    padding-left: 20px;
-}
-.input-container i{
-    box-sizing: border-box;
-    margin-left: 10px; 
-   font-size: 25px;
-}
-.login .button-login {
-    height: 40px;
-    border-radius: 20px;
-    background-color: black;
-    border-color: white;
-    width: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transform: translate(-50%, -50%);
 
 }
 
-.login .button-login a {
-    color: white;
+.modal.active {
+    display: block;
 }
 
-.login .button-register {
-    height: 40px;
-    border-radius: 20px;
-    background-color: red;
-    border-color: red;
-    width: 150px;
+.modal.active {
+    display: block;
 }
 
-.login .button-register a {
-    color: white;
-}
 .login-container {
-    
-    max-width: 400px;
+
+    max-width: 500px;
     margin: 200px auto;
-    background-color:black;
+    background-color: black;
     padding: 20px;
     border-radius: 5px;
-    box-shadow:#fff;
+    box-shadow: #fff;
     border: 3px solid #23ad68be;
+    position: relative;
 
-    }
+}
 
 h1 {
     margin-bottom: 20px;
-    color:#fff
+    color: #fff
 }
+
 .head {
-    text-align: center;
+
     color: white;
 }
-span{
-    color: rgb(230, 17, 17);
-}
+
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -116,9 +55,7 @@ label {
     width: 49%;
 
 }
-label:nth-child(2){
-    text-align: right;
-}
+
 
 input[type="email"],
 input[type="password"] {
@@ -126,87 +63,32 @@ input[type="password"] {
     padding: 10px;
     border: 1px solid black;
     border-radius: 3px;
+
     
-    border: 1px solid rgb(246, 244, 244);
 }
 
 button[type="submit"] {
     display: block;
     width: 30%;
-    padding:10px;
+    padding: 10px;
     background-color: #e33408;
     color: #0c0c0c;
     border: none;
     border-radius: 30px;
-    cursor: pointer;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin-left: 35%;
 }
-#dontaccount{
-    color:white;
+
+#dontaccount {
+    color: white;
     text-align: center;
-    
+
 }
-#dontaccount a{
-    color:red;
+
+#dontaccount b a {
+    color: red;
     text-decoration: none;
 }
-
-button[type="submit"]:hover {
-    background-color: #f13105;
-}
-
-
-footer{
-    height: 628px;
-    flex-shrink: 0;
-    background-color: #000000;
-    padding: 70px;
-    box-sizing: border-box;
-}
-.logo img{
-    width: 416.481px;
-    height: 141px;
-    flex-shrink: 0;
-    background: url(<path-to-image>),  cover no-repeat;
-
-
-}
-hr{
-    height: 1px;
-    width: 100%;
-    background-color: #ffffff;
-}
-.information{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: #FFF;
-}
-.footer-head{
-    color: #FFF;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-.footer-paragrap{
-    color: #FFF;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-}
-
-.about,
-.infor,
-.Contact{
-    padding: 10px  50px;
-    box-sizing: border-box;
-    justify-content: flex-start;
-
-
-
 

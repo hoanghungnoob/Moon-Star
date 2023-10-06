@@ -18,7 +18,7 @@ function getListFilm(callback) {
 function listProduct(listfilm) {
   const itemContainer = document.getElementById("item");
   
-  listfilm.forEach(item => {
+  listfilm.forEach((item,idx) => {
     const filmCard = document.createElement("div");
     filmCard.classList.add("film-card");
     
@@ -42,8 +42,7 @@ function listProduct(listfilm) {
     detailButton.type = "button";
     detailButton.value = "Detail";
     detailButton.addEventListener("click", function() {
-      // Xử lý sự kiện khi nhấn nút "Detail"
-      // Đặt logic xử lý ở đây
+        window.location.href="detail.html"+`?idx=${idx}`;
     });
     
     const bookingButton = document.createElement("input");

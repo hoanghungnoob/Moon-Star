@@ -91,24 +91,40 @@
   ],
   "user": [
     {
-      "id": "1",
-      "email": "hoanghung2003@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "2",
-      "email": "duchung2003@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "3",
-      "email": "hungtran@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "4",
+      "id": "1000-1234",
+      "name": "duyen",
+      "lname": "nguyen",
+      "phone": "0123456789",
+      "gender": "female",
       "email": "nguyenmyduyen@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "bf61-d54d",
+      "name": "hung",
+      "lastname": "hoang",
+      "pnumber": "034567890",
+      "email": "hoanghung@gmail.com",
+      "password": "12345",
+      "gender": ""
+    },
+    {
+      "id": "c94c-e73e",
+      "name": "hung",
+      "lastname": "Duc",
+      "pnumber": "0111111111",
+      "email": "duchung@gmail.com",
+      "password": "12345",
+      "gender": ""
+    },
+    {
+      "id": "f262-0116",
+      "name": "Van",
+      "lastname": "Tran",
+      "pnumber": "023456789",
+      "email": "vantran@gmail.com",
+      "password": "12345",
+      "gender": ""
     }
   ],
   "admin": [
@@ -180,18 +196,18 @@
       "Content": "Ging took his son on vacation to a wooden house in the middle of the forest. However, the boy was kidnapped in the middle of the night. After many search efforts, the only clue in the case pointed to a man named In, who worked as a mortician at the temple."
     },
     {
-      "id":"7",
-      "name":"Thành phố ngủ gật",
-      "time":"73 minutes",
-      "date":"ComingSoon",
-      "Actors":"Quốc Toàn, Minh Hiền, Đức Trí, Tạ Xuân Tuế, Ba Trường,...",
-      "Director":"Lương Đình Dũng" ,
-      "image":"../imagecoming/thanhphongugat.jpg",
-      "Content":"Nhân vật chính là một chàng thanh niên 26 tuổi, sống đơn độc giữa trung tâm thành phố nhộn nhịp, mưu sinh bằng nghề mổ gà. Một ngày, sự xuất hiện của nhóm giang hồ và một cô gái điếm đã tác động đến cuộc sống của anh. Điều đó đã làm cho bản năng hoang dã của chàng thanh niên trỗi dậy không kiểm soát."
+      "id": "7",
+      "name": "Thành phố ngủ gật",
+      "time": "73 minutes",
+      "date": "ComingSoon",
+      "Actors": "Quốc Toàn, Minh Hiền, Đức Trí, Tạ Xuân Tuế, Ba Trường,...",
+      "Director": "Lương Đình Dũng",
+      "image": "../imagecoming/thanhphongugat.jpg",
+      "Content": "Nhân vật chính là một chàng thanh niên 26 tuổi, sống đơn độc giữa trung tâm thành phố nhộn nhịp, mưu sinh bằng nghề mổ gà. Một ngày, sự xuất hiện của nhóm giang hồ và một cô gái điếm đã tác động đến cuộc sống của anh. Điều đó đã làm cho bản năng hoang dã của chàng thanh niên trỗi dậy không kiểm soát."
     },
     {
-      "id":"8",
-      "name":"AQUAMAN",
+      "id": "8",
+      "name": "AQUAMAN",
       "time": "100 minutes",
       "date": "ComingSoon",
       "Actors": "Jason Momoa, Ben Affleck, Patrick Wilson,...",

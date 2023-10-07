@@ -1,0 +1,265 @@
+    * {
+        box-sizing: border-box
+    }
+    html{
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url(../image/backgrounddetail.jpg);
+        background-size: cover;
+        background-position: center;
+        
+    }
+    /* css navbar */
+    .navbar {
+        display: flex;
+        height:100px;
+        background-color: rgba(16,20,27,.3);
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 999;
+        /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
+    }
+    .navbar::after{
+        content: "";
+        position: absolute; 
+        width: 100%;
+        height: 100%;
+        -webkit-backdrop-filter: blur(50px);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+    
+    }
+    .navbar a {
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+    }
+    .navbar a:hover{
+        color:red;
+    }
+    .input-container{
+        display: flex-inline;
+    }
+    .input-container input[type="text"]{
+        border-radius: 5px;
+        height:40px;
+        width: 300px;
+        outline: none;
+        padding-left: 20px;
+    }
+    .input-container button{
+        border: none;
+        background: none;
+        
+    }
+    .input-container i{
+        box-sizing: border-box;
+        margin: 5px; 
+        font-size: 25px;
+        color:white;
+    }
+    .menu {
+        position: relative;
+        display: inline-block;
+        margin-right: 100px;
+    }
+    
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        z-index: 10;
+    }
+    
+    .menu:hover .submenu {
+        display: block;
+    }
+    .submenu button{
+        background: none;
+        border: none;
+        outline: none;
+    
+    }
+    .submenu button a{
+        color: white;
+        font-size: 25px;
+    }
+    
+    .menu span i{
+        box-sizing: border-box;
+        border:1px solid white;
+        border-radius: 50%;
+        font-size: 25px;
+        width: 50px;
+        height: 50px;
+        padding-top: 10px;
+        text-align: center;
+    
+    }
+    
+    /* Css deatil */
+    .detail{
+        width: 85%;
+        margin: 150px auto 0;
+        display: flex;
+        padding: 40px 50px;
+        position: relative;
+    }
+
+    .detail-img{
+        color: #fff;
+        text-align: center;
+        margin-right: 2%;
+        font-size: 33px;
+    }
+    .detail-img img{
+        width: 100%;
+    }
+    .detail-content{
+        width: 69%;
+        color: #fff;
+        font-size: 30px;
+    }
+    .detail_item{
+        display: flex;
+    }
+    .detail-img h2{
+        margin: 0;
+    }
+   
+    .detail-btn{
+        background-color: red;
+        width: 250px;
+        height: 80px;
+        border-radius: 30px;
+        font-size: 25px;
+        color: #fff;
+        float:right;
+        position: relative;
+        top: 100px;
+        outline: none;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        
+        border:none;
+        outline: none;
+        text-align: center;
+    }
+    
+    .modal.active {
+        display: block;
+    }
+    
+    /* CSS cho nút đóng modal */
+    .close {
+        position: absolute;
+        top: 20px;
+        right:40px;
+        color:white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .close span{
+        margin-right: 20px;
+        justify-content: end;
+    }
+    
+    .close:hover {
+        color: #e74c3c;
+    }
+    
+    /* CSS cho nội dung modal (trong ví dụ này, iframe) */
+    .modal-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    /* CSS cho trang chi tiết */
+    #main {
+        transition: opacity 0.3s; /* Hiệu ứng khi trang bị mờ đi */
+    }
+    
+    .detail-btn {
+        cursor: pointer;
+    }
+    /* Css footer */
+    footer{
+        position: relative;
+        top:100px;
+        height: 628px;
+        flex-shrink: 0;
+        background-color: #000000;
+        padding: 70px;
+        box-sizing: border-box;
+    }
+    .logo img{
+        width: 416.481px;
+        height: 141px;
+        flex-shrink: 0;
+        background: url(<path-to-image>),  cover no-repeat;
+    }
+    hr{
+        height: 1px;
+        width: 100%;
+        background-color: #ffffff;
+    }
+    .information{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: #FFF;
+    }
+    .footer-head{
+        color: #FFF;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .footer-paragrap{
+        color: #FFF;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .about,
+    .infor,
+    .Contact{
+        padding: 10px  50px;
+        box-sizing: border-box;
+    }
+
+
+
+
+
+    

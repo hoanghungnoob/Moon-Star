@@ -41,14 +41,9 @@ document.getElementById("loginBtn").addEventListener("click", openLoginModal);
 
                     if (loggedInUser) {
                         window.location.href = "homepages2.html";
-
                     } 
                     else if(loggedInAdmin){
                         window.location.href = "../Admin/admin.html"
-
-                    } else if(loggedInAdmin){
-                        window.location.href =  "../Admin/admin.html";
-
                     } 
                     else {
                         alert("Unsuccessful");

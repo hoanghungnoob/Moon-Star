@@ -19,7 +19,7 @@
             <a href="#home">Home</a>
             <div class="input-container">
                 <input type="text" id="search" class="search" placeholder="Search">
-                <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
+                <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
             <a href="#listbooking">List Booking</a>
 
@@ -28,6 +28,7 @@
                 <button class="button-register" id="registerBtn">Register</button>
             </div>
         </nav>
+
         <!-- Modal login -->
         <div id="loginModal" class="modal">
             <div class="login-container">
@@ -57,36 +58,36 @@
                     <div class="user-details">
                         <div class="input-box">
                             <label class="details">First Name</label>
-                            <input type="text" placeholder="Enter your first name" required>
+                            <input type="text" id="firstname" placeholder="Enter your first name" required>
                         </div>
 
                         <div class="input-box">
                             <label class="details">Last Name</label>
-                            <input type="text" placeholder="Enter your last name" required>
+                            <input type="text" id="lastname" placeholder="Enter your last name" required>
                         </div>
 
                         <div class="input-box">
                             <label class="details">Phone Number</label>
-                            <input type="text" placeholder="Enter your number" required>
+                            <input type="text" id="phonenumber" placeholder="Enter your number" required>
                         </div>
 
                         <div class="input-box">
                             <label class="details">Email</label>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" id="email" placeholder="Enter your email" required>
                         </div>
 
                         <div class="input-box">
                             <label class="details">Password</label>
-                            <input type="password" placeholder="Enter your password" required>
+                            <input type="password" id="Password" placeholder="Enter your password" required>
                         </div>
 
                         <div class="input-box">
                             <label class="details">Re - Password</label>
-                            <input type="password" placeholder="Re - your password" required>
+                            <input type="password" id="repassword" placeholder="Re - your password" required>
                         </div>
                     </div>
                     <div class="button">
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Register" onclick="register()">
                     </div>
                     <div class="login">
                         <p>Do you already have an account?<b><a href="#" id="showLoginModal"> Log in</a></b></p>
@@ -95,6 +96,7 @@
             </div>
 
         </div>
+
 
         <div class="slideshow-container">
 
@@ -200,6 +202,7 @@
 
     <script src="datalistfilm.js"></script>
     <script src="slider.js"></script>
+
     <script src="login.js"></script>
     <script src="../Admin/register.js"></script>
 

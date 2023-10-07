@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="hompage2.css">
     <title>Home Page</title>
     <style>
-        
 
-       
+
+
     </style>
 </head>
 
@@ -23,7 +23,7 @@
             <a href="#home">Home</a>
             <div class="input-container">
                 <input type="text" id="search" class="search" placeholder="Search">
-                <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
+                <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
             <a href="#listbooking">List Booking</a>
             <div class="menu">
@@ -142,6 +142,41 @@
 
     <script src="datalistfilm.js"></script>
     <script src="slider.js"></script>
+    <script>
+        const btnSearch = document.querySelector(".button-search");
+        const contentSearch = document.querySelector("#search");
+        btnSearch.onclick = function () {
+            if (contentSearch.value) {
+                fetch("../database/data.json")
+                    .then(
+                        respone => respone.json()
+                    ).then(data => {
+                        // console.log(data);
+                        const listfilm = data.listfilm
+                        console.log(listfilm);
+                        const searchedFilm = listfilm.find(e => {
+                            return e.name === contentSearch.value;
+
+                        });
+                        if (searchedFilm) {
+                            console.log(searchedFilm);
+                            // window.location.href=""
+                        } else {
+                            alert("khong tim thay film");
+                        }
+                    })
+                // const promise = getFilms();
+                // promise.then(data => {
+
+
+                // })
+
+            } else {
+                alert("vui long nhap ten phim");
+            }
+
+        }
+    </script>
 
 </body>
 

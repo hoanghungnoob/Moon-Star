@@ -1,5 +1,4 @@
-document.getElementById("registerBtn").addEventListener("click", openRegisterModal
-);
+document.getElementById("registerBtn").addEventListener("click", openRegisterModal);
 
 function openRegisterModal() {
     var loginModal = document.getElementById("registerModal");

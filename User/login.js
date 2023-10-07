@@ -35,11 +35,17 @@ document.getElementById("loginBtn").addEventListener("click", openLoginModal);
                 .then(response => response.json())
                 .then(data => {
                     const user = data.user;
+                    const admin = data.admin;
                     const loggedInUser = user.find(user => user.email === emailInput && user.password === passwordInput);
+                    const loggedInAdmin = admin.find(admin => admin.email === emailInput && admin.password === passwordInput);
 
                     if (loggedInUser) {
                         window.location.href = "homepages2.html";
-                    } else {
+                    } 
+                    else if(loggedInAdmin){
+                        window.location.href = "../Admin/admin.html"
+                    } 
+                    else {
                         alert("Unsuccessful");
                     }
                 })

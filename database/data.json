@@ -106,7 +106,6 @@
       "pnumber": "034567890",
       "email": "hoanghung@gmail.com",
       "password": "12345",
-
       "gender": ""
     },
     {
@@ -135,7 +134,6 @@
       "password": "12345",
       "pnumber": "034567890",
       "gender": "Male"
-
     }
   ],
   "admin": [

@@ -14,7 +14,7 @@ function register() {
   let password = document.getElementById("password").value;
   let repassword = document.getElementById("repassword").value;
   let id =
-    RandomHexString(4) + "-" + RandomHexString(4) + "-" + RandomHexString(4);
+    RandomHexString(4) + "-" + RandomHexString(4);
 
   console.log(id);
   // Create an object with the data
@@ -27,11 +27,13 @@ function register() {
     password == repassword
   ) {
     let userData = {
+      id,
       name: fname,
+      lastname: lname, 
       pnumber: pnumber,
       email: email,
       password: password,
-      id,
+      gender: ""
     };
     console.log(userData);
     // Make a POST request to http://localhost:3000/user

@@ -91,21 +91,12 @@
   ],
   "user": [
     {
-      "id": "1000-1234",
-      "name": "duyen",
-      "lname": "nguyen",
-      "phone": "0123456789",
-      "gender": "female",
-      "email": "nguyenmyduyen@gmail.com",
-      "password": "12345"
-    },
-    {
       "id": "bf61-d54d",
-      "name": "hung",
-      "lastname": "hoang",
-      "pnumber": "034567890",
+      "name": "Hùng",
+      "lastname": "Hoàng",
       "email": "hoanghung@gmail.com",
       "password": "12345",
+      "pnumber": "034567890",
       "gender": ""
     },
     {
@@ -125,6 +116,15 @@
       "email": "vantran@gmail.com",
       "password": "12345",
       "gender": ""
+    },
+    {
+      "id": "6257-470e",
+      "name": "Hùng",
+      "lastname": "Hoàng",
+      "email": "hoanghung@gmail.com",
+      "password": "12345",
+      "pnumber": "034567890",
+      "gender": "Male"
     }
   ],
   "admin": [

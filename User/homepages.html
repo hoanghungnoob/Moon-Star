@@ -28,77 +28,7 @@
                 <button class="button-register" id="registerBtn">Register</button>
             </div>
         </nav>
-
-        
-        <!-- Modal login -->
-        <div id="loginModal" class="modal">
-            <div class="login-container">
-                <h1>Log in</h1>
-                <p class="head">Enter email and password to log in.</p>
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="Email">Email</label>
-                        <input type="email" id="Email" name="Email" placeholder="Enter your email!">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Please enter your password!"
-                            required>
-                    </div>
-                    <button type="submit">Log in</button>
-                </form>
-                <p id="dontaccount">Don't have an account?
-                    <b><a href="#" id="showRegisterModal"> Create Account</a></b>
-                </p>
-            </div>
-        </div>
-        <!-- Modal register -->
-        <div id="registerModal" class="modal">
-            <div class="containers">
-                <h1>Register</h1>
-                <form action="#">
-                    <div class="user-details">
-                        <div class="input-box">
-                            <label class="details">First Name</label>
-                            <input type="text" placeholder="Enter your first name" required>
-                        </div>
-
-                        <div class="input-box">
-                            <label class="details">Last Name</label>
-                            <input type="text" placeholder="Enter your last name" required>
-                        </div>
-
-                        <div class="input-box">
-                            <label class="details">Phone Number</label>
-                            <input type="text" placeholder="Enter your number" required>
-                        </div>
-
-                        <div class="input-box">
-                            <label class="details">Email</label>
-                            <input type="text" placeholder="Enter your email" required>
-                        </div>
-
-                        <div class="input-box">
-                            <label class="details">Password</label>
-                            <input type="password" placeholder="Enter your password" required>
-                        </div>
-
-                        <div class="input-box">
-                            <label class="details">Re - Password</label>
-                            <input type="password" placeholder="Re - your password" required>
-                        </div>
-                    </div>
-                    <div class="button">
-                        <input type="submit" value="Register">
-                    </div>
-                    <div class="login">
-                        <p>Do you already have an account?<b><a href="#" id="showLoginModal"> Log in</a></b></p>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-
+    
         <div class="slideshow-container">
 
             <div class="mySlides fade">
@@ -203,44 +133,6 @@
 
     <script src="datalistfilm.js"></script>
     <script src="slider.js"></script>
-    <script src="login.js"></script>
-    <script src="register.js"></script>
-    <script>
-        const btnSearch = document.querySelector(".button-search");
-        const contentSearch = document.querySelector("#search");
-        btnSearch.onclick = function () {
-            if (contentSearch.value) {
-                fetch("../database/data.json")
-                    .then(
-                        respone => respone.json()
-                    ).then(data => {
-                        // console.log(data);
-                        const listfilm = data.listfilm
-                        console.log(listfilm);
-                        const searchedFilm = listfilm.find(e => {
-                            return e.name === contentSearch.value;
-
-                        });
-                        if (searchedFilm) {
-                            console.log(searchedFilm);
-                            window.location.href="detail.html"
-                        } else {
-                            alert("khong tim thay film");
-                        }
-                    })
-                // const promise = getFilms();
-                // promise.then(data => {
-
-
-                // })
-
-            } else {
-                alert("vui long nhap ten phim");
-            }
-
-        }
-    </script>
-
+    
 </body>
-
 </html>

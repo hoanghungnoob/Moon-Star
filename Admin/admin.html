@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="containers">
+        <nav class="navbar" style="height:100px;">
+            <div class="img"><img src="../image/logo.png" alt="" style="padding-left: 50px;"></div>
+
+            <div class="setting">
+            </div>
+
+            <div class="menu">
+                <span><i class="fa fa-solid fa-user"></i> </span>
+                <ul class="submenu">
+                    <li>
+                        <button>
+                            <a target="_self" href="../User/homepages.html">Logout</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-item">
+            <div class="container-item-left" >
+                <div class="container-item-left-user" onclick="showUser()" >
+                    <button><i class="fa fa-user" id="user" ></i>
+                        <h3>User</h3></button>
+                </div>
+                <div class="container-item-left-film" onclick="showListFilm()">
+                    <button><i class="fa fa-list" id="film"></i>
+                        <h3>Film</h3></button>
+                </div>
+                <div class="container-item-left-listbooking">
+                    <button><i class="fa fa-list" id="film"></i>
+                        <h3>List Booking</h3></button>
+                </div>
+            </div>
+            <div class="container-item-right">
+                <div class="container-item-right-head1" id="container-item-right-head1">
+                    <h1 >User</h1>
+                    <button id="create-user" >Create +</button>
+                </div>
+                <div class="container-item-right-body1" id="user-list">
+                    <table>
+                        <thead>
+                            <tr>                          
+                                <th>Name</th>
+                                <th>email</th>
+                                <th>Password</th>
+                                <th>Option</th>     
+                            </tr>
+                        </thead>
+                        <tbody id="tbody1">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-item-right-head2" id="container-item-right-head2">
+                    <h1 >List film</h1>
+                    <button id="create-listfilm" >Create +</button>
+                </div>
+                <div class="container-item-right-body2" id="list-film">
+                    <table>
+                        <thead>
+                            <tr>
+                               
+                                <th>Name Film</th>
+                                <th>Time</th>
+                                <th>Director</th>
+                                <th>Content</th>
+                                <th>Option</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody id="tbody2">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- modal create-->
+        <div id="modal-container" >
+            <div id="modal">
+                <div class="modal-header">
+                    <h2>Create User</h2>
+                    <button id="close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <div class="name-lname">
+                        <div class="name">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" placeholder="Name">
+                        </div>
+                        <div class="lname">
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="Email">
+                    </div>
+                    <div class="password">
+                        <label for="password">Password:</label>
+                        <input type="text" id="password" placeholder="Password">
+                    </div>
+                    <div class="phone-gender">
+                        <div class="phone">
+                            <label for="phone">Phone Number:</label>
+                            <input type="number" id="phone" placeholder="Phone number">
+                        </div>
+                        <div class="gender">
+                            <label for="gender">Gender:</label>
+                            <select  name="gender" id="select">
+                                <option value="none"></option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="button-submit">
+                        <button id="submit" onclick="register()">Đăng Ký</button>
+                    </div>
+                    <div class="button-close">
+                        <button id="close-modal">Hủy Bỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal  update-->
+    <div id="update-modal-container" >
+        <div id="update-modal">
+            <div class="update-modal-header">
+                <h2>Update User</h2>
+                <button id="update-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <hr>
+            <div class="update-modal-body">
+                <div class="update-id">
+                    <label for="id">ID:</label>
+                    <input type="text" id="update-id" disabled>
+                </div>
+                <div class="update-name-lname">
+                    <div class="update-name">
+                        <label for="name">Name:</label>
+                        <input type="text" id="update-name" placeholder="Name">
+                    </div>
+                    <div class="update-lname">
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="update-lname" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="update-email">
+                    <label for="email">Email:</label>
+                    <input type="text" id="update-email" placeholder="Email">
+                </div>
+                <div class="update-password">
+                    <label for="password">Password:</label>
+                    <input type="text" id="update-password" placeholder="Password">
+                </div>
+                <div class="update-phone-gender">
+                    <div class="update-phone">
+                        <label for="phone">Phone Number:</label>
+                        <input type="number" id="update-phone" placeholder="Phone number">
+                    </div>
+                    <div class="update-gender">
+                        <label for="gender">Gender:</label>
+                        <select  name="update-gender" id="update-select">
+                            <option value="none"></option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="update-button-submit">
+                    <button id="update-submit">Hoàn thành</button>
+                </div>
+                <div class="update-button-close">
+                    <button id="update-close-modal">Hủy Bỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal container delete user -->
+    <div class="modaldeleteuser">
+        <div class="modal-content-delete-user">
+            <h2>Thông báo</h2>
+            <p>Bạn có muốn thực hiện thao tác này không?</p>
+            <div class="modal-buttons">
+                <button id="confirm-button">Xác nhận</button>
+                <button id="cancel-button">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="admin.js"></script>
+</html>

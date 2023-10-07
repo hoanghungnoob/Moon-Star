@@ -1,0 +1,507 @@
+* {
+    box-sizing: border-box
+}
+html{
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+
+}
+body {
+    background-color: black;
+    margin: 0
+}
+.containers{
+    background-color: black;
+    position: relative;
+}
+.navbar {
+    display: flex;
+    height:100px;
+    background-color: rgba(16,20,27,.3);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    border-bottom: 4px solid orangered;
+    /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
+}
+.navbar::after{
+    content: "";
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+
+}
+.navbar a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+.navbar a:hover{
+    color:red;
+}
+.input-container{
+    display: flex-inline;
+}
+.input-container input[type="text"]{
+    border-radius: 5px;
+    height:40px;
+    width: 300px;
+    outline: none;
+    padding-left: 20px;
+}
+.input-container button{
+    border: none;
+    background: none;
+    
+}
+.input-container i{
+    box-sizing: border-box;
+    margin: 5px; 
+    font-size: 25px;
+    color:white;
+}
+.menu {
+    position: relative;
+    display: inline-block;
+    margin-right: 100px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+.submenu button{
+    background: none;
+    border: none;
+    outline: none;
+
+}
+.submenu button a{
+    color: white;
+    font-size: 25px;
+}
+
+.menu span i{
+    box-sizing: border-box;
+    border:1px solid white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/* container */
+.container-item{
+    position: absolute;
+    color: white;
+    top: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    height: 100%;
+}
+/* left */
+.container-item-left{
+    border-right: 2px solid orangered;
+    padding: 0px; 
+    box-sizing: border-box;
+}
+.container-item-left-user button,
+.container-item-left-film button{
+    background-color: black;
+    color: white;
+    display: flex;
+    border: none;
+    gap: 40px;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-left: 50px;
+}
+.container-item-left-listbooking button{
+    background-color: black;
+    color: white;
+    display: flex;
+    border: none;
+    gap: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-left: 50px;
+}
+.container-item-left i{   
+    padding-top: 26px;
+}
+
+.container-item-left-user button:hover,
+.container-item-left-film button:hover,
+.container-item-left-listbooking button:hover{
+    background-color: white;
+    color: black;
+    width: 100%;
+    cursor: pointer;
+
+}
+/* right */
+.container-item-right{
+    position: relative;
+    background-color: aliceblue;
+}
+.container-item-right h1{
+    color: black;
+    padding: 0 0 0 30px;
+}
+.container-item-right-head1,
+.container-item-right-head2{
+    margin-top: 0px;
+    line-height: 0;
+}
+.container-item-right button#create-user,
+.container-item-right button#create-listfilm{
+    background-color: black;
+    color: white;
+    display: flex;
+    box-sizing: border-box;
+    font-size: 32px;
+    padding:5px 20px 0 20px;
+    height: 50px;
+    border-radius: 40px ;
+    margin: 30px 0 0 30px;
+
+}
+.container-item-right button#create-user:hover,
+.container-item-right button#create-listfilm:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+table{
+    /* display: none; */
+    border: 1px solid;
+    position: absolute;
+    top : 150px;
+    width: 95%;
+    margin-left: 20px;
+    box-sizing: border-box; 
+    color: black;
+    border-collapse: collapse;
+}
+ table tr th,
+ table tr td{
+    border: 1px solid;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.container-item-right-body2 table{
+    /* display: none; */
+    position: absolute;
+    top : 150px;
+    width: 95%;
+    margin-left: 20px;
+    box-sizing: border-box; 
+    color: black;
+    border: 1px solid;
+}
+
+
+/* đặt các element bên phải thuộc tính display none */
+/* nút create voới tên*/
+.container-item-right-head1,
+.container-item-right-head2{
+    display: none;
+}
+/* bảng hiển thị danh sách user */
+.container-item-right-body1{
+    display: none;
+}
+/* bảng hiển thị phim */
+.container-item-right-body2{
+    display: none;
+}
+.container-item-right{
+    height: 1000px;
+}
+
+
+/* modal */
+
+
+#modal-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    opacity: 0;
+    pointer-events: none;
+    /* left: 0; */ 
+}
+#modal-container.show{
+    opacity: 1;
+    pointer-events: all;
+}
+#modal-container h2{
+    margin-left: 15px;
+}
+#modal{
+    background-color: white;
+    max-width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+}
+button#close{
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px;
+}
+hr{
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    opacity: 0.5;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    margin:0px 20px ;
+    box-sizing: border-box;
+    gap: 10px; 
+}
+.modal-body label{
+    font-size: 22px;
+}
+.modal-body input{
+    height: 35px;
+
+}
+.name-lname,
+.phone-gender{
+    display: flex;
+    gap: 30px;  
+}
+.name,.lname,.phone,.gender{
+    width: 220px;
+}
+.name,.lname,.email,.password,.phone,.gender{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.modal-body input{
+    border: 1px solid;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.gender select{
+    height: 35px;
+    border: 1px solid;
+}
+.button-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.button-submit button,
+.button-close button{
+    font-size: 20px;
+    height: 40px;
+    width: 110px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.button-close{
+    display: flex;
+    justify-content: flex-end;
+}
+.button-submit button:hover{
+    background-color: red;
+}
+.button-close button:hover{
+    background-color: rgb(58, 59, 63);
+    color: white;
+}
+
+/* modal update */
+
+
+#update-modal-container{
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    /* left: 0; */ 
+}
+#update-modal-container.show{
+    opacity: 1;
+    pointer-events: all;
+}
+#update-modal-container h2{
+    margin-left: 15px;
+}
+#update-modal{
+    background-color: white;
+    max-width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+.update-modal-header{
+    display: flex;
+    justify-content: space-between;
+}
+button#update-close{
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px;
+}
+hr{
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    opacity: 0.5;
+}
+.update-modal-body{
+    display: flex;
+    flex-direction: column;
+    margin:0px 20px ;
+    box-sizing: border-box;
+    gap: 5px; 
+}
+.update-modal-body label{
+    font-size: 22px;
+}
+.update-modal-body input{
+    height: 35px;
+
+}
+.update-name-lname,
+.update-phone-gender{
+    display: flex;
+    gap: 30px;  
+}
+.update-name,.update-lname,.update-phone,.update-gender{
+    width: 220px;
+}
+.update-id,.update-name,.update-lname,.update-email,.update-password,.update-phone,.update-gender{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.update-modal-body input{
+    border: 1px solid;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.update-gender select{
+    height: 38.6px;
+    border: 1px solid;
+}
+.update-button-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+.update-button-submit button,
+.update-button-close button{
+    font-size: 20px;
+    height: 40px;
+    width: max-content;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.update-button-close{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -5px;
+}
+.update-button-submit button:hover{
+    background-color: red;
+}
+.update-button-close button:hover{
+    background-color: rgb(58, 59, 63);
+    color: white;
+}
+
+/* css modal dl user */
+        /* CSS để cài đặt modal và định dạng nút */
+        .modaldeleteuser {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content-delete-user {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal h2 {
+            margin: 0;
+        }
+
+        .modal-buttons {
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* CSS để hiển thị modal */
+        .show-modal-dl-user {
+            display: flex;
+        }

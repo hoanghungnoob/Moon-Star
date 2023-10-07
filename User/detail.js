@@ -1,5 +1,3 @@
-
-
 // Lấy các thông tin của bộ phim
 fetch("../database/data.json")
     .then(response => response.json())
@@ -34,7 +32,6 @@ fetch("../database/data.json")
         detailContainer.append(filmDiv);
 
     });
-
 
 // LLấy Video tạo trailer xuất ra modal
 document.getElementById("trailer").addEventListener("click", openModal);

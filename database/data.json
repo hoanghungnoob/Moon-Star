@@ -106,6 +106,7 @@
       "pnumber": "034567890",
       "email": "hoanghung@gmail.com",
       "password": "12345",
+
       "gender": ""
     },
     {
@@ -125,6 +126,16 @@
       "email": "vantran@gmail.com",
       "password": "12345",
       "gender": ""
+    },
+    {
+      "id": "6257-470e",
+      "name": "Hùng",
+      "lastname": "Hoàng",
+      "email": "hoanghung@gmail.com",
+      "password": "12345",
+      "pnumber": "034567890",
+      "gender": "Male"
+
     }
   ],
   "admin": [

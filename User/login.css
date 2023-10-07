@@ -80,7 +80,15 @@ button[type="submit"] {
     align-items: center;
     margin-left: 35%;
 }
-
+#dontaccount{
+    color:white;
+    text-align: center;
+    
+}
+#dontaccount a{
+    color:red;
+    text-decoration: none;
+}
 
 #dontaccount {
     color: white;
@@ -91,19 +99,5 @@ button[type="submit"] {
 #dontaccount b a {
     color: red;
     text-decoration: none;
-}
-
-
-.about,
-.infor,
-.Contact{
-    padding: 10px  50px;
-    box-sizing: border-box;
-    justify-content: flex-start;
-}
-
-p {
-    text-align: center;
-
 }
 

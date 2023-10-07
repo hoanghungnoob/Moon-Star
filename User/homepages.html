@@ -19,7 +19,7 @@
             <a href="#home">Home</a>
             <div class="input-container">
                 <input type="text" id="search" class="search" placeholder="Search">
-                <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
+                <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
             <a href="#listbooking">List Booking</a>
 
@@ -28,6 +28,8 @@
                 <button class="button-register" id="registerBtn">Register</button>
             </div>
         </nav>
+
+        
         <!-- Modal login -->
         <div id="loginModal" class="modal">
             <div class="login-container">
@@ -46,7 +48,8 @@
                     <button type="submit">Log in</button>
                 </form>
                 <p id="dontaccount">Don't have an account?
-                    <b><a href="#" id="showRegisterModal"> Create Account</a></b></p>
+                    <b><a href="#" id="showRegisterModal"> Create Account</a></b>
+                </p>
             </div>
         </div>
         <!-- Modal register -->
@@ -202,6 +205,42 @@
     <script src="slider.js"></script>
     <script src="login.js"></script>
     <script src="register.js"></script>
+    <script>
+        const btnSearch = document.querySelector(".button-search");
+        const contentSearch = document.querySelector("#search");
+        btnSearch.onclick = function () {
+            if (contentSearch.value) {
+                fetch("../database/data.json")
+                    .then(
+                        respone => respone.json()
+                    ).then(data => {
+                        // console.log(data);
+                        const listfilm = data.listfilm
+                        console.log(listfilm);
+                        const searchedFilm = listfilm.find(e => {
+                            return e.name === contentSearch.value;
+
+                        });
+                        if (searchedFilm) {
+                            console.log(searchedFilm);
+                            window.location.href="detail.html"
+                        } else {
+                            alert("khong tim thay film");
+                        }
+                    })
+                // const promise = getFilms();
+                // promise.then(data => {
+
+
+                // })
+
+            } else {
+                alert("vui long nhap ten phim");
+            }
+
+        }
+    </script>
 
 </body>
+
 </html>

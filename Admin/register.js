@@ -1,3 +1,30 @@
+document.getElementById("registerBtn").addEventListener("click", openRegisterModal
+);
+
+function openRegisterModal() {
+    var loginModal = document.getElementById("registerModal");
+    loginModal.style.display = "block";
+}
+
+document.getElementById("registerModal").addEventListener("click", function (e) {
+    if (e.target === this) {
+        var loginModal = document.getElementById("registerModal");
+        loginModal.style.display = "none";
+    }
+});
+var loginModal = document.getElementById("loginModal");
+var showLoginModalLink = document.getElementById("showLoginModal");
+var registerModal = document.getElementById("registerModal");
+
+// Lắng nghe sự kiện khi nhấp vào liên kết "Login" trong form đăng ký
+showLoginModalLink.addEventListener("click", function (e) {
+e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+
+loginModal.style.display = "block"; // Hiển thị modal đăng nhập
+registerModal.style.display = "none"; // Ẩn modal đăng ký
+});
+
+
 function RandomHexString(L) {
   var hexstring = "";
   for (var i = 0; i < L; i++) {
@@ -11,14 +38,20 @@ function register() {
   let lname = document.getElementById("lastname").value;
   let pnumber = document.getElementById("phonenumber").value;
   let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+  let password = document.getElementById("Password").value;
   let repassword = document.getElementById("repassword").value;
   let id =
-
     RandomHexString(4) + "-" + RandomHexString(4);
 
   console.log(id);
+  console.log(fname);
+  console.log(lname);
+  console.log(email);
+  console.log(pnumber);
+  console.log(password);
+  console.log(repassword);
   // Create an object with the data
+  console.log(id);
   if (
     fname != "" &&
     lname != "" &&
@@ -28,7 +61,6 @@ function register() {
     password == repassword
   ) {
     let userData = {
-
       id,
       name: fname,
       lastname: lname, 
@@ -36,7 +68,6 @@ function register() {
       email: email,
       password: password,
       gender: ""
-
     };
     console.log(userData);
     // Make a POST request to http://localhost:3000/user

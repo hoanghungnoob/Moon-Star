@@ -47,9 +47,20 @@ function listProduct(listfilm) {
     const bookingButton = document.createElement("input");
     bookingButton.type = "button";
     bookingButton.value = "Booking Now";
+    bookingButton.setAttribute("data-bs-toggle", "modal");
+    bookingButton.setAttribute("data-bs-target", "#staticBackdrop");
+    bookingButton.setAttribute("data-firm-id", `${item.id}`);
 
     buttonsContainer.appendChild(detailButton);
     buttonsContainer.appendChild(bookingButton);
+
+    const viewDetailsButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+    viewDetailsButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const userId = button.getAttribute("data-firm-id");
+        console.log(userId)
+      });
+    })
 
     cardBody.appendChild(title);
     cardBody.appendChild(details);
@@ -64,3 +75,14 @@ function listProduct(listfilm) {
 
 // Gọi hàm getListFilm và truyền hàm listProduct làm callback
 getListFilm(listProduct);
+
+function getFileName() {
+  const fileInput = document.getElementById('fileInput');
+  
+  if (fileInput.files.length > 0) {
+    const fileName = fileInput.files[0].name;
+    console.log(fileName);
+  } else {
+    console.log('Không có file nào được chọn.');
+  }
+}

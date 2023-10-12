@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../../styles/hompage2.css">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <div class="containers">
+        <nav class="navbar" style="height:100px;">
+            <div class="img"><img src="../../assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
+            <a href="#home">Home</a>
+            <div class="input-container">
+                <input type="text" id="search" class="search" placeholder="Search">
+                <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <a href="#listbooking">List Booking</a>
+            <div class="menu">
+                <span><i class="fa fa-solid fa-user"></i> </span>
+                <ul class="submenu">
+                    <li>
+                        <button>
+                            <a target="_self" href="homepages.html">Logout</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <center>
+                    <img src="../../assets/image/avarta.jpg" style="width:70%">
+                </center>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <center>
+                <img src="../../assets/image/harryposter.webp" style="width:70%">
+            </center>
+        </div>
+
+        <div class="mySlides fade">
+            <center>
+                <img src="../../assets/image/theavenger.jpg" style="width:70%">
+            </center>
+        </div>
+
+        <div class="mySlides fade">
+            <center>
+                <img src="../../assets/image/forcewaken2.webp" style="width:70%">
+            </center>
+        </div>
+
+        <div class="mySlides fade">
+            <center>
+                <img src="../../assets/image/Moribius-n.jpg" style="width:70%">
+            </center>
+        </div>
+
+        <div class="mySlides fade">
+            <center>
+                <img src="../../assets/image/terminator2.jpg" style="width:70%">
+            </center>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <div class="listproduct">
+        <div class="option-listproduct">
+            <input type="button" value="Movie is showing">
+            <input type="button" value="Upcoming movie" onclick="window.location.href='Comingsoon.html'">
+        </div>
+        <div class="listproduct-1" onload="getListFilm()">
+            <!-- <div >
+                    <input type="button" value="More >>>" id="more" onclick="moreItem()">
+                </div> -->
+            <div class="row" id="item">
+
+            </div>
+
+        </div>
+        <div class="listproduct-2"></div>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="../../assets/image/logo.png" alt="">
+        </div>
+        <hr>
+        <div class="information">
+            <div class="about">
+                <p class="footer-head">About Us</p>
+                <p class="footer-paragrap">We are team build this website with the help of Mr. Le Viet Cuong</p>
+            </div>
+            <div class="infor">
+                <p class="footer-head">More infor</p>
+                <p class="footer-paragrap">
+                    Team has 4 member consist of: Hoang Huu Hung, Nguyen Thi My Duyen,
+                    Tran Duc Hung, Tran Phan Thanh Van</p>
+            </div>
+            <div class="Contact">
+                <p class="footer-head">Contact Us</p>
+                <p class="footer-paragrap">Passerellesnumeriques Viet Nam
+                    Call:+84123465789
+                    Mail:a@gmail.infor</p>
+
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+    <script src="../../js/User/datalistfilm.js"></script>
+    <script src="../../js/User/slider.js"></script>
+    <script>
+        const btnSearch = document.querySelector(".button-search");
+        const contentSearch = document.querySelector("#search");
+        btnSearch.onclick = function () {
+            if (contentSearch.value) {
+                fetch("../../../database/data.json")
+                    .then(
+                        respone => respone.json()
+                    ).then(data => {
+                        // console.log(data);
+                        const listfilm = data.listfilm
+                        console.log(listfilm);
+                        const searchedFilm = listfilm.find(e => {
+                            return e.name === contentSearch.value;
+
+                        });
+                        if (searchedFilm) {
+                            console.log(searchedFilm);
+                            // window.location.href=""
+                        } else {
+                            alert("khong tim thay film");
+                        }
+                    })
+                // const promise = getFilms();
+                // promise.then(data => {
+
+
+                // })
+
+            } else {
+                alert("vui long nhap ten phim");
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

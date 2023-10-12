@@ -1,19 +1,19 @@
 document.getElementById("loginBtn").addEventListener("click", openLoginModal);
 
         function openLoginModal() {
-            var loginModal = document.getElementById("loginModal");
+            let loginModal = document.getElementById("loginModal");
             loginModal.style.display = "block";
         }
 
         document.getElementById("loginModal").addEventListener("click", function (e) {
             if (e.target === this) {
-                var loginModal = document.getElementById("loginModal");
+                let loginModal = document.getElementById("loginModal");
                 loginModal.style.display = "none";
             }
         });
-        var loginModal = document.getElementById("loginModal");
-        var showRegisterModalLink = document.getElementById("showRegisterModal");
-        var registerModal = document.getElementById("registerModal");
+        let loginModal = document.getElementById("loginModal");
+        let showRegisterModalLink = document.getElementById("showRegisterModal");
+        let registerModal = document.getElementById("registerModal");
 
     // Lắng nghe sự kiện khi nhấp vào liên kết "Login" trong form đăng ký
         showRegisterModalLink.addEventListener("click", function (e) {
@@ -31,7 +31,7 @@ document.getElementById("loginBtn").addEventListener("click", openLoginModal);
             const emailInput = document.getElementById("Email").value;
             const passwordInput = document.getElementById("password").value;
 
-            fetch("../database/data.json")
+            fetch("../../../../../database/data.json")
                 .then(response => response.json())
                 .then(data => {
                     const user = data.user;
@@ -53,6 +53,6 @@ document.getElementById("loginBtn").addEventListener("click", openLoginModal);
                     alert("Lỗi khi tải dữ liệu người dùng:", error);
                 });
             // Đóng modal sau khi đăng nhập thành công
-            var loginModal = document.getElementById("loginModal");
+            let loginModal = document.getElementById("loginModal");
             loginModal.style.display = "none";
         });

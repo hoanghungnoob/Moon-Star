@@ -7,9 +7,9 @@
       "date": "30/10/2023",
       "Actors": "Herimone Granger, Harry Potter, Lord Voldemort...",
       "Director": "J.K.Rowling, Rowli Ng J.K",
-      "image": "/image/Harry potter.png",
+      "image": "../../assets/image/Harry potter.png",
       "Content": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry",
-      "video": "/trailer/Harry potter.mp4"
+      "video": "../../assets/trailer/Harry potter.mp4"
     },
     {
       "id": "2",
@@ -18,9 +18,9 @@
       "date": "30/10/2023",
       "Actors": "Sam Worthington, Zoe Saldana, Stephen Lang, Kate Winslet, Cliff Curtis, Victo Lopez...",
       "Director": "Jame Cameron",
-      "image": "/image/Avata 2.png",
+      "image": "../../assets/image/Avata 2.png",
       "Content": "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
-      "video": "/trailer/Avatar_ Dòng Chảy Của Nước _ Official Trailer.mp4"
+      "video": "../../assets/trailer/Avatar_ Dòng Chảy Của Nước _ Official Trailer.mp4"
     },
     {
       "id": "3",
@@ -29,9 +29,9 @@
       "date": "30/10/2023",
       "Actors": "Jared Leto, Jared Harries, Tyress Gibson, Matt Smith, ...",
       "Director": "Daniel Espinosa",
-      "image": "/image/Morrbius.png",
+      "image": "../../assets/image/Morrbius.png",
       "Content": "Biochemist Michael Morbius tries to cure himself of a rare blood disease, but he inadvertently infects himself with a form of vampirism instead.",
-      "video": "/trailer/MORBIUS.mp4"
+      "video": "../../assets/trailer/MORBIUS.mp4"
     },
     {
       "id": "4",
@@ -40,9 +40,9 @@
       "date": "30/10/2023",
       "Actors": "Robert Downey Jr., Chris Evans, Tom Hiddleston, Chris Hemsworth,...",
       "Director": "Joss Whedon",
-      "image": "/image/The Avanger.png",
+      "image": "../../assets/image/The Avanger.png",
       "Content": "The fantasy film tells about a group of superheroes with specail abilities including: Iron man, God of Thunder, captain American, Hulk, Black Widow collective known as SHIELD. The purpose of SHIELD is to protect Earth from the destructive plots of evil forces form beyond the earth, whose leader is Loki, the trickster god and also the yuonger brother of the God of Thunder.",
-      "video": "/trailer/The avenger.mp4"
+      "video": "../../assets/trailer/The avenger.mp4"
     },
     {
       "id": "5",
@@ -51,9 +51,9 @@
       "date": "30/10/2023",
       "Actors": "Daisy Ridley, John Boyega, Harrison Ford, Oscar Isaac, Kiran Shah,...",
       "Director": "J.J. Abrams",
-      "image": "/image/The Force Avakens.png",
+      "image": "../../assets/image/The Force Avakens.png",
       "Content": "As a new threat to the galaxy rises, Rey, a desert scavenger, and Finn, an ex-stormtrooper, must join Han Solo and Chewbacca to search for the one hope of restoring peace.",
-      "video": "/trailer/Star Wars_ The Force Awakens Official Teaser.mp4"
+      "video": "../../assets/trailer/Star Wars_ The Force Awakens Official Teaser.mp4"
     },
     {
       "id": "6",
@@ -62,9 +62,9 @@
       "date": "29/10/2023",
       "Actors": "Arnold Schwarzenegger, Linda Hamiton, Michael Biehn, Earl Boen, Dick Miler,..",
       "Director": "James Cameron",
-      "image": "/image/The Terminator 1984.png",
+      "image": "../../assets/image/The Terminator 1984.png",
       "Content": " A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvation.",
-      "video": "/trailer/The Terminator (1984) Trailer.mp4"
+      "video": "../../assets/trailer/The Terminator (1984) Trailer.mp4"
     },
     {
       "id": "7",
@@ -73,9 +73,9 @@
       "date": "29/10/2023",
       "Actors": "Arnold Schwarzenegger, Linda Hamiton, Michael Biehn, Earl Boen, Dick Miler,..",
       "Director": "James Cameron",
-      "image": "/image/honey.png",
+      "image": "../../assets/image/honey.png",
       "Content": " A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvation.",
-      "video": "/trailer/Honey Sweet - Official Trailer [ซับไทย].mp4"
+      "video": "../../assets/trailer/Honey Sweet - Official Trailer [ซับไทย].mp4"
     },
     {
       "id": "8",
@@ -84,9 +84,9 @@
       "date": "29/10/2023",
       "Actors": "Arnold Schwarzenegger, Linda Hamiton, Michael Biehn, Earl Boen, Dick Miler,..",
       "Director": "James Cameron",
-      "image": "/image/Onc piece 2.png",
+      "image": "../../assets/image/Onc piece 2.png",
       "Content": " A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvation.",
-      "video": "/trailer/One Piece Trailer - Hoạt Hình Tiếng Việt.mp4"
+      "video": "../../assets/trailer/One Piece Trailer - Hoạt Hình Tiếng Việt.mp4"
     }
   ],
   "user": [
@@ -142,7 +142,7 @@
       "date": "ComingSoon",
       "Actors": "Isaac, Rocker Nguyễn,La Thành, Emma Lê, Lợi Trần, Ngọc Hồ",
       "Director": "Tân DS",
-      "image": "../imagecoming/giaolo8675.jpg",
+      "image": "../../assets/imagecoming/giaolo8675.jpg",
       "Content": "The movie revolves around the story about the young people despite appearing at different contexts and Face your own problems, everyone have the same thing in commonyoung people are standing in front of the ''mountain'' must be conqueredself."
     },
     {
@@ -152,7 +152,7 @@
       "date": "comingSoon",
       "Actors": "Jennifer Nettles, Ellen Burstyn, Leslie Odom Jr.",
       "Director": "David Gordon Green",
-      "image": "../imagecoming/quyam.jpg",
+      "image": "../../assets/imagecoming/quyam.jpg",
       "Content": "The sequel to the 1973 film follows a 12-year-old girl possessed by a mysterious demonic entity, forcing her mother to seek the help of two priests to save her."
     },
     {
@@ -162,7 +162,7 @@
       "date": "comingSoon",
       "Actors": "Timothée Chalamet, Rebecca Ferguson, Zendaya",
       "Director": "Denis Villeneuve",
-      "image": "../imagecoming/dune.jpg",
+      "image": "../../assets/imagecoming/dune.jpg",
       "Content": "It is an epic, emotional journey of Paul Atreides - an outstandingly talented young man born with a great mission beyond his own understanding. Paul had to travel to the most dangerous planet in the Universe to ensure the future of his family and his people. When cruel forces begin to engage in conflict to monopolize the planet's most valuable resource - the precious fuel capable of activating humanity's greatest potential - only those who Only by conquering your fear can you survive..."
     },
     {
@@ -172,7 +172,7 @@
       "date": "ComingSoon",
       "Actors": "Priyanka Chopra Jonas, Sam Heughan, Russell Tovey",
       "Director": "Jim Strouse",
-      "image": "../imagecoming/loveagain.jpg",
+      "image": "../../assets/imagecoming/loveagain.jpg",
       "Content": "Love will come to those who believe. #LoveAgainMovie, a healing movie for those who have been, are and will be in love. Starring Priyanka Chopra and Sam Heughan, plus Céline Dion and her new song."
     },
     {
@@ -182,7 +182,7 @@
       "date": "ComingSoon",
       "Actors": "Aaron Taylor-Johnson, Russell Crowe, Ariana DeBose",
       "Director": "J.C. Chandor",
-      "image": "../imagecoming/kravethehunter.jpg",
+      "image": "../../assets/imagecoming/kravethehunter.jpg",
       "Content": "Russian immigrant Sergei Kravinoff is on a mission to prove that he is the world's greatest hunter."
     },
     {
@@ -192,7 +192,7 @@
       "date": "ComingSoon",
       "Actors": "Kuan Denkhun Ngamnet, Pinky Savika Chaiyadej, Care Panisara Rikulsurakan",
       "Director": "Thitipan Raksasat",
-      "image": "../imagecoming/kumathong.jpg",
+      "image": "../../assets/imagecoming/kumathong.jpg",
       "Content": "Ging took his son on vacation to a wooden house in the middle of the forest. However, the boy was kidnapped in the middle of the night. After many search efforts, the only clue in the case pointed to a man named In, who worked as a mortician at the temple."
     },
     {
@@ -202,7 +202,7 @@
       "date": "ComingSoon",
       "Actors": "Quốc Toàn, Minh Hiền, Đức Trí, Tạ Xuân Tuế, Ba Trường,...",
       "Director": "Lương Đình Dũng",
-      "image": "../imagecoming/thanhphongugat.jpg",
+      "image": "../../assets/imagecoming/thanhphongugat.jpg",
       "Content": "Nhân vật chính là một chàng thanh niên 26 tuổi, sống đơn độc giữa trung tâm thành phố nhộn nhịp, mưu sinh bằng nghề mổ gà. Một ngày, sự xuất hiện của nhóm giang hồ và một cô gái điếm đã tác động đến cuộc sống của anh. Điều đó đã làm cho bản năng hoang dã của chàng thanh niên trỗi dậy không kiểm soát."
     },
     {
@@ -212,7 +212,7 @@
       "date": "ComingSoon",
       "Actors": "Jason Momoa, Ben Affleck, Patrick Wilson,...",
       "Director": "James Wan",
-      "image": "../imagecoming/aquaman.jpg"
+      "image": "../../assets/imagecoming/aquaman.jpg"
     }
   ],
   "listbooking": [],

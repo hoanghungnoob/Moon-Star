@@ -2,19 +2,19 @@ document.getElementById("registerBtn").addEventListener("click", openRegisterMod
 );
 
 function openRegisterModal() {
-    var loginModal = document.getElementById("registerModal");
+    let loginModal = document.getElementById("registerModal");
     loginModal.style.display = "block";
 }
 
 document.getElementById("registerModal").addEventListener("click", function (e) {
     if (e.target === this) {
-        var loginModal = document.getElementById("registerModal");
+        let loginModal = document.getElementById("registerModal");
         loginModal.style.display = "none";
     }
 });
-var loginModal = document.getElementById("loginModal");
-var showLoginModalLink = document.getElementById("showLoginModal");
-var registerModal = document.getElementById("registerModal");
+let loginModal = document.getElementById("loginModal");
+let showLoginModalLink = document.getElementById("showLoginModal");
+let registerModal = document.getElementById("registerModal");
 
 // Lắng nghe sự kiện khi nhấp vào liên kết "Login" trong form đăng ký
 showLoginModalLink.addEventListener("click", function (e) {
@@ -26,8 +26,8 @@ registerModal.style.display = "none"; // Ẩn modal đăng ký
 
 
 function RandomHexString(L) {
-  var hexstring = "";
-  for (var i = 0; i < L; i++) {
+  let hexstring = "";
+  for (let i = 0; i < L; i++) {
     hexstring += Math.floor(Math.random() * 16).toString(16);
   }
   return hexstring;

@@ -125,6 +125,15 @@
       "password": "12345",
       "pnumber": "034567890",
       "gender": "Male"
+    },
+    {
+      "id": "60bb-61a5",
+      "name": "luân",
+      "lastname": "trần",
+      "pnumber": "0799466639",
+      "email": "tranluan@gmail.com",
+      "password": "1",
+      "gender": "Male"
     }
   ],
   "admin": [

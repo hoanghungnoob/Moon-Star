@@ -45,15 +45,13 @@ fetch("http://localhost:3000/user")
         .getElementById("update-user-" + userId)
         .addEventListener("click", () => {
           // modal update
-          const update_creat = document.getElementById("update-user-" + userId);
           const update_close = document.getElementById("update-close");
           const update_close_button = document.getElementById("update-close-modal");
           const update_modal_container = document.getElementById("update-modal-container");
           const update_data = document.getElementById("update-submit");
-          update_creat.addEventListener("click", () => {
-            // add class show
-            update_modal_container.classList.add("show");
-          });
+          // add class show để show modal
+          update_modal_container.classList.add("show");
+          console.log("update-user-" + userId);
           update_close.addEventListener("click", () => {
             update_modal_container.classList.remove("show");
           });
@@ -111,16 +109,11 @@ fetch("http://localhost:3000/user")
         .getElementById("delete-user-" + userId)
         .addEventListener("click", () => {
           // Lấy các phần tử DOM
-          const show_modal_dl_user = document.getElementById(
-            "delete-user-" + userId
-          );
           const modal = document.querySelector(".modaldeleteuser");
           const confirmButton = document.getElementById("confirm-button");
           const cancelButton = document.getElementById("cancel-button");
-
-          show_modal_dl_user.addEventListener("click", () => {
-            modal.classList.add("show-modal-dl-user");
-          });
+          // thêm class để hiển thị modal delete
+          modal.classList.add("show-modal-dl-user");
           // Bắt sự kiện khi nút "Xác nhận" được nhấn
           confirmButton.addEventListener("click", () => {
             // Thực hiện các hành động khi nút "Xác nhận" được nhấn
@@ -201,102 +194,253 @@ fetch("http://localhost:3000/listfilm")
       html += "<td>" + director + "</td>";
       html += "<td>" + content + "</td>";
       html +=
-      '<td class="fix-option">' +
-      '<button id="update-film-' +
-      filmId +
-      '"><i class="fa-solid fa-screwdriver-wrench"></i></button>' +
-      '<button id="delete-film-' +
-      filmId +
-      '"><i class="fa-solid fa-trash"></i></button>' +
-      "</td>";
+        '<td class="fix-option">' +
+        '<button id="update-film-' +
+        filmId +
+        '"><i class="fa-solid fa-screwdriver-wrench"></i></button>' +
+        '<button id="delete-film-' +
+        filmId +
+        '"><i class="fa-solid fa-trash"></i></button>' +
+        "</td>";
       html += "</tr>";
-      
+
       document.getElementById("tbody2").innerHTML += html;
     }
     for (const index of data) {
-      const element =index;
+      const element = index;
       const filmId = element.id;
       document.getElementById("update-film-" + filmId).addEventListener("click", () => {
-        console.log("update-film-" + filmId);
-          const update_film_create = document.getElementById("update-film-" + filmId);
-          const update_film_close = document.getElementById('update-film-close-icon');
-          const update_close_button= document.getElementById('update-film-cancel');
-          const update_film_modal_container = document.getElementById('update-film-modal-container');
-          const update_film_data = document.getElementById("update-film-submit");
+        const update_film_close = document.getElementById('update-film-close-icon');
+        const update_close_button = document.getElementById('update-film-cancel');
+        const update_film_modal_container = document.getElementById('update-film-modal-container');
+        const update_film_submit = document.getElementById("update-film-submit");
+        // add class show
+        update_film_modal_container.classList.add('show');
+        // lấy các phần tử DOM
+        document.getElementById('update-film-id').value = element.id;
+        document.getElementById('update-film-name').value = element.name;
+        document.getElementById('update-film-time').value = element.time;
+        document.getElementById('update-film-date').value = element.date;
+        document.getElementById('update-film-actor').value = element.Actors;
+        document.getElementById('update-film-director').value = element.Director;
 
-          console.log("delete-film-" +filmId);
-          update_film_create.addEventListener('click',()=>{
-             // add class show
-             update_film_modal_container.classList.add('show');
-          });
-          update_film_close.addEventListener('click',()=>{
-             
-             update_film_modal_container.classList.remove('show');
-          });
-          update_close_button.addEventListener('click',()=>{
-              update_film_modal_container.classList.remove('show');
-          });
+        // Display the image and video
+        document.getElementById('update-film-image').src = element.image; // Set the image source
+        document.getElementById('update-film-content').value = element.Content; // Set text content for description
+        document.getElementById('update-film-trailer').src = element.video;
+        let imageInput = document.getElementById("update-film-image-local");
+        let trailerInput = document.getElementById("update-film-trailer-local");
+        console.log(filmId);
+        update_film_submit.addEventListener("click",()=>{
+        if (checkFileImage()==false && checkFileVideo()==false) {  
+            let updateFilm = {
+              name:document.getElementById('update-film-name').value,
+              time:document.getElementById('update-film-time').value,
+              date:document.getElementById('update-film-date').value,
+              Actors:document.getElementById('update-film-actor').value,
+              Director:document.getElementById('update-film-director').value,
+              Content: document.getElementById('update-film-content').value ,
+              image:element.image,
+              video:element.video
+            }
 
-          // lấy các phần tử DOM
-          document.getElementById('update-film-id').value = element.id;
-          document.getElementById('update-film-name').value = element.name;
-          document.getElementById('update-film-time').value = element.time;
-          document.getElementById('update-film-date').value = element.date;
-          document.getElementById('update-film-actor').value = element.Actors;
-          document.getElementById('update-film-director').value = element.Director;
-          
-          // Display the image and video
-          document.getElementById('update-film-image').src = element.image; // Set the image source
-          document.getElementById('update-film-content').value = element.Content; // Set text content for description
-          document.getElementById('update-film-trailer').src = element.video;
+              fetch(`http://localhost:3000/listfilm/${element.id}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updateFilm),
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error("Cập nhật người dùng thất bại.");
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  // Xử lý phản hồi từ API sau khi cập nhật thành công
+                  console.log("Thông tin người dùng đã được cập nhật:", data);
+  
+                  // Đóng modal sau khi cập nhật thành công
+                  update_film_modal_container.classList.remove("show");
+                })
+                .catch((error) => {
+                  console.error("Lỗi khi cập nhật người dùng:", error);
+                });
+          }// nut if
+          else if(checkFileImage()!=false && checkFileVideo()==false){
+              console.log(checkFileImage());
+              let nameImage =checkFileImage();
+              let updateFilm = {
+                name:document.getElementById('update-film-name').value,
+                time:document.getElementById('update-film-time').value,
+                date:document.getElementById('update-film-date').value,
+                Actors:document.getElementById('update-film-actor').value,
+                Director:document.getElementById('update-film-director').value,
+                Content: document.getElementById('update-film-content').value ,
+                image:`/src/assets/image/${nameImage}`,
+                video:element.video
+              }
+  
+                fetch(`http://localhost:3000/listfilm/${element.id}`, {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(updateFilm),
+                })
+                  .then((response) => {
+                    if (!response.ok) {
+                      throw new Error("Cập nhật người dùng thất bại.");
+                    }
+                    return response.json();
+                  })
+                  .then((data) => {
+                    // Xử lý phản hồi từ API sau khi cập nhật thành công
+                    console.log("Thông tin người dùng đã được cập nhật:", data);
+    
+                    // Đóng modal sau khi cập nhật thành công
+                    update_film_modal_container.classList.remove("show");
+                  })
+                  .catch((error) => {
+                    console.error("Lỗi khi cập nhật người dùng:", error);
+                  });
 
+          }
+          else if(checkFileImage()==false && checkFileVideo()!=false) {
+            let nameVideo =checkFileVideo();
+            let updateFilm = {
+              name:document.getElementById('update-film-name').value,
+              time:document.getElementById('update-film-time').value,
+              date:document.getElementById('update-film-date').value,
+              Actors:document.getElementById('update-film-actor').value,
+              Director:document.getElementById('update-film-director').value,
+              Content: document.getElementById('update-film-content').value ,
+              image:element.image,
+              video:`/src/assets/trailer/${nameVideo}`
+            }
 
-      })// ngoac cua update film
-          // Lấy các phần tử DOM
+              fetch(`http://localhost:3000/listfilm/${element.id}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updateFilm),
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error("Cập nhật người dùng thất bại.");
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  // Xử lý phản hồi từ API sau khi cập nhật thành công
+                  console.log("Thông tin người dùng đã được cập nhật:", data);
+  
+                  // Đóng modal sau khi cập nhật thành công
+                  update_film_modal_container.classList.remove("show");
+                })
+                .catch((error) => {
+                  console.error("Lỗi khi cập nhật người dùng:", error);
+                });
 
-    const show_modal_dl_film = document.getElementById('delete-film-' + filmId);
-    const modal = document.querySelector('.modaldeletefilm');
-    const confirmButton = document.getElementById('confirm-film-button');
-    const cancelButton = document.getElementById('cancel-film-button');
+          }
+          else{
+            console.log(checkFileImage());
+            console.log(checkFileVideo());
+            let nameImage = checkFileImage();
+            let nameVideo = checkFileVideo();
+            let updateFilm = {
+              name:document.getElementById('update-film-name').value,
+              time:document.getElementById('update-film-time').value,
+              date:document.getElementById('update-film-date').value,
+              Actors:document.getElementById('update-film-actor').value,
+              Director:document.getElementById('update-film-director').value,
+              Content: document.getElementById('update-film-content').value ,
+              image:`/src/assets/image/${nameImage}`,
+              video:`/src/assets/trailer/${nameVideo}`
+            }
 
-    show_modal_dl_film.addEventListener('click', ()=>{
+              fetch(`http://localhost:3000/listfilm/${element.id}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updateFilm),
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error("Cập nhật người dùng thất bại.");
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  // Xử lý phản hồi từ API sau khi cập nhật thành công
+                  console.log("Thông tin người dùng đã được cập nhật:", data);
+  
+                  // Đóng modal sau khi cập nhật thành công
+                  update_film_modal_container.classList.remove("show");
+                })
+                .catch((error) => {
+                  console.error("Lỗi khi cập nhật người dùng:", error);
+                });
+
+          }
+              });
+
+        update_film_close.addEventListener('click', () => {
+
+          update_film_modal_container.classList.remove('show');
+        });
+        update_close_button.addEventListener('click', () => {
+          update_film_modal_container.classList.remove('show');
+        });
+
+      });// ngoac cua update film
+      // Lấy các phần tử DOM
+      document.getElementById('delete-film-' + filmId).addEventListener("click", () => {
+        const show_modal_dl_film = document.getElementById('delete-film-' + filmId);
+        const modal = document.querySelector('.modaldeletefilm');
+        const confirmButton = document.getElementById('confirm-film-button');
+        const cancelButton = document.getElementById('cancel-film-button');
+
         modal.classList.add('show-modal-dl-film');
-    })
-    // Bắt sự kiện khi nút "Xác nhận" được nhấn
-    confirmButton.addEventListener('click', () => {
-        // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-            // fetch(`http://localhost:3000/user/${userId}`, {
-            //   method: "DELETE",
-            // })
-            //   .then((response) => {
-            //     if (!response.ok) {
-            //       throw new Error("Xóa người dùng thất bại.");
-            //     }
-            //     return response.json();
-            //   })
-            //   .then((data) => {
-            //     // Xử lý phản hồi từ API sau khi xóa thành công
-            //     console.log("Người dùng đã được xóa:", data);
+        // Bắt sự kiện khi nút "Xác nhận" được nhấn
+        confirmButton.addEventListener('click', () => {
+          // Thực hiện các hành động khi nút "Xác nhận" được nhấn
+          fetch(`http://localhost:3000/listfilm/${filmId}`, {
+            method: "DELETE", // Use the DELETE method to delete the film
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Xóa phim thất bại.");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              // Xử lý phản hồi từ API sau khi xóa thành công
+              console.log("Phim đã được xóa:", data);
 
-            //     // Đóng modal sau khi xóa thành công
-            //     modal.classList.remove("show-modal-dl-user");
-            //     // Cập nhật giao diện hoặc làm bất kỳ điều gì bạn muốn sau khi xóa thành công
-            //   })
-            //   .catch((error) => {
-            //     console.error("Lỗi khi xóa người dùng:", error);
-            //   });
-        closeModal();
-    });
+              // Đóng modal sau khi xóa thành công
+              closeModal();
+              // Cập nhật giao diện hoặc làm bất kỳ điều gì bạn muốn sau khi xóa thành công
+            })
+            .catch((error) => {
+              console.error("Lỗi khi xóa phim:", error);
+            });
+        });
 
-    // Bắt sự kiện khi nút "Hủy bỏ" được nhấn
-    cancelButton.addEventListener('click', () => {
-        // Thực hiện các hành động khi nút "Hủy bỏ" được nhấn
-        closeModal();
-    });
-    // Hàm để đóng modal
-    function closeModal() {
-        modal.classList.remove('show-modal-dl-film');
-    }
+        // Bắt sự kiện khi nút "Hủy bỏ" được nhấn
+        cancelButton.addEventListener('click', () => {
+          // Thực hiện các hành động khi nút "Hủy bỏ" được nhấn
+          closeModal();
+        });
+        // Hàm để đóng modal
+        function closeModal() {
+          modal.classList.remove('show-modal-dl-film');
+        }
+
+      })
 
     }
   })
@@ -304,6 +448,30 @@ fetch("http://localhost:3000/listfilm")
     console.error("Error:", error);
   });
 
+
+// hàm kiểm tra thẻ input cuar  update film
+function checkFileImage() {
+  var fileInput = document.getElementById('update-film-image-local');
+  var file = fileInput.files[0];
+  
+  if (file) {
+    return file.name;
+  } else {
+    console.log('Không có ảnh nào được chọn.');
+    return false;
+  }
+}
+function checkFileVideo() {
+  var fileInput = document.getElementById("update-film-trailer-local");
+  var file = fileInput.files[0];
+  
+  if (file) {
+    return file.name;
+  } else {
+    console.log('Không có video nào được chọn.');
+    return false;
+  }
+}
 // modal create user
 const creat = document.getElementById("create-user");
 const close = document.getElementById("close");

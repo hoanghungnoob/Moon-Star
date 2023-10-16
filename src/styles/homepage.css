@@ -15,12 +15,8 @@ html {
 }
 
 body {
-    background-color: black;
+    background-color: black !important;
     margin: 0
-}
-
-.containers {
-    background-color: black;
 }
 
 .mySlides {
@@ -196,14 +192,14 @@ input[type="password"] {
     padding: 10px;
     border: 1px solid black;
     border-radius: 3px;
-    
+
     border: 1px solid rgb(246, 244, 244);
 }
 
 button[type="submit"] {
     display: block;
     width: 30%;
-    padding:10px;
+    padding: 10px;
     font-size: 25px;
     background-color: #e33408;
     color: white;
@@ -215,19 +211,22 @@ button[type="submit"] {
     align-items: center;
     margin-left: 35%;
 }
-#dontaccount{
-    color:white;
+
+#dontaccount {
+    color: white;
     text-align: center;
-    
+
 }
-#dontaccount span{
-    color:red;
+
+#dontaccount span {
+    color: red;
     text-decoration: none;
 }
 
 button[type="submit"]:hover {
     background-color: #f13105;
 }
+
 .listproduct {
     margin-top: 50px;
     display: flex;
@@ -261,8 +260,8 @@ button[type="submit"]:hover {
 }
 
 .card-body {
-    color: white;
-    font-size: 30px;
+    color: white !important;
+    font-size: 30px !important;
 }
 
 .option-listproduct input[type="button"] {
@@ -326,8 +325,8 @@ hr {
 }
 
 h5 {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
 }
 
 p {
@@ -338,4 +337,24 @@ p {
 
 input {
     height: 40px;
+}
+
+.btn-booking {
+    height: 50px;
+    border-radius: 10px;
+    border-color: red;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    margin-right: 20p;
+}
+
+.btn-detail-phim {
+    height: 50px;
+    border-radius: 10px;
+    border-color: red;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    margin-right: 20px;
 }

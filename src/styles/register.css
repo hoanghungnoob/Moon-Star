@@ -1,6 +1,4 @@
-
-
-.modal {
+.modal-custom {
     display: none;
     position: fixed;
     top: 50%;
@@ -13,17 +11,17 @@
 
 }
 
-.modal.active {
+.modal-custom.active {
     display: block;
 }
 
-.modal.active {
+.modal-custom.active {
     display: block;
 }
 
-.containers{
+.containers {
     position: relative;
-    margin:100px auto;
+    margin: 100px auto;
     max-width: 700px;
     background-color: black;
     padding: 25px 30px;
@@ -38,19 +36,19 @@ h1 {
 }
 
 
-.containers form .user-details{
+.containers form .user-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 0 12px 0;
 }
 
-form .user-details .input-box{
+form .user-details .input-box {
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
 }
 
-form .user-details .input-box .details{
+form .user-details .input-box .details {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
@@ -60,11 +58,12 @@ form .user-details .input-box input {
     display: flex;
     align-items: center;
     height: 45px;
-    width: 100%; /* Đặt độ rộng của ô input thành 100% */
+    width: 100%;
+    /* Đặt độ rộng của ô input thành 100% */
     outline: none;
     border-radius: 5px;
     border: 1px solid rgb(231, 225, 225);
-    
+
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
@@ -75,11 +74,11 @@ form .user-details .input-box input {
 
 
 .user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:valid {
     border-color: black;
 }
 
-form .button{
+form .button {
     height: 45px;
     margin: 45px 0;
     text-align: center;
@@ -88,7 +87,7 @@ form .button{
 }
 
 form .button input {
-    
+
     align-items: center;
     justify-content: center;
     height: 38px;
@@ -104,13 +103,12 @@ form .button input {
 }
 
 
-.login{
+.login {
     text-align: center;
     color: #fff;
 }
 
-.login b a{
+.login b a {
     color: red;
     text-decoration: none;
 }
- 

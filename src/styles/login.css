@@ -1,5 +1,5 @@
 /* CSS cho modal */ 
-.modal {
+.modal-custom {
     display: none;
     position: fixed;
     top: 50%;
@@ -12,11 +12,11 @@
 
 }
 
-.modal.active {
+.modal-custom.active {
     display: block;
 }
 
-.modal.active {
+.modal-custom.active {
     display: block;
 }
 

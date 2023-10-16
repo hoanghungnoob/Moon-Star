@@ -43,6 +43,7 @@ function listProduct(listfilm) {
     detailButton.addEventListener("click", function () {
       window.location.href = "detail.html" + `?idx=${idx}`;
     });
+    detailButton.setAttribute("class", "btn-detail-phim");
 
     const bookingButton = document.createElement("input");
     bookingButton.type = "button";
@@ -50,17 +51,22 @@ function listProduct(listfilm) {
     bookingButton.setAttribute("data-bs-toggle", "modal");
     bookingButton.setAttribute("data-bs-target", "#staticBackdrop");
     bookingButton.setAttribute("data-firm-id", `${item.id}`);
+    bookingButton.setAttribute("class", "btn-booking");
 
     buttonsContainer.appendChild(detailButton);
     buttonsContainer.appendChild(bookingButton);
 
     const viewDetailsButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+
     viewDetailsButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        const userId = button.getAttribute("data-firm-id");
-        console.log(userId)
+      button.addEventListener("click", function (event) {
+        const targetModalId = event.getAttribute("data-bs-target");
+        const myModal = new bootstrap.Modal(document.querySelector(targetModalId));
+        myModal.hide();
       });
     })
+
+
 
     cardBody.appendChild(title);
     cardBody.appendChild(details);
@@ -78,7 +84,7 @@ getListFilm(listProduct);
 
 function getFileName() {
   const fileInput = document.getElementById('fileInput');
-  
+
   if (fileInput.files.length > 0) {
     const fileName = fileInput.files[0].name;
     console.log(fileName);

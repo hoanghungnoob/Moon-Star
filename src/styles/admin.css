@@ -160,24 +160,13 @@ body {
     padding-left: 20px;
 }
 
-.container-item-left-listbooking button {
-    background-color: black;
-    color: white;
-    display: flex;
-    border: none;
-    gap: 10px;
-    box-sizing: border-box;
-    font-size: 20px;
-    padding-left: 20px;
-}
 
 .container-item-left i {
     padding-top: 26px;
 }
 
 .container-item-left-user button:hover,
-.container-item-left-film button:hover,
-.container-item-left-listbooking button:hover {
+.container-item-left-film button:hover {
     background-color: white;
     color: black;
     width: 100%;
@@ -197,7 +186,8 @@ body {
 }
 
 .container-item-right-head1,
-.container-item-right-head2 {
+.container-item-right-head2,
+.container-item-right-head3 {
     margin-top: 0px;
     line-height: 0;
 }
@@ -242,7 +232,8 @@ table tr td {
 }
 
 
-.container-item-right-body2 table {
+.container-item-right-body2 table,
+.container-item-right-body3 table {
     /* display: none; */
     position: absolute;
     top: 150px;
@@ -257,7 +248,8 @@ table tr td {
 /* đặt các element bên phải thuộc tính display none */
 /* nút create voới tên*/
 .container-item-right-head1,
-.container-item-right-head2 {
+.container-item-right-head2,
+.container-item-right-head3 {
     display: none;
 }
 
@@ -268,6 +260,11 @@ table tr td {
 
 /* bảng hiển thị phim */
 .container-item-right-body2 {
+    display: none;
+}
+
+/* bảng hiển thị phim comming */
+.container-item-right-body3 {
     display: none;
 }
 

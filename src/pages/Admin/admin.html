@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="../../styles/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="containers">
         <nav class="navbar" style="height:100px;">
@@ -30,33 +35,41 @@
             </div>
         </nav>
         <div class="container-item">
-            <div class="container-item-left" >
-                <div class="container-item-left-user" onclick="showUser()" >
-                    <button><i class="fa fa-user" id="user" ></i>
-                        <h3>User</h3></button>
+            <div class="container-item-left">
+                <div class="container-item-left-user" onclick="showUser()">
+                    <button><i class="fa fa-user" id="user"></i>
+                        <h3>User</h3>
+                    </button>
                 </div>
                 <div class="container-item-left-film" onclick="showListFilm()">
                     <button><i class="fa fa-list" id="film"></i>
-                        <h3>Film</h3></button>
+                        <h3>Film</h3>
+                    </button>
                 </div>
-                <div class="container-item-left-listbooking">
+                <div class="container-item-left-film" onclick="showFilmComming()">
                     <button><i class="fa fa-list" id="film"></i>
-                        <h3>List Booking</h3></button>
+                        <h3>ComingSoon</h3>
+                    </button>
+                </div>
+                <div class="container-item-left-film" onclick="">
+                    <button><i class="fa fa-list" id="film"></i>
+                        <h3>Booking</h3>
+                    </button>
                 </div>
             </div>
             <div class="container-item-right">
                 <div class="container-item-right-head1" id="container-item-right-head1">
-                    <h1 >User</h1>
-                    <button id="create-user" >Create +</button>
+                    <h1>User</h1>
+                    <button id="create-user">Create +</button>
                 </div>
                 <div class="container-item-right-body1" id="user-list">
                     <table>
                         <thead>
-                            <tr>                          
+                            <tr>
                                 <th>Name</th>
                                 <th>email</th>
                                 <th>Password</th>
-                                <th>Option</th>     
+                                <th>Option</th>
                             </tr>
                         </thead>
                         <tbody id="tbody1">
@@ -64,20 +77,20 @@
                     </table>
                 </div>
                 <div class="container-item-right-head2" id="container-item-right-head2">
-                    <h1 >List film</h1>
-                    <button id="create-listfilm" >Create +</button>
+                    <h1>List film</h1>
+                    <button id="create-listfilm">Create +</button>
                 </div>
                 <div class="container-item-right-body2" id="list-film">
                     <table>
                         <thead>
                             <tr>
-                               
+
                                 <th>Name Film</th>
                                 <th>Time</th>
                                 <th>Director</th>
                                 <th>Content</th>
                                 <th>Option</th>
-                            
+
                             </tr>
                         </thead>
                         <tbody id="tbody2">
@@ -85,10 +98,32 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="container-item-right-head3" id="container-item-right-head3">
+                    <h1>List film commingSoon</h1>
+                    <button id="create-listfilm">Create +</button>
+                </div>
+                <div class="container-item-right-body3" id="list-film-comming">
+                    <table>
+                        <thead>
+                            <tr>
+
+                                <th>Name Film</th>
+                                <th>Time</th>
+                                <th>Director</th>
+                                <th>Content</th>
+                                <th>Option</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody3">
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- modal create-->
-        <div id="modal-container" >
+        <div id="modal-container">
             <div id="modal">
                 <div class="modal-header">
                     <h2>Create User</h2>
@@ -121,7 +156,7 @@
                         </div>
                         <div class="gender">
                             <label for="gender">Gender:</label>
-                            <select  name="gender" id="select">
+                            <select name="gender" id="select">
                                 <option value="none"></option>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
@@ -138,200 +173,201 @@
             </div>
         </div>
         <!-- modal  update-->
-    <div id="update-modal-container" >
-        <div id="update-modal">
-            <div class="update-modal-header">
-                <h2>Update User</h2>
-                <button id="update-close"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <hr>
-            <div class="update-modal-body">
-                <div class="update-id">
-                    <label for="id">ID:</label>
-                    <input type="text" id="update-id" disabled>
+        <div id="update-modal-container">
+            <div id="update-modal">
+                <div class="update-modal-header">
+                    <h2>Update User</h2>
+                    <button id="update-close"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div class="update-name-lname">
-                    <div class="update-name">
-                        <label for="name">Name:</label>
-                        <input type="text" id="update-name" placeholder="Name">
-                    </div>
-                    <div class="update-lname">
-                        <label for="lname">Last Name:</label>
-                        <input type="text" id="update-lname" placeholder="Last Name">
-                    </div>
-                </div>
-                <div class="update-email">
-                    <label for="email">Email:</label>
-                    <input type="text" id="update-email" placeholder="Email">
-                </div>
-                <div class="update-password">
-                    <label for="password">Password:</label>
-                    <input type="text" id="update-password" placeholder="Password">
-                </div>
-                <div class="update-phone-gender">
-                    <div class="update-phone">
-                        <label for="phone">Phone Number:</label>
-                        <input type="number" id="update-phone" placeholder="Phone number">
-                    </div>
-                    <div class="update-gender">
-                        <label for="gender">Gender:</label>
-                        <select  name="update-gender" id="update-select">
-                            <option value="none"></option>
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="update-button-submit">
-                    <button id="update-submit">Hoàn thành</button>
-                </div>
-                <div class="update-button-close">
-                    <button id="update-close-modal">Hủy Bỏ</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal container delete user -->
-    <div class="modaldeleteuser">
-        <div class="modal-content-delete-user">
-            <h2>Thông báo</h2>
-            <p>Bạn có muốn thực hiện thao tác này không?</p>
-            <div class="modal-buttons">
-                <button id="confirm-button">Xác nhận</button>
-                <button id="cancel-button">Hủy bỏ</button>
-            </div>
-        </div>
-    </div>
-    <!-- create modal  film -->
-    <div class="create-film-modal-container" id="create-film-modal-container">
-        <div id="create-film-modal">
-            <div class="create-film-modal-header">
-                <h2>Create Film</h2>
-                <button id="create-film-close-icon"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <hr>
-            <div class="create-film-modal-body">
-                <div class="create-film-name">
-                    <label for="name">Name:</label>
-                    <input type="text" id="create-film-name">
-                </div>
-                <div class="create-film-time-date">
-                    <div class="create-film-time">
-                        <label for="time">Time:</label>
-                        <input type="text" id="create-film-time">
-                    </div>
-                    <div class="create-film-date">
-                        <label for="date">Date</label>
-                        <input type="text" id="create-film-date">
-                    </div>
-                </div>
-                <div class="create-film-actor">
-                    <label for="actor">Actor:</label>
-                    <input type="text" id="create-film-actor">
-                </div>
-                <div class="create-film-director-image">
-                    <div class="create-film-director">
-                        <label for="director">Director</label>
-                        <input type="text" id="create-film-director">
-                    </div>
-                    <div class="create-film-image">
-                        <label for="image">Image</label>
-                        <input type="file" id="create-film-image" accept="/src/assets/image/*">
-                    </div>
-                </div>
-                <div class="create-film-content">
-                    <label for="content">Content</label>
-                    <input type="text" id="create-film-content">
-                </div>
-                <div class="create-film-trailer">
-                    <label for="trailer">Trailer</label>
-                    <input type="file" name="" id="create-film-trailer">
-                </div>
-                <div class="create-film-button-submit">
-                    <button id="create-film-submit" onclick="createfilm()">Submit</button>
-                </div>
-                <div class="create-film-close">
-                    <button id="create-film-cancel">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- create modal update film -->
-    <div class="update-film-modal-container" id="update-film-modal-container">
-        <div id="update-film-modal">
-            <div class="update-film-modal-header">
-                <h2>Update Film</h2>
-                <button id="update-film-close-icon"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <hr>
-            <div class="update-film-modal-body">
-                <div class="update-film-id-name">
-                    <div class="update-film-id">
+                <hr>
+                <div class="update-modal-body">
+                    <div class="update-id">
                         <label for="id">ID:</label>
-                        <input type="text" id="update-film-id" disabled >
+                        <input type="text" id="update-id" disabled>
                     </div>
-                    <div class="update-film-name">
+                    <div class="update-name-lname">
+                        <div class="update-name">
+                            <label for="name">Name:</label>
+                            <input type="text" id="update-name" placeholder="Name">
+                        </div>
+                        <div class="update-lname">
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="update-lname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="update-email">
+                        <label for="email">Email:</label>
+                        <input type="text" id="update-email" placeholder="Email">
+                    </div>
+                    <div class="update-password">
+                        <label for="password">Password:</label>
+                        <input type="text" id="update-password" placeholder="Password">
+                    </div>
+                    <div class="update-phone-gender">
+                        <div class="update-phone">
+                            <label for="phone">Phone Number:</label>
+                            <input type="number" id="update-phone" placeholder="Phone number">
+                        </div>
+                        <div class="update-gender">
+                            <label for="gender">Gender:</label>
+                            <select name="update-gender" id="update-select">
+                                <option value="none"></option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="update-button-submit">
+                        <button id="update-submit">Hoàn thành</button>
+                    </div>
+                    <div class="update-button-close">
+                        <button id="update-close-modal">Hủy Bỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal container delete user -->
+        <div class="modaldeleteuser">
+            <div class="modal-content-delete-user">
+                <h2>Thông báo</h2>
+                <p>Bạn có muốn thực hiện thao tác này không?</p>
+                <div class="modal-buttons">
+                    <button id="confirm-button">Xác nhận</button>
+                    <button id="cancel-button">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+        <!-- create modal  film -->
+        <div class="create-film-modal-container" id="create-film-modal-container">
+            <div id="create-film-modal">
+                <div class="create-film-modal-header">
+                    <h2>Create Film</h2>
+                    <button id="create-film-close-icon"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <hr>
+                <div class="create-film-modal-body">
+                    <div class="create-film-name">
                         <label for="name">Name:</label>
-                        <input type="text" id="update-film-name">
+                        <input type="text" id="create-film-name">
                     </div>
-                </div>
-                <div class="update-film-time-date">
-                    <div class="update-film-time">
-                        <label for="time">Time:</label>
-                        <input type="text" id="update-film-time">
+                    <div class="create-film-time-date">
+                        <div class="create-film-time">
+                            <label for="time">Time:</label>
+                            <input type="text" id="create-film-time">
+                        </div>
+                        <div class="create-film-date">
+                            <label for="date">Date</label>
+                            <input type="text" id="create-film-date">
+                        </div>
                     </div>
-                    <div class="update-film-date">
-                        <label for="date">Date</label>
-                        <input type="text" id="update-film-date">
+                    <div class="create-film-actor">
+                        <label for="actor">Actor:</label>
+                        <input type="text" id="create-film-actor">
                     </div>
-                </div>
-                <div class="update-film-actor">
-                    <label for="actor">Actor:</label>
-                    <input type="text" id="update-film-actor">
-                </div>
-                <div class="update-film-director-image">
-                    <div class="update-film-director">
-                        <label for="director">Director</label>
-                        <input type="text" id="update-film-director">
+                    <div class="create-film-director-image">
+                        <div class="create-film-director">
+                            <label for="director">Director</label>
+                            <input type="text" id="create-film-director">
+                        </div>
+                        <div class="create-film-image">
+                            <label for="image">Image</label>
+                            <input type="file" id="create-film-image" accept="/src/assets/image/*">
+                        </div>
                     </div>
-                    <div class="update-film-image">
-                        <label for="image">Image</label>
-                        <input type="file" id="update-film-image-local">
-                        <img src="" alt="" id="update-film-image" style="width: 20%;">
+                    <div class="create-film-content">
+                        <label for="content">Content</label>
+                        <input type="text" id="create-film-content">
                     </div>
-                </div>
-                <div class="update-film-content">
-                    <label for="content">Content</label>
-                    <input type="text" id="update-film-content">
-                </div>
-                <div class="update-film-trailer">
-                    <label for="trailer">Trailer</label>
-                    <input type="file" name="" id="update-film-trailer-local">
-                    <video src="" id="update-film-trailer" style="width:20%"></video>
-                </div>
-                <div class="update-film-button-submit">
-                    <button id="update-film-submit">Submit</button>
-                </div>
-                <div class="update-film-close">
-                    <button id="update-film-cancel">Cancel</button>
+                    <div class="create-film-trailer">
+                        <label for="trailer">Trailer</label>
+                        <input type="file" name="" id="create-film-trailer">
+                    </div>
+                    <div class="create-film-button-submit">
+                        <button id="create-film-submit" onclick="createfilm()">Submit</button>
+                    </div>
+                    <div class="create-film-close">
+                        <button id="create-film-cancel">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- modal delete film -->
-    <div class="modaldeletefilm">
-        <div class="modal-content-delete-film">
-            <h2>Thông báo</h2>
-            <p>Bạn có muốn thực hiện thao tác này không?</p>
-            <div class="modal-buttons">
-                <button id="confirm-film-button">Xác nhận</button>
-                <button id="cancel-film-button">Hủy bỏ</button>
-            </div>
-        </div>
-    </div>
 
-</div>
+        <!-- create modal update film -->
+        <div class="update-film-modal-container" id="update-film-modal-container">
+            <div id="update-film-modal">
+                <div class="update-film-modal-header">
+                    <h2>Update Film</h2>
+                    <button id="update-film-close-icon"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <hr>
+                <div class="update-film-modal-body">
+                    <div class="update-film-id-name">
+                        <div class="update-film-id">
+                            <label for="id">ID:</label>
+                            <input type="text" id="update-film-id" disabled>
+                        </div>
+                        <div class="update-film-name">
+                            <label for="name">Name:</label>
+                            <input type="text" id="update-film-name">
+                        </div>
+                    </div>
+                    <div class="update-film-time-date">
+                        <div class="update-film-time">
+                            <label for="time">Time:</label>
+                            <input type="text" id="update-film-time">
+                        </div>
+                        <div class="update-film-date">
+                            <label for="date">Date</label>
+                            <input type="text" id="update-film-date">
+                        </div>
+                    </div>
+                    <div class="update-film-actor">
+                        <label for="actor">Actor:</label>
+                        <input type="text" id="update-film-actor">
+                    </div>
+                    <div class="update-film-director-image">
+                        <div class="update-film-director">
+                            <label for="director">Director</label>
+                            <input type="text" id="update-film-director">
+                        </div>
+                        <div class="update-film-image">
+                            <label for="image">Image</label>
+                            <input type="file" id="update-film-image-local">
+                            <img src="" alt="" id="update-film-image" style="width: 20%;">
+                        </div>
+                    </div>
+                    <div class="update-film-content">
+                        <label for="content">Content</label>
+                        <input type="text" id="update-film-content">
+                    </div>
+                    <div class="update-film-trailer">
+                        <label for="trailer">Trailer</label>
+                        <input type="file" name="" id="update-film-trailer-local">
+                        <video src="" id="update-film-trailer" style="width:20%"></video>
+                    </div>
+                    <div class="update-film-button-submit">
+                        <button id="update-film-submit">Submit</button>
+                    </div>
+                    <div class="update-film-close">
+                        <button id="update-film-cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal delete film -->
+        <div class="modaldeletefilm">
+            <div class="modal-content-delete-film">
+                <h2>Thông báo</h2>
+                <p>Bạn có muốn thực hiện thao tác này không?</p>
+                <div class="modal-buttons">
+                    <button id="confirm-film-button">Xác nhận</button>
+                    <button id="cancel-film-button">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 <script src="/src/js/Admin/admin.js"></script>
+
 </html>

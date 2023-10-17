@@ -166,7 +166,7 @@ body {
 }
 
 .container-item-left-user button:hover,
-.container-item-left-film button:hover {
+.container-item-left-film button:hover{
     background-color: white;
     color: black;
     width: 100%;
@@ -187,7 +187,7 @@ body {
 
 .container-item-right-head1,
 .container-item-right-head2,
-.container-item-right-head3 {
+.container-item-right-head3{
     margin-top: 0px;
     line-height: 0;
 }
@@ -249,7 +249,7 @@ table tr td {
 /* nút create voới tên*/
 .container-item-right-head1,
 .container-item-right-head2,
-.container-item-right-head3 {
+.container-item-right-head3{
     display: none;
 }
 
@@ -262,7 +262,6 @@ table tr td {
 .container-item-right-body2 {
     display: none;
 }
-
 /* bảng hiển thị phim comming */
 .container-item-right-body3 {
     display: none;

@@ -41,10 +41,17 @@ document.getElementById("loginBtn").addEventListener("click", openLoginModal);
 
                     if (loggedInUser) {
                         window.location.href = "homepages2.html";
+
+                        
+                         localStorage.setItem("user_token_id", JSON.stringify(loggedInUser.id));
                     } 
                     else if(loggedInAdmin){
+              
+                         localStorage.setItem("user_token_id", JSON.stringify(loggedInAdmin.id));
+
                         window.location.href = "../Admin/admin.html"
-                    } 
+                    }
+
                     else {
                         alert("Unsuccessful");
                     }

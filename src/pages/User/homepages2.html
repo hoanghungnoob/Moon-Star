@@ -23,11 +23,13 @@
             <div class="menu">
                 <span><i class="fa fa-solid fa-user"></i> </span>
                 <ul class="submenu">
+                    <li><a href="profileUser.html">Proflie</a></li>
                     <li>
-                        <button>
+                        <button id="logout">
                             <a target="_self" href="homepages.html">Logout</a>
                         </button>
                     </li>
+                    
                 </ul>
             </div>
         </nav>
@@ -131,6 +133,8 @@
 
     <script src="../../js/User/datalistfilm.js"></script>
     <script src="../../js/User/slider.js"></script>
+    <script src="../../js/User/logout.js"></script>
+
     <script>
         const btnSearch = document.querySelector(".button-search");
         const contentSearch = document.querySelector("#search");
@@ -156,7 +160,6 @@
                     })
                 // const promise = getFilms();
                 // promise.then(data => {
-
 
                 // })
 

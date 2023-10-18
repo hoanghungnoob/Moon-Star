@@ -1,15 +1,15 @@
 {
   "listfilm": [
     {
-      "id": "1",
       "name": "Harry Potter",
       "time": "180 minute",
       "date": "30/10/2023",
       "Actors": "Herimone Granger, Harry Potter, Lord Voldemort...",
       "Director": "J.K.Rowling, Rowli Ng J.K",
-      "image": "/src/assets/image/Harry potter.png",
       "Content": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry",
-      "video": "/src/assets/trailer/Harry potter.mp4"
+      "image": "/src/assets/image/Harry potter.png",
+      "video": "/src/assets/trailer/Harry potter.mp4",
+      "id": "1"
     },
     {
       "id": "2",
@@ -212,7 +212,8 @@
       "date": "ComingSoon",
       "Actors": "Jason Momoa, Ben Affleck, Patrick Wilson,...",
       "Director": "James Wan",
-      "image": "/src/assets/imagecoming/aquaman.jpg"
+      "image": "/src/assets/imagecoming/aquaman.jpg",
+      "Content": "Đạo diễn James Wan và Jason Momoa trong vai Aquaman—cùng với Patrick Wilson, Amber Heard, Yahya Abdul-Mateen II và Nicole Kidman sẽ trở lại trong phần tiếp theo của bộ phim DC có doanh thu cao nhất mọi thời đại “Aquaman Và Vương Quốc Thất Lạc (tựa gốc: Aquaman and the Lost Kingdom)”."
     }
   ],
   "listbooking": [],

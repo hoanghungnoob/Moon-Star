@@ -193,7 +193,8 @@ body {
 }
 
 .container-item-right button#create-user,
-.container-item-right button#create-listfilm {
+.container-item-right button#create-listfilm,
+.container-item-right button#create-listfilm-coming {
     background-color: white;
     color: black;
     display: flex;
@@ -206,7 +207,8 @@ body {
 }
 
 .container-item-right button#create-user:hover,
-.container-item-right button#create-listfilm:hover {
+.container-item-right button#create-listfilm:hover,
+.container-item-right button#create-listfilm-coming:hover {
     cursor: pointer;
     background-color: white;
     color: black;

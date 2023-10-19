@@ -47,7 +47,7 @@ document.getElementById("loginBtn").addEventListener("click", openLoginModal);
                     } 
                     else if(loggedInAdmin){
               
-                         localStorage.setItem("user_token_id", JSON.stringify(loggedInAdmin.id));
+                         localStorage.setItem("admin_token_id", JSON.stringify(loggedInAdmin.id));
 
                         window.location.href = "../Admin/admin.html"
                     }

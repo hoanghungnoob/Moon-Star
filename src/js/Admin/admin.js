@@ -474,9 +474,9 @@ function checkFileImage() {
   }
 }
 function checkFileVideo() {
-  let fileInput = document.getElementById("update-film-trailer-local");
-  let file = fileInput.files[0];
-
+  var fileInput = document.getElementById("update-film-trailer-local");
+  var file = fileInput.files[0];
+  
   if (file) {
     return file.name;
   } else {
@@ -567,6 +567,10 @@ const create_film_modal_container = document.getElementById('create-film-modal-c
 create_film_create.addEventListener('click', () => {
   // add class show
   create_film_modal_container.classList.add('show');
+  create_film_submit.addEventListener("click",()=>{
+    createfilm();
+    create_film_modal_container.classList.remove('show');
+  })
 });
 create_film_close.addEventListener('click', () => {
 
@@ -808,3 +812,66 @@ fetch("http://localhost:3000/comingSoon")
       })
     }
   })
+
+  // create film coming soon
+ const showmodal = document.getElementById('create-listfilm-coming');
+ showmodal.addEventListener('click',()=>{
+  create_film_modal_container.classList.add('show');
+  create_film_submit.addEventListener('click',()=>{
+    createFilmComing();
+    create_film_modal_container.classList.remove('show');
+  })
+ })
+
+function createFilmComing(){
+  let name = document.getElementById("create-film-name").value;
+  let time = document.getElementById("create-film-time").value;
+  let date = document.getElementById("create-film-date").value;
+  let actor = document.getElementById("create-film-actor").value;
+  let director = document.getElementById("create-film-director").value;
+  let imageInput = document.getElementById("create-film-image");
+  let content = document.getElementById("create-film-content").value;
+  let trailerInput = document.getElementById("create-film-trailer");
+  let id = RandomHexString(4) + "-" + RandomHexString(4);
+
+  if (
+    name !== "" &&
+    time !== "" &&
+    date !== "" &&
+    actor !== "" &&
+    director !== "" &&
+    content !== ""
+  ) {
+    // Get the file names from the file inputs
+    let imageFileName = imageInput.value.split('\\').pop(); // Extracts the file name from the full path
+    let trailerFileName = trailerInput.value.split('\\').pop(); // Extracts the file name from the full path
+
+    let listFilm = {
+      id,
+      name,
+      time,
+      date,
+      Actors: actor,
+      Director: director,
+      image: `/src/assets/image/${imageFileName}`, // Store only the file name or relative path
+      Content: content,
+      video: `/src/assets/trailer/${trailerFileName}`, // Store only the file name or relative path
+    };
+
+    fetch("http://localhost:3000/comingSoon", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(listFilm),
+    })
+      .then((data) => {
+        console.log("Data sent successfully:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  } else {
+    alert("Vui lòng nhập đầy đủ thông tin!");
+  }
+}

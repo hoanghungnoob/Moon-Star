@@ -48,10 +48,10 @@
                 </div>
                 <div class="container-item-left-film" onclick="showFilmComming()">
                     <button><i class="fa fa-list" id="film"></i>
-                        <h3>ComingSoon</h3>
+                        <h3>Comming</h3>
                     </button>
                 </div>
-                <div class="container-item-left-film" onclick="">
+                <div class="container-item-left-film" onclick="showListBooking()">
                     <button><i class="fa fa-list" id="film"></i>
                         <h3>Booking</h3>
                     </button>
@@ -81,7 +81,7 @@
                     <button id="create-listfilm">Create +</button>
                 </div>
                 <div class="container-item-right-body2" id="list-film">
-                    <table>
+                    <table class="overflow">
                         <thead>
                             <tr>
 
@@ -119,6 +119,31 @@
 
                         </tbody>
                     </table>
+                </div>
+                <div class="listbooking">
+                    <div class="container-item-right-head4" id="container-item-right-head4">
+                        <h1>List booking</h1>
+                    </div>
+                    <div class="container-item-right-body4" id="list-booking">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name Customer</th>
+                                    <th>Phone number</th>
+                                    <th>Date booking</th>
+                                    <th>Name Film</th>
+                                    <th>Date watching</th>
+                                    <th>Time</th>
+                                    <th>Char</th>
+                                    <th>Money</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody4">
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

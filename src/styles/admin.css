@@ -22,6 +22,7 @@ body {
 .containers {
     background-color: black;
     position: relative;
+    height: 100vh;
 }
 
 .navbar {
@@ -117,6 +118,7 @@ body {
 .submenu button a {
     color: white;
     font-size: 25px;
+    margin-left: -18px;
 }
 
 .menu span i {
@@ -138,7 +140,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 15% 85%;
-    height: 100%;
+    height: 100vh;
 }
 
 /* left */
@@ -270,10 +272,15 @@ table tr td {
     display: none;
 }
 
-.container-item-right {
-    height: 1000px;
+.container-item-right .container-item-right-body1 {
+    height: 100vh;
 }
-
+.container-item-right .container-item-right-body2 {
+    height: 210vh;
+}
+.container-item-right .container-item-right-body3{
+    height: 100vh;
+}
 
 /* modal */
 

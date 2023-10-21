@@ -136,7 +136,8 @@
         font-size: 33px;
     }
     .detail-img img{
-        width: 100%;
+        width: 400px;
+        margin-left: -100px;
     }
     .detail-content{
         width: 69%;
@@ -145,6 +146,24 @@
     }
     .detail_item{
         display: flex;
+        flex-direction: column;
+        margin-top: -20px;
+    }
+    .detail_item p:nth-of-type(2){
+        margin-top: -10px;
+        margin-bottom: -5px;
+    }
+    .detail_item #film_actor,
+    .detail_item #film_director,
+    .detail_item #film_content{ 
+        margin-left: 50px;
+        width: 110%;
+    }
+    #button-booking-trailer{
+        margin-left: 300px;
+        display: flex;
+        margin-top: 40px;
+        gap: 20px;
     }
     .detail-img h2{
         margin: 0;
@@ -159,7 +178,7 @@
         color: #fff;
         float:right;
         position: relative;
-        top: 100px;
+        top: 0px;
         outline: none;
     }
     .modal {

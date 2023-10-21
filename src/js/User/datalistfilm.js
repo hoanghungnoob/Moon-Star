@@ -17,7 +17,7 @@ function getListFilm(callback) {
 function listProduct(listfilm) {
   const itemContainer = document.getElementById("item");
 
-  listfilm.forEach((item, idx) => {
+  listfilm.forEach((item) => {
     const filmCard = document.createElement("div");
     filmCard.classList.add("film-card");
 
@@ -37,19 +37,22 @@ function listProduct(listfilm) {
     const buttonsContainer = document.createElement("div");
     buttonsContainer.classList.add("buttons-container");
 
-    const detailButton = document.createElement("input");
-    detailButton.type = "button";
-    detailButton.value = "Detail";
-    detailButton.addEventListener("click", function () {
-      window.location.href = "detail.html" + `?idx=${idx}`;
-    });
+    image.addEventListener('click',()=>{
+      window.location.href = "detail.html" + `?idx=${item.id}`;
+    })
+    // const detailButton = document.createElement("input");
+    // detailButton.type = "button";
+    // detailButton.value = "Detail";
+    // detailButton.addEventListener("click", function () {
+    //   window.location.href = "detail.html" + `?idx=${item.id}`;
+    // });
 
-    const bookingButton = document.createElement("input");
-    bookingButton.type = "button";
-    bookingButton.value = "Booking Now";
+    // const bookingButton = document.createElement("input");
+    // bookingButton.type = "button";
+    // bookingButton.value = "Booking Now";
 
-    buttonsContainer.appendChild(detailButton);
-    buttonsContainer.appendChild(bookingButton);
+    // buttonsContainer.appendChild(detailButton);
+    // buttonsContainer.appendChild(bookingButton);
 
     cardBody.appendChild(title);
     cardBody.appendChild(details);

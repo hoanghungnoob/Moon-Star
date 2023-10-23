@@ -1,0 +1,118 @@
+
+* {
+    box-sizing: border-box
+}
+html{
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+
+}
+body {
+    background-color: black;
+    margin: 0
+}
+.containers{
+    background-color: black;
+}
+
+.navbar {
+    display: flex;
+    height:100px;
+    background-color: rgba(16,20,27,.3);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
+}
+.navbar::after{
+    content: "";
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+
+}
+.navbar a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+.navbar a:hover{
+    color:red;
+}
+.input-container{
+    display: flex-inline;
+}
+.input-container input[type="text"]{
+    border-radius: 5px;
+    height:40px;
+    width: 300px;
+    outline: none;
+    padding-left: 20px;
+}
+.input-container button{
+    border: none;
+    background: none;
+    
+}
+.input-container i{
+    box-sizing: border-box;
+    margin: 5px; 
+    font-size: 25px;
+    color:white;
+}
+.menu {
+    position: relative;
+    display: inline-block;
+    margin-right: 100px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+.submenu button{
+    background: none;
+    border: none;
+    outline: none;
+
+}
+.submenu button a{
+    color: white;
+    font-size: 25px;
+}
+
+.menu span i{
+    box-sizing: border-box;
+    border:1px solid white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+
+}

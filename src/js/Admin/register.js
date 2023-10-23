@@ -1,28 +1,29 @@
-document.getElementById("registerBtn").addEventListener("click", openRegisterModal
-);
+document.getElementById("registerBtn").addEventListener("click", function () {
+  let registerModal = document.getElementById("registerModal");
+  let loginModal = document.getElementById("loginModal");
+  let registerBtn = document.getElementById("registerBtn");
+  let showLoginModalLink = document.getElementById("showLoginModal");
 
-function openRegisterModal() {
-    let loginModal = document.getElementById("registerModal");
-    loginModal.style.display = "block";
-}
+  // Thêm bộ lắng nghe sự kiện
+  registerBtn.addEventListener("click", function () {
+    registerModal.style.display = "block";
+  });
 
-document.getElementById("registerModal").addEventListener("click", function (e) {
+  document.getElementById("registerModal").addEventListener("click", function (e) {
     if (e.target === this) {
-        let loginModal = document.getElementById("registerModal");
-        loginModal.style.display = "none";
+      registerModal = document.getElementById("registerModal");
+      registerModal.style.display = "none";
     }
 });
-let loginModal = document.getElementById("loginModal");
-let showLoginModalLink = document.getElementById("showLoginModal");
-let registerModal = document.getElementById("registerModal");
+  
 
-// Lắng nghe sự kiện khi nhấp vào liên kết "Login" trong form đăng ký
-showLoginModalLink.addEventListener("click", function (e) {
-e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
-
-loginModal.style.display = "block"; // Hiển thị modal đăng nhập
-registerModal.style.display = "none"; // Ẩn modal đăng ký
+  showLoginModalLink.addEventListener("click", function (e) {
+    e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    loginModal.style.display = "block"; // Hiển thị modal đăng nhập
+    registerModal.style.display = "none";
+  });
 });
+
 
 
 function RandomHexString(L) {
@@ -63,7 +64,7 @@ function register() {
     let userData = {
       id,
       name: fname,
-      lastname: lname, 
+      lastname: lname,
       pnumber: pnumber,
       email: email,
       password: password,

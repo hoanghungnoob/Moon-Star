@@ -1,5 +1,5 @@
 /* CSS cho modal */ 
-.modal {
+.modal_login {
     display: none;
     position: fixed;
     top: 50%;
@@ -33,13 +33,12 @@
 
 }
 
-h1 {
+.title_login {
     margin-bottom: 20px;
     color: #fff
 }
 
 .head {
-
     color: white;
 }
 
@@ -95,16 +94,5 @@ button[type="submit"] {
 }
 
 
-.about,
-.infor,
-.Contact{
-    padding: 10px  50px;
-    box-sizing: border-box;
-    justify-content: flex-start;
-}
 
-p {
-    text-align: center;
-
-}
 

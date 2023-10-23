@@ -41,7 +41,10 @@ body {
 .gift-blocker ul{
     padding-left: 0px;
   }
- 
+.gift-blocker ul li a{
+  text-decoration: none;
+  color: #fff;
+} 
 .profile p {
     font-size: 16px;
     font-weight: bold;

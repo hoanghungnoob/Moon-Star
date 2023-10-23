@@ -2,12 +2,13 @@
 fetch("../../../database/data.json")
   .then((response) => response.json())
   .then((data) => {
-    let currentUrl = window.location.href;
+    let url = window.location.href;
+    var paramsString = url.split("?")[1];
+    var filmIdex = paramsString.split("=")[1];
 
-    let filmIdex = currentUrl[currentUrl.length - 1];
-
-    const listfilm = data.listfilm[filmIdex];
-
+    const listfilm = data.listfilm.find(film => {
+      return film.id == filmIdex
+    });
     const detailContainer = document.getElementById("main");
 
     const filmDiv = document.createElement("div");

@@ -17,7 +17,7 @@ function getListFilm(callback) {
 function listProduct(listfilm) {
   const itemContainer = document.getElementById("item");
 
-  listfilm.forEach((item, idx) => {
+  listfilm.forEach((item) => {
     const filmCard = document.createElement("div");
     filmCard.classList.add("film-card");
 
@@ -41,7 +41,7 @@ function listProduct(listfilm) {
     detailButton.type = "button";
     detailButton.value = "Detail";
     detailButton.addEventListener("click", function () {
-      window.location.href = "detail.html" + `?idx=${idx}`;
+      window.location.href = "detail.html" + `?idx=${item.id}`;
     });
 
     const bookingButton = document.createElement("input");

@@ -290,3 +290,13 @@ p{
 input{
     height:40px;
 }
+.film-card {
+    height:20%;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+  
+  .film-card:hover {
+    transform: scale(1.05); /* Phóng to thẻ khi hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ khi hover */
+  }

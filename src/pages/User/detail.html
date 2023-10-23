@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../styles/detail.css">
+    <link rel="stylesheet" href="../../styles/login.css">
+    <link rel="stylesheet" href="../../styles/register.css">
+    <link rel="stylesheet" href="../../styles/Select_seatModal.css">
     <title>Detail</title>
 </head>
 
 <body>
 
     <nav class="navbar" style="height:100px;">
-        <div class="img"><img src="../../assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
-        <a href="homepages2.html">Home</a>
-       
+        <div class="img"><a href="homepages.html"><img src="../../assets/image/logo.png" alt="" style="padding-left: 50px;"></a></div>
         <div class="input-container">
             <input type="text" id="search" class="search" placeholder="Search">
             <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
         </div>
         <a href="#listbooking">List Booking</a>
-        <div class="menu">
+
+        <div class="login" style="padding-right: 50px;">
+            <button class="button-login" id="loginBtn">Login</button>
+            <button class="button-register" id="registerBtn">Register</button>
+        </div>
+
+        <div class="menu" id="menu_profile">
             <span><i class="fa fa-solid fa-user"></i> </span>
             <ul class="submenu">
-                <li>
-                    <button>
-                        <a target="_self" href="homepages.html">Logout</a>
-                    </button>
-                </li>
+                <li><a href="profileUser.html">Proflie</a></li>
+                
+                <li id="logout"><a href="homepages.html">Logout</a></li>
+                
+                
             </ul>
         </div>
     </nav>
@@ -62,8 +69,75 @@
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModalBtn">&times;</span>
-            <iframe id="videoFrame" width="1000px" height="600px" frameborder="0" allowfullscreen></iframe>
+            <iframe id="videoFrame" width="1000px" height="600px" allowfullscreen></iframe>
         </div>
+    </div>
+    <!-- Modal login -->
+    <div id="loginModal" class="modal_login">
+        <div class="login-container">
+            <h1 class="title_login">Login</h1>
+            <p class="head">Enter email and password to log in.</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" placeholder="Enter your email!">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Please enter your password!"
+                        required>
+                </div>
+                <button type="submit">Log in</button>
+            </form>
+            <p id="dontaccount">Don't have an account?
+                <b><a href="#" id="showRegisterModal"> Create Account</a></b></p>
+        </div>
+    </div>
+    <!-- Modal register -->
+    <div id="registerModal" class="modal_register">
+        <div class="containers">
+            <h1>Register</h1>
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label class="details">First Name</label>
+                        <input type="text" id="firstname" placeholder="Enter your first name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details">Last Name</label>
+                        <input type="text" id="lastname" placeholder="Enter your last name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details">Phone Number</label>
+                        <input type="text" id="phonenumber" placeholder="Enter your number" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details">Email</label>
+                        <input type="text" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details">Password</label>
+                        <input type="password" id="Password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details">Re - Password</label>
+                        <input type="password" id="repassword" placeholder="Re - your password" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register" onclick="register()">
+                </div>
+                <div class="login">
+                    <p>Do you already have an account?<b><a href="#" id="showLoginModal"> Login</a></b></p>
+                </div>
+            </form>
+        </div>
+
     </div>
     <!-- Booking now -->
     <div id="bookModal" class="modal">
@@ -71,7 +145,258 @@
             
         </div>
     </div>
-    <!-- Booking now -->
+     <!-- Selected seat -->
+
+     <div id="select_seat_modal" class="modal_seat">
+        <div class="head">
+            <h1>Mời Bạn Chọn Ghế</h1>
+        </div>
+        <div class="container_seat">
+            <div class="row">
+                <div class="seat">
+                    <input type="checkbox" id="seat1" name="chair" onchange="changeSeatColor('seat1')">
+                    <label for="seat1">A1</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat2" name="chair" onchange="changeSeatColor('seat2')">
+                    <label for="seat2">A2</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat3" name="chair" onchange="changeSeatColor('seat3')">
+                    <label for="seat3">A3</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat4" name="chair" onchange="changeSeatColor('seat4')">
+                    <label for="seat4">A4</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat5" name="chair" onchange="changeSeatColor('seat5')">
+                    <label for="seat5">A5</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat6" name="chair" onchange="changeSeatColor('seat6')">
+                    <label for="seat6">A6</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat7" name="chair" onchange="changeSeatColor('seat7')">
+                    <label for="seat7">A7</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat8" name="chair" onchange="changeSeatColor('seat8')">
+                    <label for="seat8">A8</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat9" name="chair" onchange="changeSeatColor('seat9')">
+                    <label for="seat9">A9</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="seat">
+                    <input type="checkbox" id="seat11" name="chair" onchange="changeSeatColor('seat11')">
+                    <label for="seat11">B1</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat12" name="chair" onchange="changeSeatColor('seat12')">
+                    <label for="seat12">B2</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat13" name="chair" onchange="changeSeatColor('seat13')">
+                    <label for="seat13">B3</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat14" name="chair" onchange="changeSeatColor('seat14')">
+                    <label for="seat14">B4</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat15" name="chair" onchange="changeSeatColor('seat15')">
+                    <label for="seat15">B5</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat16" name="chair" onchange="changeSeatColor('seat16')">
+                    <label for="seat16">B6</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat17" name="chair" onchange="changeSeatColor('seat17')">
+                    <label for="seat17">B7</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat18" name="chair" onchange="changeSeatColor('seat18')">
+                    <label for="seat18">B8</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat19" name="chair" onchange="changeSeatColor('seat19')">
+                    <label for="seat19">B9</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="seat">
+                    <input type="checkbox" id="seat20" name="chair" onchange="changeSeatColor('seat20')">
+                    <label for="seat20">C1</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat21" name="chair" onchange="changeSeatColor('seat21')">
+                    <label for="seat21">C2</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat22" name="chair" onchange="changeSeatColor('seat22')">
+                    <label for="seat22">C3</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat23" name="chair" onchange="changeSeatColor('seat23')">
+                    <label for="seat23">C4</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat24" name="chair" onchange="changeSeatColor('seat24')">
+                    <label for="seat24">C5</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat25" name="chair" onchange="changeSeatColor('seat25')">
+                    <label for="seat25">C6</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat26" name="chair" onchange="changeSeatColor('seat26')">
+                    <label for="seat26">C7</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat27" name="chair" onchange="changeSeatColor('seat27')">
+                    <label for="seat27">C8</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat28" name="chair" onchange="changeSeatColor('seat28')">
+                    <label for="seat28">C9</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="seat">
+                    <input type="checkbox" id="seat29" name="chair" onchange="changeSeatColor('seat29')">
+                    <label for="seat29">D1</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat30" name="chair" onchange="changeSeatColor('seat30')">
+                    <label for="seat30">D2</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat31" name="chair" onchange="changeSeatColor('seat31')">
+                    <label for="seat31">D3</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat32" name="chair" onchange="changeSeatColor('seat32')">
+                    <label for="seat32">D4</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat33" name="chair" onchange="changeSeatColor('seat33')">
+                    <label for="seat33">D5</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat34" name="chair" onchange="changeSeatColor('seat34')">
+                    <label for="seat34">D6</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat35" name="chair" onchange="changeSeatColor('seat35')">
+                    <label for="seat35">D7</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat36" name="chair" onchange="changeSeatColor('seat36')">
+                    <label for="seat36">D8</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat37" name="chair" onchange="changeSeatColor('seat37')">
+                    <label for="seat37">D9</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="seat">
+                    <input type="checkbox" id="seat38" name="chair" onchange="changeSeatColor('seat38')">
+                    <label for="seat38">E1</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat39" name="chair" onchange="changeSeatColor('seat39')">
+                    <label for="seat39">E2</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat40" name="chair" onchange="changeSeatColor('seat40')">
+                    <label for="seat40">E3</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat41" name="chair" onchange="changeSeatColor('seat41')">
+                    <label for="seat41">E4</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat42" name="chair" onchange="changeSeatColor('seat42')">
+                    <label for="seat42">E5</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat43" name="chair" onchange="changeSeatColor('seat43')">
+                    <label for="seat43">E6</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat44" name="chair" onchange="changeSeatColor('seat44')">
+                    <label for="seat44">E7</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat45" name="chair" onchange="changeSeatColor('seat45')">
+                    <label for="seat45">E8</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat46" name="chair" onchange="changeSeatColor('seat46')">
+                    <label for="seat46">E9</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="seat">
+                    <input type="checkbox" id="seat47" name="chair" onchange="changeSeatColor('seat47')">
+                    <label for="seat47">F1</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat48" name="chair" onchange="changeSeatColor('seat48')">
+                    <label for="seat48">F2</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat49" name="chair" onchange="changeSeatColor('seat49')">
+                    <label for="seat49">F3</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat50" name="chair" onchange="changeSeatColor('seat50')">
+                    <label for="seat50">F4</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat51" name="chair" onchange="changeSeatColor('seat51')">
+                    <label for="seat51">F5</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat52" name="chair" onchange="changeSeatColor('seat52')">
+                    <label for="seat52">F6</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat53" name="chair" onchange="changeSeatColor('seat53')">
+                    <label for="seat53">F7</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat54" name="chair" onchange="changeSeatColor('seat54')">
+                    <label for="seat54">F8</label>
+                </div>
+                <div class="seat">
+                    <input type="checkbox" id="seat55" name="chair" onchange="changeSeatColor('seat55')">
+                    <label for="seat55">F9</label>
+                </div>
+            </div>
+        </div>
+        <div id="selected-seats"> </div>
+        
+        <div class="pay_item">
+            <div id="result"></div>
+            <div class="pay">
+                <button type="submit" id="pay-button">Thanh Toán</button>
+                <button type="submit" id="back-button">Quay Lại</button>
+            </div>
+            
+        </div>
+       
+        
+
+    </div>
+
 
     
 <!-- Footer -->
@@ -102,8 +427,9 @@
     </footer>
     <!-- Lấy các thông tin -->
     <script src="../../js/User/detail.js"></script>
-
-
+    <script src="../../js/User/login.js"></script>
+    <script src="../../js/Admin/register.js"></script>
+    <script src="../../js/User/Select_seatModal.js"></script>
+    <script src="../../js/User/pay.js"></script>
 </body>
-
 </html>

@@ -150,6 +150,49 @@ body {
     padding-left: 20px;
 }
 
+.menu {
+    position: relative;
+    display: none;
+    margin-right: 100px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+.submenu button{
+    background: none;
+    border: none;
+    outline: none;
+
+}
+.submenu button a{
+    color: white;
+    font-size: 25px;
+}
+
+.menu span i{
+    box-sizing: border-box;
+    border:1px solid white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
 .input-container button {
     border: none;
     background: none;
@@ -324,6 +367,17 @@ hr {
     padding: 10px 50px;
     box-sizing: border-box;
 }
+.film-card {
+    height:20%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+  
+  .film-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  }
 
 h5 {
     margin-top: 10px;
@@ -336,6 +390,6 @@ p {
     font-size: 25px;
 }
 
-input {
-    height: 40px;
-}
+
+
+

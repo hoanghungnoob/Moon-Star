@@ -18,7 +18,7 @@
         background-image: linear-gradient(
             rgba(0,0,0,0.6),
             rgba(0,0,0,0.6)),
-            url(../../assets/image/backgrounddetail.jpg);
+            url(../assets/image/backgrounddetail.jpg);
         background-size: cover;
         background-position: center;
         
@@ -77,9 +77,32 @@
         font-size: 25px;
         color:white;
     }
+    .login .button-login {
+        height: 40px;
+        border-radius: 20px;
+        background-color: red;
+        border-color: red;
+        width: 150px;
+        color: white;
+        font-size: 25px;
+    
+    }
+    
+ 
+    .login .button-register {
+        height: 40px;
+        border-radius: 20px;
+        background-color: red;
+        border-color: red;
+        width: 150px;
+        color: white;
+        font-size: 25px;
+    }
+    
+   
     .menu {
         position: relative;
-        display: inline-block;
+        display: none;
         margin-right: 100px;
     }
     
@@ -143,8 +166,26 @@
         color: #fff;
         font-size: 30px;
     }
+    
     .detail_item{
         display: flex;
+        flex-direction: column;
+        
+    }
+    .detail_item #film_actor{
+        margin-left: 30px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
+    .detail_item #film_director{
+        margin-left: 30px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
+    .detail_item #film_content{
+        margin-left: 30px;
+        margin-top: -1px;
+        margin-bottom: -1px;
     }
     .detail-img h2{
         margin: 0;
@@ -172,7 +213,7 @@
         
         border:none;
         outline: none;
-        text-align: center;
+        /* text-align: center; */
     }
     
     .modal.active {
@@ -257,7 +298,6 @@
         padding: 10px  50px;
         box-sizing: border-box;
     }
-
 
 
 

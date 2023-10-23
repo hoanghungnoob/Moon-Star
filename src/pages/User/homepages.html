@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../styles/homepage.css">
     <link rel="stylesheet" href="../../styles/login.css">
     <link rel="stylesheet" href="../../styles/register.css">
+    
     <title>Home Page</title>
 
 </head>
@@ -16,7 +17,6 @@
     <div class="container">
         <nav class="navbar" style="height:100px;">
             <div class="img"><img src="../../assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
-            <a href="#home">Home</a>
             <div class="input-container">
                 <input type="text" id="search" class="search" placeholder="Search">
                 <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -27,12 +27,20 @@
                 <button class="button-login" id="loginBtn">Login</button>
                 <button class="button-register" id="registerBtn">Register</button>
             </div>
+            <div class="menu" id="menu_profile">
+                <span><i class="fa fa-solid fa-user"></i> </span>
+                <ul class="submenu">
+                    <li><a href="profileUser.html">Proflie</a></li>
+                    <li id="logout"><a href="homepages.html">Logout</a></li>
+                    
+                </ul>
+            </div>
         </nav>
 
         <!-- Modal login -->
-        <div id="loginModal" class="modal">
+        <div id="loginModal" class="modal_login">
             <div class="login-container">
-                <h1>Log in</h1>
+                <h1>Login</h1>
                 <p class="head">Enter email and password to log in.</p>
                 <form id="loginForm">
                     <div class="form-group">
@@ -51,7 +59,7 @@
             </div>
         </div>
         <!-- Modal register -->
-        <div id="registerModal" class="modal">
+        <div id="registerModal" class="modal_register">
             <div class="containers">
                 <h1>Register</h1>
                 <form action="#">
@@ -103,42 +111,42 @@
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/avarta.jpg" style="width:70%">
+                    <img src="../../assets/image/avarta.jpg" style="width:70%" alt="">
                 </center>
             </div>
 
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/harryposter.webp" style="width:70%">
+                    <img src="../../assets/image/harryposter.webp" style="width:70%" alt="">
                 </center>
             </div>
 
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/theavenger.jpg" style="width:70%">
+                    <img src="../../assets/image/theavenger.jpg" style="width:70%" alt="">
                 </center>
             </div>
 
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/forcewaken2.webp" style="width:70%">
+                    <img src="../../assets/image/forcewaken2.webp" style="width:70%" alt="">
                 </center>
             </div>
 
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/Moribius-n.jpg" style="width:70%">
+                    <img src="../../assets/image/Moribius-n.jpg" style="width:70%" alt="">
                 </center>
             </div>
 
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/terminator2.jpg" style="width:70%">
+                    <img src="../../assets/image/terminator2.jpg" style="width:70%" alt="">
                 </center>
             </div>
 
@@ -158,7 +166,7 @@
 
         <div class="listproduct">
             <div class="option-listproduct">
-                <input type="button" value="Movie is showing">
+                <input type="button" value="Movie is showing" >
                 <input type="button" value="Upcoming movie" onclick="window.location.href='Comingsoon.html'">
             </div>
             <div class="listproduct-1" onload="getListFilm()">
@@ -204,7 +212,8 @@
     <script src="../../js/User/slider.js"></script>
 <script src="../../js/search.js"></script>
     <script src="../../js/User/login.js"></script>
-    <script src="../../js/User/register.js"></script>
+    <script src="../../js/Admin/register.js"></script>
+    <script src="../../js/User/Select_seatModal.js"></script>
 
 </body>
 </html>

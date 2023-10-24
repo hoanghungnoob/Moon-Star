@@ -18,14 +18,16 @@
                 <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
             </div>
             <a href="#listbooking">List Booking</a>
-            <div class="menu">
+            <div class="login" style="padding-right: 50px;">
+                <button class="button-login" id="loginBtn">Login</button>
+                <button class="button-register" id="registerBtn">Register</button>
+            </div>
+            <div class="menu" id="menu_profile">
                 <span><i class="fa fa-solid fa-user"></i> </span>
                 <ul class="submenu">
-                    <li>
-                        <button>
-                            <a target="_self" href="homepages.html">Logout</a>
-                        </button>
-                    </li>
+                    <li><a href="profileUser.html">Proflie</a></li>
+                    <li id="logout"><a href="homepages.html">Logout</a></li>
+                    
                 </ul>
             </div>
         </nav>
@@ -63,7 +65,7 @@
             <div class="mySlides fade">
 
                 <center>
-                    <img src="../../assets/image/morbius.jpg" style="width:70%" alt="">
+                    <img src="../../assets/image/Moribius-n.jpg" style="width:70%" alt="">
                 </center>
             </div>
 
@@ -129,6 +131,8 @@
 
     <script src="../../js/User/dataComingfilm.js"></script>
     <script src="../../js/User/slider.js"></script>
+    <script src="../../js/User/login.js"></script>
+    <script src="../../js/User/logout.js"></script>
 
 </body>
 

@@ -28,7 +28,9 @@ showRegisterModalLink.addEventListener("click", function (e) {
 // Kiểm tra trạng thái đăng nhập khi trang chủ được tải lại
 document.addEventListener("DOMContentLoaded", function () {
     const userToken = localStorage.getItem("user_token_id");
-    if (userToken) {
+    const adminToken = localStorage.getItem("admin_token_id");
+
+    if (userToken || adminToken) {
       // Người dùng đã đăng nhập, ẩn nút đăng nhập và đăng ký, hiển thị hình profile
       document.getElementById("loginBtn").style.display = "none";
       document.getElementById("registerBtn").style.display = "none";
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("menu_profile").style.display = "none";
     }
   });
+
   
   // Xử lý đăng nhập khi người dùng submit form
   document.getElementById("loginForm").addEventListener("submit", function (event) {
@@ -67,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("menu_profile").style.display = "inline-block";
         } else if (loggedInAdmin) {
           // Lưu thông tin người dùng đã đăng nhập vào local storage
-          localStorage.setItem("user_token_id", JSON.stringify(loggedInAdmin.id));
+          localStorage.setItem("admin_token_id", JSON.stringify(loggedInAdmin.id));
           
           // Chuyển hướng đến trang quản trị
           window.location.href = "../Admin/admin.html";

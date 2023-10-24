@@ -17,13 +17,13 @@ function getListFilm(callback) {
 function listProduct(listfilm) {
   const itemContainer = document.getElementById("item");
 
-  listfilm.forEach((item, idx) => {
+  listfilm.forEach((item) => {
     const filmCard = document.createElement("div");
     filmCard.classList.add("film-card");
 
     // Sử dụng một sự kiện click chung cho cả hình ảnh và tiêu đề để vào trang "detail"
     filmCard.addEventListener("click", function () {
-      window.location.href = "detail.html" + `?idx=${idx}`;
+      window.location.href = "detail.html" + `?idx=${item.id}`;
     });
 
     const image = document.createElement("img");
@@ -32,7 +32,7 @@ function listProduct(listfilm) {
 
     // Sử dụng cùng một sự kiện click cho hình ảnh
     image.addEventListener("click", function () {
-      window.location.href = "detail.html" + `?idx=${idx}`;
+      window.location.href = "detail.html" + `?idx=${item.id}`;
     });
 
     const cardBody = document.createElement("div");
@@ -43,7 +43,6 @@ function listProduct(listfilm) {
 
     const details = document.createElement("p");
     details.textContent = `${item.time} | ${item.date}`;
-
 
 
 

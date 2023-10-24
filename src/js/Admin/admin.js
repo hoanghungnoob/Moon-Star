@@ -5,7 +5,10 @@ function showUser() {
   table1.style.display = "block";
   hideListFilm();
   hideFilmComming();
+  hideListBooking();
 }
+hideListBooking();
+
 function showFilmComming() {
   let show = document.getElementById("container-item-right-head3");
   let table3 = document.getElementById("list-film-comming");
@@ -13,12 +16,47 @@ function showFilmComming() {
   table3.style.display = "block";
   hideUser();
   hideListFilm();
+  hideListBooking();
 }
 function hideFilmComming() {
   let show = document.getElementById("container-item-right-head3");
   let table3 = document.getElementById("list-film-comming");
   show.style.display = "none";
   table3.style.display = "none";
+}
+function hideUser() {
+  let show1 = document.getElementById("container-item-right-head1");
+  let table1 = document.getElementById("user-list");
+  show1.style.display = "none";
+  table1.style.display = "none";
+}
+function showListFilm() {
+  let show2 = document.getElementById("container-item-right-head2");
+  let table2 = document.getElementById("list-film");
+  show2.style.display = "block";
+  table2.style.display = "block";
+  hideUser();
+  hideFilmComming();
+  hideListBooking();
+}
+function hideListFilm() {
+  let show2 = document.getElementById("container-item-right-head2");
+  let table2 = document.getElementById("list-film");
+  show2.style.display = "none";
+  table2.style.display = "none";
+}
+//hàm ẩn list booking
+function hideListBooking() {
+  let hide = document.querySelector('.listbooking');
+  hide.style.display = 'none';
+}
+
+function showListBooking() {
+  let show = document.querySelector('.listbooking')
+  show.style.display = 'block';
+  hideFilmComming();
+  hideUser();
+  hideListFilm();
 }
 
 fetch("http://localhost:3000/user")
@@ -171,26 +209,7 @@ fetch("http://localhost:3000/user")
     console.error("Error:", error);
   });
 
-function hideUser() {
-  let show1 = document.getElementById("container-item-right-head1");
-  let table1 = document.getElementById("user-list");
-  show1.style.display = "none";
-  table1.style.display = "none";
-}
-function showListFilm() {
-  let show2 = document.getElementById("container-item-right-head2");
-  let table2 = document.getElementById("list-film");
-  show2.style.display = "block";
-  table2.style.display = "block";
-  hideUser();
-  hideFilmComming();
-}
-function hideListFilm() {
-  let show2 = document.getElementById("container-item-right-head2");
-  let table2 = document.getElementById("list-film");
-  show2.style.display = "none";
-  table2.style.display = "none";
-}
+
 // get data list film
 fetch("http://localhost:3000/listfilm")
   .then((response) => response.json())
@@ -476,7 +495,7 @@ function checkFileImage() {
 function checkFileVideo() {
   var fileInput = document.getElementById("update-film-trailer-local");
   var file = fileInput.files[0];
-  
+
   if (file) {
     return file.name;
   } else {
@@ -567,7 +586,7 @@ const create_film_modal_container = document.getElementById('create-film-modal-c
 create_film_create.addEventListener('click', () => {
   // add class show
   create_film_modal_container.classList.add('show');
-  create_film_submit.addEventListener("click",()=>{
+  create_film_submit.addEventListener("click", () => {
     createfilm();
     create_film_modal_container.classList.remove('show');
   })
@@ -813,17 +832,17 @@ fetch("http://localhost:3000/comingSoon")
     }
   })
 
-  // create film coming soon
- const showmodal = document.getElementById('create-listfilm-coming');
- showmodal.addEventListener('click',()=>{
+// create film coming soon
+const showmodal = document.getElementById('create-listfilm-coming');
+showmodal.addEventListener('click', () => {
   create_film_modal_container.classList.add('show');
-  create_film_submit.addEventListener('click',()=>{
+  create_film_submit.addEventListener('click', () => {
     createFilmComing();
     create_film_modal_container.classList.remove('show');
   })
- })
+})
 
-function createFilmComing(){
+function createFilmComing() {
   let name = document.getElementById("create-film-name").value;
   let time = document.getElementById("create-film-time").value;
   let date = document.getElementById("create-film-date").value;
@@ -875,3 +894,31 @@ function createFilmComing(){
     alert("Vui lòng nhập đầy đủ thông tin!");
   }
 }
+
+// show list booking
+
+fetch('http://localhost:3000/listbooking')
+  .then(res => res.json())
+  .then(data => {
+    let html = ''; // Khởi tạo chuỗi HTML bên ngoài vòng lặp
+
+    for (const item of data) {
+      const bookingId = item.id;
+
+      // Sử dụng biến `item` để lấy thông tin từ mảng `data`
+      html += `
+    <tr>
+        <td>${item.idBooking}</td>
+        <td>${item.nameUser}</td>
+        <td>${item.phoneNumber}</td>
+        <td>${item.dateBooking}</td>
+        <td>${item.filmName}</td>
+        <td>${item.dateWatch}</td>
+        <td>${item.time}</td>
+        <td>${item.char}</td>
+        <td>${item.money}</td>
+    </tr>
+  `;
+    }
+    document.getElementById('tbody4').innerHTML = html;
+  })

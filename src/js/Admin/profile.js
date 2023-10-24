@@ -66,12 +66,20 @@ const usersAPI = `http://localhost:3000/admin`;
 fetch(`http://localhost:3000/admin`)
 .then((response) => response.json())
 .then((data) => {
-        const element = data[0];
-        document.getElementById('first_name').value = element.name;
-        document.getElementById('last_name').value = element.lastname;
-        document.getElementById('email').value = element.email;
-        document.getElementById('password').value= element.password;
-        document.getElementById('phone').value = element.pnumber;
-        document.getElementById('gender').value = element.gender;
-
+        for (const element of data) {
+          const check = localStorage.getItem('admin_token_id');
+          const item = `"`+element.id+`"`;
+          if (item==check){
+            document.getElementById('adminName').innerHTML = element.name;
+            document.getElementById('admin-phone').innerHTML = element.pnumber;
+            document.getElementById('first_name').value = element.name;
+            document.getElementById('last_name').value = element.lastname;
+            document.getElementById('email').value = element.email;
+            document.getElementById('password').value= element.password;
+            document.getElementById('phone').value = element.pnumber;
+            document.getElementById('gender').value = element.gender;
+            break;
+          }
+        }
+      
 })

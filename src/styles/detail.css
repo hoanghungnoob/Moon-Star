@@ -159,7 +159,8 @@
         font-size: 33px;
     }
     .detail-img img{
-        width: 100%;
+        width: 400px;
+        margin-left: -100px;
     }
     .detail-content{
         width: 69%;
@@ -200,7 +201,7 @@
         color: #fff;
         float:right;
         position: relative;
-        top: 100px;
+        top: 0px;
         outline: none;
     }
     .modal {

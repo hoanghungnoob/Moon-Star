@@ -40,9 +40,13 @@ function openModal() {
   fetch("../../../database/data.json")
     .then((response) => response.json())
     .then((data) => {
-      let currentUrl = window.location.href;
-      let filmIndex = currentUrl[currentUrl.length - 1];
-      const listfilm = data.listfilm[filmIndex];
+      let url = window.location.href;
+    var paramsString = url.split("?")[1];
+    var filmIdex = paramsString.split("=")[1];
+
+    const listfilm = data.listfilm.find(film => {
+      return film.id == filmIdex
+    });
 
       // Hiển thị modal với video trailer
       const videoFrame = document.getElementById("videoFrame");
@@ -67,3 +71,5 @@ function closeModal() {
   videoFrame.src = "";
   document.getElementById("videoModal").style.display = "none";
 }
+
+

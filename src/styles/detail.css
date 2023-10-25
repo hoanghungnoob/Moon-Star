@@ -145,11 +145,11 @@
     
     /* Css deatil */
     .detail{
-        width: 85%;
         margin: 150px auto 0;
         display: flex;
         padding: 40px 50px;
         position: relative;
+        margin-left: -5px;
     }
 
     .detail-img{
@@ -159,8 +159,14 @@
         font-size: 33px;
     }
     .detail-img img{
-        width: 400px;
-        margin-left: -100px;
+        width: 305px;
+    height: 435px;
+    border-radius: 15px;
+    border: solid orangered;
+
+    }
+    .detail #film_name{
+        font-size: 35px;
     }
     .detail-content{
         width: 69%;
@@ -170,28 +176,29 @@
     
     .detail_item{
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: row;
+  
     }
-    .detail_item #film_actor{
-        margin-left: 30px;
-        margin-top: -1px;
-        margin-bottom: -1px;
+    .detail_item p:first-child{
+        width: 122px;
     }
+    .detail_item p:first-child strong{
+        color: #1297e4;
+    }
+    .detail_item #film_actor,
+    .detail_item #film_content,
     .detail_item #film_director{
         margin-left: 30px;
-        margin-top: -1px;
+        margin-top: 30px;
         margin-bottom: -1px;
     }
-    .detail_item #film_content{
-        margin-left: 30px;
-        margin-top: -1px;
-        margin-bottom: -1px;
-    }
+
     .detail-img h2{
         margin: 0;
     }
-   
+   #button-booking-trailer{
+    margin-top: 30px;
+   }
     .detail-btn{
         background-color: red;
         width: 250px;

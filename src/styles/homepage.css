@@ -299,8 +299,10 @@ button[type="submit"]:hover {
 }
 
 .film-card img {
-    width: 100%;
-
+    width: 305px;
+    height: 435px;
+    border-radius: 15px;
+    border: solid orangered;
 }
 
 .card-body {

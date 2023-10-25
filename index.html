@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./src/styles/homepage.css">
+    <link rel="stylesheet" href="./src/styles/login.css">
+    <link rel="stylesheet" href="./src/styles/register.css">
+    
+    <title>Home Page</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar" style="height:100px;">
+            <div class="img"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
+            <div class="input-container">
+                <input type="text" id="search" class="search" placeholder="Search">
+                <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <a href="#listbooking">List Booking</a>
+
+            <div class="login" style="padding-right: 50px;">
+                <button class="button-login" id="loginBtn">Login</button>
+                <button class="button-register" id="registerBtn">Register</button>
+            </div>
+            <div class="menu" id="menu_profile">
+                <span><i class="fa fa-solid fa-user"></i> </span>
+                <ul class="submenu">
+                    <li><a href="profileUser.html">Proflie</a></li>
+                    <li id="logout"><a href="index.html">Logout</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Modal login -->
+        <div id="loginModal" class="modal_login">
+            <div class="login-container">
+                <h1>Login</h1>
+                <p class="head">Enter email and password to log in.</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" id="Email" name="Email" placeholder="Enter your email!">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Please enter your password!"
+                            required>
+                    </div>
+                    <button type="submit">Log in</button>
+                </form>
+                <p id="dontaccount">Don't have an account?
+                    <b><a href="#" id="showRegisterModal"> Create Account</a></b></p>
+            </div>
+        </div>
+        <!-- Modal register -->
+        <div id="registerModal" class="modal_register">
+            <div class="containers">
+                <h1>Register</h1>
+                <form action="#">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <label class="details">First Name</label>
+                            <input type="text" id="firstname" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="details">Last Name</label>
+                            <input type="text" id="lastname" placeholder="Enter your last name" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="details">Phone Number</label>
+                            <input type="text" id="phonenumber" placeholder="Enter your number" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="details">Email</label>
+                            <input type="text" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="details">Password</label>
+                            <input type="password" id="Password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="details">Re - Password</label>
+                            <input type="password" id="repassword" placeholder="Re - your password" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Register" onclick="register()">
+                    </div>
+                    <div class="login">
+                        <p>Do you already have an account?<b><a href="#" id="showLoginModal"> Log in</a></b></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+
+                <center>
+                    <img src="../../assets/image/avarta.jpg" style="width:70%" alt="">
+                </center>
+            </div>
+
+            <div class="mySlides fade">
+
+                <center>
+                    <img src="../../assets/image/harryposter.webp" style="width:70%" alt="">
+                </center>
+            </div>
+
+            <div class="mySlides fade">
+
+                <center>
+                    <img src="../../assets/image/theavenger.jpg" style="width:70%" alt="">
+                </center>
+            </div>
+
+            <div class="mySlides fade">
+
+                <center>
+                    <img src="../../assets/image/forcewaken2.webp" style="width:70%" alt="">
+                </center>
+            </div>
+
+            <div class="mySlides fade">
+
+                <center>
+                    <img src="../../assets/image/Moribius-n.jpg" style="width:70%" alt="">
+                </center>
+            </div>
+
+            <div class="mySlides fade">
+
+                <center>
+                    <img src="../../assets/image/terminator2.jpg" style="width:70%" alt="">
+                </center>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <div class="listproduct">
+            <div class="option-listproduct">
+                <input type="button" value="Movie is showing" >
+                <input type="button" value="Upcoming movie" onclick="window.location.href='Comingsoon.html'">
+            </div>
+            <div class="listproduct-1" onload="getListFilm()">
+                <!-- <div >
+                    <input type="button" value="More >>>" id="more" onclick="moreItem()">
+                </div> -->
+                <div class="row" id="item">
+
+                </div>
+
+            </div>
+            <div class="listproduct-2"></div>
+        </div>
+        <footer>
+            <div class="logo">
+                <img src="../../assets/image/logo.png" alt="">
+            </div>
+            <hr>
+            <div class="information">
+                <div class="about">
+                    <p class="footer-head">About Us</p>
+                    <p class="footer-paragrap">We are team build this website with the help of Mr. Le Viet Cuong</p>
+                </div>
+                <div class="infor">
+                    <p class="footer-head">More infor</p>
+                    <p class="footer-paragrap">
+                        Team has 4 member consist of: Hoang Huu Hung, Nguyen Thi My Duyen,
+                        Tran Duc Hung, Tran Phan Thanh Van</p>
+                </div>
+                <div class="Contact">
+                    <p class="footer-head">Contact Us</p>
+                    <p class="footer-paragrap">Passerellesnumeriques Viet Nam
+                        Call:+84123465789
+                        Mail:a@gmail.infor</p>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="/src/js/User/datalistfilm.js"></script>
+    <script src="/src/js/User/slider.js"></script>
+    <script src="/src/js/User/login.js"></script>
+    <script src="/src/js/Admin/register.js"></script>
+    <script src="/src/js/User/Select_seatModal.js"></script>
+    <script src="/src/js/search.js"></script>
+
+</body>
+</html>

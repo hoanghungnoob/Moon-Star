@@ -39,7 +39,7 @@ function changeSeatColor(seatId) {
     }
 
     cost = selectedSeats.length * 90000; // Tính giá vé dựa trên số ghế đã chọn
-    localStorage.setItem("cost", JSON.stringify(cost));
+    localStorage.setItem("cost", cost);
     document.getElementById("result").innerHTML = "Bạn đã mua vé với số tiền là: " + cost + " VND";
     document.getElementById("selected-seats").textContent = "Ghế đã chọn: " + selectedSeats.join(", ");
 }

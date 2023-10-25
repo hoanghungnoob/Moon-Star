@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="../../styles/admin.css">
+    <link rel="stylesheet" href="./src/styles/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,7 +17,7 @@
 <body>
     <div class="containers">
         <nav class="navbar" style="height:100px;">
-            <div class="img"><img src="../../assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
+            <div class="img"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
 
             <div class="setting">
             </div>
@@ -27,8 +27,8 @@
                 <ul class="submenu">
                     <li>
                         <button>
-                            <a target="_self" href="../User/homepages.html">Logout</a>
-                            <a target="_self" href="../Admin/profile.html">Setting</a>
+                            <a target="_self" href="index.html" id="logout">Logout</a>
+                            <a target="_self" href="profile.html">Setting</a>
                         </button>
                     </li>
                 </ul>
@@ -394,4 +394,5 @@
     </div>
 </body>
 <script src="/src/js/Admin/admin.js"></script>
+<script src="/src/js/User/logout.js"></script>
 </html>

@@ -1,0 +1,10 @@
+.film-card{
+    width: 100%;
+}
+.buttons-container input[type="button"]{
+    width: 49%;
+    padding: 10px;
+}
+.buttons-container input[type="button"]:first-child{
+    margin-right: 1%;
+}

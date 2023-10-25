@@ -45,6 +45,12 @@ function listProduct(listfilm) {
     details.textContent = `${item.time} | ${item.date}`;
 
 
+    const detailButton = document.createElement("input");
+    detailButton.type = "button";
+    detailButton.value = "Detail";
+    detailButton.addEventListener("click", function () {
+      window.location.href = "detail.html" + `?idx=${item.id}`;
+    });
 
     cardBody.appendChild(title);
     cardBody.appendChild(details);

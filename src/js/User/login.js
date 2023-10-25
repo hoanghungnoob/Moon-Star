@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.setItem("admin_token_id", JSON.stringify(loggedInAdmin.id));
           
           // Chuyển hướng đến trang quản trị
-          window.location.href = "../Admin/admin.html";
+          window.location.href = "/admin.html";
         } else {
           alert("Unsuccessful");
         }

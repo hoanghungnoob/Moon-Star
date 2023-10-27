@@ -61,9 +61,9 @@ let btnEdits = document.querySelectorAll(".btn-edit");
         }
     }
 
-const usersAPI = `http://localhost:3000/admin`;
+const usersAPI = `https://foregoing-messy-freckle.glitch.me/admin`;
 
-fetch(`http://localhost:3000/admin`)
+fetch(`https://foregoing-messy-freckle.glitch.me/admin`)
 .then((response) => response.json())
 .then((data) => {
         for (const element of data) {

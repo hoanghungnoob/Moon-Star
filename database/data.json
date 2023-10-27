@@ -201,7 +201,7 @@
       "name": "Trần",
       "lastname": "Hùng",
       "pnumber": "0382870032",
-      "email": "hung.tran25@student.passerellesnumeriques.org",
+      "email": "hung.tran25@gmail.org",
       "password": "123456",
       "gender": "Male"
     },
@@ -390,6 +390,20 @@
       "email": "hoanghung@gmail.com",
       "phoneNumber": "034567890",
       "filmName": "Harry Potter",
+      "dateBooking": "20/10/2023",
+      "dateWatch": "30/10/2023",
+      "time": "18:00",
+      "char": "A1",
+      "money": "90.000đ"
+    }
+    ,
+    {
+      "idBooking": "7",
+      "idUser": "5e68-afe2",
+      "nameUser": "Duc",
+      "email": "hung.tran25@student.passerellesnumeriques.org",
+      "phoneNumber": "034567890",
+      "filmName": "Morribius",
       "dateBooking": "20/10/2023",
       "dateWatch": "30/10/2023",
       "time": "18:00",

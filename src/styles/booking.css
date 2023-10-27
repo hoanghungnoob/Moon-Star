@@ -14,7 +14,7 @@ html{
 
 }
 body {
-    background-color: black;
+    /* background-color: black; */
     margin: 0
 }
 .containers{
@@ -24,7 +24,7 @@ body {
 .navbar {
     display: flex;
     height:100px;
-    background-color: rgba(16,20,27,.3);
+    background-color: rgba(1, 1, 1, 1);
     color: white;
     justify-content: space-between;
     align-items: center;
@@ -115,4 +115,60 @@ body {
     padding-top: 10px;
     text-align: center;
 
+}
+.container-body{
+    position: absolute;
+    background-color: white;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.showlistbookingtable{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Định dạng bảng */
+#returnValue {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Định dạng tiêu đề cột */
+#returnValue th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Định dạng hàng chẵn */
+#returnValue tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Định dạng hàng lẻ */
+#returnValue tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Định dạng ô dữ liệu */
+#returnValue td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Định dạng phần tử bên trong thẻ thead */
+#returnValue thead th {
+    font-size: 16px;
+}
+
+/* Định dạng phần tử bên trong tbody */
+#returnValue tbody td {
+    font-size: 14px;
 }

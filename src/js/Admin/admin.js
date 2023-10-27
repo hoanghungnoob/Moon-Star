@@ -59,7 +59,81 @@ function showListBooking() {
   hideListFilm();
 }
 
-fetch("http://localhost:3000/user")
+// modal create user
+const creat = document.getElementById("create-user");
+const close = document.getElementById("close");
+const close_button = document.getElementById("close-modal");
+const modal_container = document.getElementById("modal-container");
+creat.addEventListener("click", () => {
+  // add class show
+  modal_container.classList.add("show");
+});
+close.addEventListener("click", () => {
+  modal_container.classList.remove("show");
+});
+close_button.addEventListener("click", () => {
+  modal_container.classList.remove("show");
+});
+
+// create data by modal
+function RandomHexString(L) {
+  let hexstring = "";
+  for (let i = 0; i < L; i++) {
+    hexstring += Math.floor(Math.random() * 16).toString(16);
+  }
+  return hexstring;
+}
+
+function register() {
+  let fname = document.getElementById("name").value;
+  let lname = document.getElementById("lname").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let pnumber = document.getElementById("phone").value;
+  let e = document.getElementById("select");
+  let gender = e.options[e.selectedIndex].text;
+  let id = RandomHexString(4) + "-" + RandomHexString(4);
+  if (
+    fname != "" &&
+    lname != "" &&
+    pnumber != "" &&
+    email != "" &&
+    password != "" &&
+    pnumber != ""
+  ) {
+    let userData = {
+      id,
+      name: fname,
+      lastname: lname,
+      pnumber: pnumber,
+      email: email,
+      password: password,
+      gender: gender,
+    };
+
+    // Make a POST request to http://localhost:3000/user
+    fetch("https://foregoing-messy-freckle.glitch.me/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((data) => {
+        console.log("Data sent successfully:", data);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  } else {
+    alert(
+      "vui lòng nhập đầy đủ thông tin! và đảm bảo rằng mật khẩu phải giống nhau"
+    );
+  }
+}
+// get data user
+fetch("https://foregoing-messy-freckle.glitch.me/user")
   .then((response) => response.json())
   .then((data) => {
     let html = ""; // Chuỗi HTML tổng hợp cho tất cả các người dùng
@@ -132,7 +206,7 @@ fetch("http://localhost:3000/user")
               gender: gender,
             };
 
-            fetch(`http://localhost:3000/user/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/user/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -151,6 +225,8 @@ fetch("http://localhost:3000/user")
 
                 // Đóng modal sau khi cập nhật thành công
                 update_modal_container.classList.remove("show");
+                window.location.reload();
+
               })
               .catch((error) => {
                 console.error("Lỗi khi cập nhật người dùng:", error);
@@ -169,7 +245,7 @@ fetch("http://localhost:3000/user")
           // Bắt sự kiện khi nút "Xác nhận" được nhấn
           confirmButton.addEventListener("click", () => {
             // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-            fetch(`http://localhost:3000/user/${userId}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/user/${userId}`, {
               method: "DELETE",
             })
               .then((response) => {
@@ -185,6 +261,8 @@ fetch("http://localhost:3000/user")
                 // Đóng modal sau khi xóa thành công
                 modal.classList.remove("show-modal-dl-user");
                 // Cập nhật giao diện hoặc làm bất kỳ điều gì bạn muốn sau khi xóa thành công
+                 window.location.reload();
+
               })
               .catch((error) => {
                 console.error("Lỗi khi xóa người dùng:", error);
@@ -211,7 +289,7 @@ fetch("http://localhost:3000/user")
 
 
 // get data list film
-fetch("http://localhost:3000/listfilm")
+fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
   .then((response) => response.json())
   .then((data) => {
     for (let index of data) {
@@ -277,7 +355,7 @@ fetch("http://localhost:3000/listfilm")
               video: element.video
             }
 
-            fetch(`http://localhost:3000/listfilm/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -315,7 +393,7 @@ fetch("http://localhost:3000/listfilm")
               video: element.video
             }
 
-            fetch(`http://localhost:3000/listfilm/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -353,7 +431,7 @@ fetch("http://localhost:3000/listfilm")
               video: `/src/assets/trailer/${nameVideo}`
             }
 
-            fetch(`http://localhost:3000/listfilm/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -362,16 +440,18 @@ fetch("http://localhost:3000/listfilm")
             })
               .then((response) => {
                 if (!response.ok) {
-                  throw new Error("Cập nhật người dùng thất bại.");
+                  throw new Error("Cập nhật phim thất bại.");
                 }
                 return response.json();
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin người dùng đã được cập nhật:", data);
+                console.log("Thông tin phim đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
+                window.location.reload();
+
               })
               .catch((error) => {
                 console.error("Lỗi khi cập nhật người dùng:", error);
@@ -393,7 +473,7 @@ fetch("http://localhost:3000/listfilm")
               video: `/src/assets/trailer/${nameVideo}`
             }
 
-            fetch(`http://localhost:3000/listfilm/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -412,6 +492,8 @@ fetch("http://localhost:3000/listfilm")
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
+                window.location.reload();
+
               })
               .catch((error) => {
                 console.error("Lỗi khi cập nhật người dùng:", error);
@@ -439,7 +521,7 @@ fetch("http://localhost:3000/listfilm")
         // Bắt sự kiện khi nút "Xác nhận" được nhấn
         confirmButton.addEventListener('click', () => {
           // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-          fetch(`http://localhost:3000/listfilm/${filmId}`, {
+          fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${filmId}`, {
             method: "DELETE", // Use the DELETE method to delete the film
           })
             .then((response) => {
@@ -455,6 +537,8 @@ fetch("http://localhost:3000/listfilm")
               // Đóng modal sau khi xóa thành công
               closeModal();
               // Cập nhật giao diện hoặc làm bất kỳ điều gì bạn muốn sau khi xóa thành công
+        window.location.reload();
+
             })
             .catch((error) => {
               console.error("Lỗi khi xóa phim:", error);
@@ -469,6 +553,7 @@ fetch("http://localhost:3000/listfilm")
         // Hàm để đóng modal
         function closeModal() {
           modal.classList.remove('show-modal-dl-film');
+          window.location.reload();
         }
 
       })
@@ -503,78 +588,7 @@ function checkFileVideo() {
     return false;
   }
 }
-// modal create user
-const creat = document.getElementById("create-user");
-const close = document.getElementById("close");
-const close_button = document.getElementById("close-modal");
-const modal_container = document.getElementById("modal-container");
-creat.addEventListener("click", () => {
-  // add class show
-  modal_container.classList.add("show");
-});
-close.addEventListener("click", () => {
-  modal_container.classList.remove("show");
-});
-close_button.addEventListener("click", () => {
-  modal_container.classList.remove("show");
-});
 
-// create data by modal
-function RandomHexString(L) {
-  let hexstring = "";
-  for (let i = 0; i < L; i++) {
-    hexstring += Math.floor(Math.random() * 16).toString(16);
-  }
-  return hexstring;
-}
-
-function register() {
-  let fname = document.getElementById("name").value;
-  let lname = document.getElementById("lname").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  let pnumber = document.getElementById("phone").value;
-  let e = document.getElementById("select");
-  let gender = e.options[e.selectedIndex].text;
-  let id = RandomHexString(4) + "-" + RandomHexString(4);
-  if (
-    fname != "" &&
-    lname != "" &&
-    pnumber != "" &&
-    email != "" &&
-    password != "" &&
-    pnumber != ""
-  ) {
-    let userData = {
-      id,
-      name: fname,
-      lastname: lname,
-      pnumber: pnumber,
-      email: email,
-      password: password,
-      gender: gender,
-    };
-
-    // Make a POST request to http://localhost:3000/user
-    fetch("http://localhost:3000/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((data) => {
-        console.log("Data sent successfully:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  } else {
-    alert(
-      "vui lòng nhập đầy đủ thông tin! và đảm bảo rằng mật khẩu phải giống nhau"
-    );
-  }
-}
 
 
 // show modal create film
@@ -635,7 +649,7 @@ function createfilm() {
       video: `/src/assets/trailer/${trailerFileName}`, // Store only the file name or relative path
     };
 
-    fetch("http://localhost:3000/listfilm", {
+    fetch("https://foregoing-messy-freckle.glitch.me/listfilm", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -644,6 +658,8 @@ function createfilm() {
     })
       .then((data) => {
         console.log("Data sent successfully:", data);
+        window.location.reload();
+
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -654,7 +670,7 @@ function createfilm() {
 }
 
 // comingsoon
-fetch("http://localhost:3000/comingSoon")
+fetch("https://foregoing-messy-freckle.glitch.me/comingSoon")
   .then(response => response.json())
   .then((data) => {
     for (let index of data) {
@@ -724,7 +740,7 @@ fetch("http://localhost:3000/comingSoon")
               image: element.image
             }
 
-            fetch(`http://localhost:3000/comingSoon/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/comingSoon/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -743,6 +759,7 @@ fetch("http://localhost:3000/comingSoon")
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
+                window.location.reload();
               })
               .catch((error) => {
                 console.error("Lỗi khi cập nhật người dùng:", error);
@@ -759,10 +776,10 @@ fetch("http://localhost:3000/comingSoon")
               Actors: document.getElementById('update-film-actor').value,
               Director: document.getElementById('update-film-director').value,
               Content: document.getElementById('update-film-content').value,
-              image: `/src/assets/image/${nameImage}`
+              image: `/src/assets/imagecoming/${nameImage}`
             }
 
-            fetch(`http://localhost:3000/comingSoon/${element.id}`, {
+            fetch(`https://foregoing-messy-freckle.glitch.me/comingSoon/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -781,6 +798,7 @@ fetch("http://localhost:3000/comingSoon")
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
+                window.location.reload();
               })
               .catch((error) => {
                 console.error("Lỗi khi cập nhật người dùng:", error);
@@ -795,7 +813,8 @@ fetch("http://localhost:3000/comingSoon")
     //delete film
     for (const index of data) {
       const element = index;
-      const filmId = index.id;
+      const filmId = element.id;
+      
       document.getElementById("delete-film-coming-" + filmId).addEventListener("click", () => {
         const modal = document.querySelector('.modaldeletefilm');
         const confirmButton = document.getElementById('confirm-film-button');
@@ -804,7 +823,7 @@ fetch("http://localhost:3000/comingSoon")
         // Bắt sự kiện khi nút "Xác nhận" được nhấn
         confirmButton.addEventListener('click', () => {
           // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-          fetch(`http://localhost:3000/comingSoon/${filmId}`, {
+          fetch(`https://foregoing-messy-freckle.glitch.me/comingSoon/${filmId}`, {
             method: "DELETE", // Use the DELETE method to delete the film
           })
             .then((response) => {
@@ -828,6 +847,10 @@ fetch("http://localhost:3000/comingSoon")
         cancelButton.addEventListener("click", () => {
           modal.classList.remove('show-modal-dl-film');
         })
+        function closeModal() {
+          modal.classList.remove('show-modal-dl-film');
+          window.location.reload();
+        }
       })
     }
   })
@@ -877,7 +900,7 @@ function createFilmComing() {
       video: `/src/assets/trailer/${trailerFileName}`, // Store only the file name or relative path
     };
 
-    fetch("http://localhost:3000/comingSoon", {
+    fetch("https://foregoing-messy-freckle.glitch.me/comingSoon", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -886,6 +909,7 @@ function createFilmComing() {
     })
       .then((data) => {
         console.log("Data sent successfully:", data);
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -897,7 +921,7 @@ function createFilmComing() {
 
 // show list booking
 
-fetch('http://localhost:3000/listbooking')
+fetch('https://foregoing-messy-freckle.glitch.me/listbooking')
   .then(res => res.json())
   .then(data => {
     let html = ''; // Khởi tạo chuỗi HTML bên ngoài vòng lặp

@@ -2,7 +2,7 @@ const btnSearch = document.querySelector(".button-search");
 const contentSearch = document.querySelector("#search");
 btnSearch.onclick = function(){
     if(contentSearch.value){
-        fetch("http://localhost:3000/listfilm")
+        fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
         .then(
             respone => respone.json()
         ).then(listfilm => {

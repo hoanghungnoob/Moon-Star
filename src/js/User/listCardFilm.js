@@ -3,7 +3,7 @@ function getFilm(callback) {
     let url = window.location.href;
     var paramsString = url.split("?")[1];
     var id = paramsString.split("=")[1];
-    fetch("http://localhost:3000/listfilm" + "?id=" +id ) // Đường dẫn đến tệp JSON
+    fetch("https://foregoing-messy-freckle.glitch.me/listfilm" + "?id=" +id ) // Đường dẫn đến tệp JSON
       .then((response) => response.json())
       .then((data) => {
         // Lấy mảng "listfilm" từ dữ liệu JSON

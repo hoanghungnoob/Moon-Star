@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,14 +14,14 @@
     <nav class="navbar" style="height:100px;">
         <div class="img"><a href="index.html"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></a></div>
         <div class="input-container">
-            <input type="text" id="search" class="search" placeholder="Search">
-            <button><i class="fa fa-search" aria-hidden="true" onclick="search()"></i></button>
+            <input type="text" id="search" class="d-mx-none search" placeholder="Search">
+            <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
-        <a href="#listbooking">List Booking</a>
+        <a class="d-mx-none" href="#listbooking">List Booking</a>
 
         <div class="login" style="padding-right: 50px;">
-            <button class="button-login" id="loginBtn">Login</button>
-            <button class="button-register" id="registerBtn">Register</button>
+            <button class="d-mx-none button-login" id="loginBtn">Login</button>
+            <button class="d-mx-none button-register" id="registerBtn">Register</button>
         </div>
 
         <div class="menu" id="menu_profile">
@@ -63,13 +61,13 @@
                 
 
             </div>
-    </main>
+    </div></main>
     
     <!-- Modal -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <iframe id="videoFrame" width="1000px" height="600px" allowfullscreen></iframe>
+            <span class="close" id="closeModalBtn">×</span>
+            <iframe id="videoFrame" width="1000px" height="600px" allowfullscreen=""></iframe>
         </div>
     </div>
     <!-- Modal login -->
@@ -84,8 +82,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Please enter your password!"
-                        required>
+                    <input type="password" id="password" name="password" placeholder="Please enter your password!" required="">
                 </div>
                 <button type="submit">Log in</button>
             </form>
@@ -101,32 +98,32 @@
                 <div class="user-details">
                     <div class="input-box">
                         <label class="details">First Name</label>
-                        <input type="text" id="firstname" placeholder="Enter your first name" required>
+                        <input type="text" id="firstname" placeholder="Enter your first name" required="">
                     </div>
 
                     <div class="input-box">
                         <label class="details">Last Name</label>
-                        <input type="text" id="lastname" placeholder="Enter your last name" required>
+                        <input type="text" id="lastname" placeholder="Enter your last name" required="">
                     </div>
 
                     <div class="input-box">
                         <label class="details">Phone Number</label>
-                        <input type="text" id="phonenumber" placeholder="Enter your number" required>
+                        <input type="text" id="phonenumber" placeholder="Enter your number" required="">
                     </div>
 
                     <div class="input-box">
                         <label class="details">Email</label>
-                        <input type="text" id="email" placeholder="Enter your email" required>
+                        <input type="text" id="email" placeholder="Enter your email" required="">
                     </div>
 
                     <div class="input-box">
                         <label class="details">Password</label>
-                        <input type="password" id="Password" placeholder="Enter your password" required>
+                        <input type="password" id="Password" placeholder="Enter your password" required="">
                     </div>
 
                     <div class="input-box">
                         <label class="details">Re - Password</label>
-                        <input type="password" id="repassword" placeholder="Re - your password" required>
+                        <input type="password" id="repassword" placeholder="Re - your password" required="">
                     </div>
                 </div>
                 <div class="button">
@@ -431,5 +428,18 @@
     <script src="./src/js/Admin/register.js"></script>
     <script src="./src/js/User/Select_seatModal.js"></script>
     <script src="./src/js/User/pay.js"></script>
-</body>
-</html>
+    <script>
+    document.querySelector(".button-search").onclick = () => {
+        const button =  document.querySelector('.input-container input');
+        if(button.classList.contains('d-mx-none')){
+            document.querySelector('.input-container input').classList.remove('d-mx-none');
+    
+        }else{
+            search();
+            document.querySelector('.input-container input').classList.add('d-mx-none');
+    
+        }
+    }
+        </script>
+
+</body></html>

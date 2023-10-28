@@ -1,313 +1,911 @@
-    * {
-        box-sizing: border-box
-    }
-    html{
-        line-height: 1.5;
-        -webkit-text-size-adjust: 100%;
-        -moz-tab-size: 4;
-        -o-tab-size: 4;
-        tab-size: 4;
-        font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-        font-feature-settings: normal;
-        font-variation-settings: normal;
+* {
+    box-sizing: border-box
+}
+html{
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
 
-    }
-    body {
-        margin: 0;
-        padding: 0;
-        background-image: linear-gradient(
-            rgba(0,0,0,0.6),
-            rgba(0,0,0,0.6)),
-            url(../assets/image/backgrounddetail.jpg);
-        background-size: cover;
-        background-position: center;
-        
-    }
-    /* css navbar */
-    .navbar {
-        display: flex;
-        height:100px;
-        background-color: rgba(16,20,27,.3);
-        color: white;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 999;
-        /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
-    }
-    .navbar::after{
-        content: "";
-        position: absolute; 
-        width: 100%;
-        height: 100%;
-        -webkit-backdrop-filter: blur(50px);
-        backdrop-filter: blur(50px);
-        z-index: -1;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)),
+        url(../assets/image/backgrounddetail.jpg);
+    background-size: cover;
+    background-position: center;
     
-    }
-    .navbar a {
-        text-decoration: none;
-        font-size: 25px;
-        color: white;
-    }
-    .navbar a:hover{
-        color:red;
-    }
-    .input-container{
-        display: flex-inline;
-    }
-    .input-container input[type="text"]{
-        border-radius: 5px;
-        height:40px;
-        width: 300px;
-        outline: none;
-        padding-left: 20px;
-    }
-    .input-container button{
-        border: none;
-        background: none;
-        
-    }
-    .input-container i{
-        box-sizing: border-box;
-        margin: 5px; 
-        font-size: 25px;
-        color:white;
-    }
-    .login .button-login {
-        height: 40px;
-        border-radius: 20px;
-        background-color: red;
-        border-color: red;
-        width: 150px;
-        color: white;
-        font-size: 25px;
-    
-    }
-    
- 
-    .login .button-register {
-        height: 40px;
-        border-radius: 20px;
-        background-color: red;
-        border-color: red;
-        width: 150px;
-        color: white;
-        font-size: 25px;
-    }
-    
-   
-    .menu {
-        position: relative;
-        display: none;
-        margin-right: 100px;
-    }
-    
-    .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-        z-index: 10;
-    }
-    
-    .menu:hover .submenu {
-        display: block;
-    }
-    .submenu button{
-        background: none;
-        border: none;
-        outline: none;
-    
-    }
-    .submenu button a{
-        color: white;
-        font-size: 25px;
-    }
-    
-    .menu span i{
-        box-sizing: border-box;
-        border:1px solid white;
-        border-radius: 50%;
-        font-size: 25px;
-        width: 50px;
-        height: 50px;
-        padding-top: 10px;
-        text-align: center;
-    
-    }
-    
-    /* Css deatil */
-    .detail{
-        margin: 150px auto 0;
-        display: flex;
-        padding: 40px 50px;
-        position: relative;
-        margin-left: -5px;
-    }
+}
+/* css navbar */
+.navbar {
+    display: flex;
+    height:100px;
+    background-color: rgba(16,20,27,.3);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
+}
+.navbar::after{
+    content: "";
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    z-index: -1;
 
-    .detail-img{
-        color: #fff;
-        text-align: center;
-        margin-right: 2%;
-        font-size: 33px;
+}
+.navbar a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+.navbar a:hover{
+    color:red;
+}
+.input-container{
+    display: flex-inline;
+}
+.input-container input[type="text"]{
+    border-radius: 5px;
+    height:40px;
+    width: 300px;
+    outline: none;
+    padding-left: 20px;
+}
+.input-container button{
+    border: none;
+    background: none;
+    
+}
+.input-container i{
+    box-sizing: border-box;
+    margin: 5px; 
+    font-size: 25px;
+    color:white;
+}
+.login .button-login {
+    height: 40px;
+    border-radius: 20px;
+    background-color: red;
+    border-color: red;
+    width: 150px;
+    color: white;
+    font-size: 25px;
+
+}
+
+
+.login .button-register {
+    height: 40px;
+    border-radius: 20px;
+    background-color: red;
+    border-color: red;
+    width: 150px;
+    color: white;
+    font-size: 25px;
+}
+
+
+.menu {
+    position: relative;
+    display: none;
+    margin-right: 100px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+.submenu button{
+    background: none;
+    border: none;
+    outline: none;
+
+}
+.submenu button a{
+    color: white;
+    font-size: 25px;
+}
+
+.menu span i{
+    box-sizing: border-box;
+    border:1px solid white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+/* Css deatil */
+.detail{
+    margin: 150px auto 0;
+    display: flex;
+    padding: 40px 50px;
+    position: relative;
+    margin-left: -5px;
+}
+
+.detail-img{
+    color: #fff;
+    text-align: center;
+    margin-right: 2%;
+    font-size: 33px;
+}
+.detail-img img{
+    width: 305px;
+height: 435px;
+border-radius: 15px;
+border: solid orangered;
+
+}
+.detail #film_name{
+    font-size: 35px;
+}
+.detail-content{
+    width: 69%;
+    color: #fff;
+    font-size: 30px;
+}
+
+.detail_item{
+    display: flex;
+    flex-direction: row;
+
+}
+.detail_item p:first-child{
+    width: 122px;
+}
+.detail_item p:first-child strong{
+    color: #1297e4;
+}
+.detail_item #film_actor,
+.detail_item #film_content,
+.detail_item #film_director{
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: -1px;
+}
+
+.detail-img h2{
+    margin: 0;
+}
+#button-booking-trailer{
+margin-top: 30px;
+}
+.detail-btn{
+    background-color: red;
+    width: 250px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 25px;
+    color: #fff;
+    float:right;
+    position: relative;
+    top: 0px;
+    outline: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    
+    border:none;
+    outline: none;
+    /* text-align: center; */
+}
+
+.modal.active {
+    display: block;
+}
+
+/* CSS cho nút đóng modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right:40px;
+    color:white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.close span{
+    margin-right: 20px;
+    justify-content: end;
+}
+
+.close:hover {
+    color: #e74c3c;
+}
+
+/* CSS cho nội dung modal (trong ví dụ này, iframe) */
+.modal-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS cho trang chi tiết */
+#main {
+    transition: opacity 0.3s; /* Hiệu ứng khi trang bị mờ đi */
+}
+
+.detail-btn {
+    cursor: pointer;
+}
+/* Css footer */
+footer{
+    position: relative;
+    top:100px;
+    height: 628px;
+    flex-shrink: 0;
+    background-color: #000000;
+    padding: 70px;
+    box-sizing: border-box;
+}
+.logo img{
+    width: 416.481px;
+    height: 141px;
+    flex-shrink: 0;
+    background: url(<path-to-image>),  cover no-repeat;
+}
+hr{
+    height: 1px;
+    width: 100%;
+    background-color: #ffffff;
+}
+.information{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: #FFF;
+}
+.footer-head{
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.footer-paragrap{
+    color: #FFF;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.about,
+.infor,
+.Contact{
+    padding: 10px  50px;
+    box-sizing: border-box;
+}
+
+
+
+
+@media (min-width: 801px) {
+    .d-ms-none{
+        display: none!important;
     }
-    .detail-img img{
-        width: 305px;
-    height: 435px;
+}
+@media (max-width: 800px) {
+.img img{
+    width: 130px;
+    padding-left: 10px!important;
+}
+.d-mx-none{
+    display: none!important;
+}
+.input-container{
+    flex:1;   
+    text-align: end;
+    position: relative;
+    right: -38px;
+    top:-2px
+}
+.input-container input{
+    width: 65%!important;
+}
+#menu_profile{
+    margin-right: 0px;
+}
+.slideshow-container {
+
+    top: 110px;
+}
+.option-listproduct{
+    display: flex;
+    padding: 0 20px;
+}
+.option-listproduct input[type="button"] {
+    height: 50px;
+    border-radius: 10px;
+    border-color: red;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    margin-right: 0px;
+}.option-listproduct input[type="button"]:first-child{
+    margin-right: 10px;
+}
+.listproduct-1 .row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+.film-card {
+    height: 20%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.film-card img {
+    width: 100%;
+    height: 200px;
     border-radius: 15px;
     border: solid orangered;
+}
+.card-body {
+    font-size: 25px;
+}
+.card-body p{
+    font-size: 12px;
+}
+footer {
+    padding: 20px;
+}
+.logo img {
+    width: 250.481px;
+    height: 141px;
+    flex-shrink: 0;
+    background: url(<path-to-image>), cover no-repeat;
+}
+.information {
+    display: block;
 
-    }
-    .detail #film_name{
-        font-size: 35px;
-    }
-    .detail-content{
-        width: 69%;
-        color: #fff;
-        font-size: 30px;
-    }
+}
+ul{
+    padding-left: 0px;
+}
+li {
+    list-style: none;
+}
+.about, .infor, .Contact {
+    padding: 10px 10px;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+.footer-paragrap {
+    font-size: 15px;
+}
+
+.navbar a{
+    font-size: 15px;
+}
+
+
+
+.detail {
+    margin: 80px auto 0;
+    display: block;
+    padding: 20px 20px;
+    position: relative;
+    /* margin-left: -5px; */
+}
+.detail #film_name {
+    font-size: 25px;
+}
+.detail-content {
+    color: #fff;
+    font-size: 20px;
+}
+#button-booking-trailer{
+    display: flex;
+    width: 145%;
+}
+.detail-btn {
+    background-color: red;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 50%;
+}
+
+.detail-btn:first-child{
+    margin-right: 10px;
+}
+.footer-head{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.detail-img {
+    margin-right: 0px;
+}
+}    * {
+    box-sizing: border-box
+}
+html{
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)),
+        url(../assets/image/backgrounddetail.jpg);
+    background-size: cover;
+    background-position: center;
     
-    .detail_item{
-        display: flex;
-        flex-direction: row;
-  
-    }
-    .detail_item p:first-child{
-        width: 122px;
-    }
-    .detail_item p:first-child strong{
-        color: #1297e4;
-    }
-    .detail_item #film_actor,
-    .detail_item #film_content,
-    .detail_item #film_director{
-        margin-left: 30px;
-        margin-top: 30px;
-        margin-bottom: -1px;
-    }
+}
+/* css navbar */
+.navbar {
+    display: flex;
+    height:100px;
+    background-color: rgba(16,20,27,.3);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
+}
+.navbar::after{
+    content: "";
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    z-index: -1;
 
-    .detail-img h2{
-        margin: 0;
-    }
-   #button-booking-trailer{
+}
+.navbar a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+.navbar a:hover{
+    color:red;
+}
+.input-container{
+    display: flex-inline;
+}
+.input-container input[type="text"]{
+    border-radius: 5px;
+    height:40px;
+    width: 300px;
+    outline: none;
+    padding-left: 20px;
+}
+.input-container button{
+    border: none;
+    background: none;
+    
+}
+.input-container i{
+    box-sizing: border-box;
+    margin: 5px; 
+    font-size: 25px;
+    color:white;
+}
+.login .button-login {
+    height: 40px;
+    border-radius: 20px;
+    background-color: red;
+    border-color: red;
+    width: 150px;
+    color: white;
+    font-size: 25px;
+
+}
+
+
+.login .button-register {
+    height: 40px;
+    border-radius: 20px;
+    background-color: red;
+    border-color: red;
+    width: 150px;
+    color: white;
+    font-size: 25px;
+}
+
+
+.menu {
+    position: relative;
+    display: none;
+    margin-right: 100px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 10;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+.submenu button{
+    background: none;
+    border: none;
+    outline: none;
+
+}
+.submenu button a{
+    color: white;
+    font-size: 25px;
+}
+
+.menu span i{
+    box-sizing: border-box;
+    border:1px solid white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+/* Css deatil */
+.detail{
+    margin: 150px auto 0;
+    display: flex;
+    padding: 40px 50px;
+    position: relative;
+    margin-left: -5px;
+}
+
+.detail-img{
+    color: #fff;
+    text-align: center;
+    margin-right: 2%;
+    font-size: 33px;
+}
+.detail-img img{
+    width: 305px;
+height: 435px;
+border-radius: 15px;
+border: solid orangered;
+
+}
+.detail #film_name{
+    font-size: 35px;
+}
+.detail-content{
+    width: 69%;
+    color: #fff;
+    font-size: 30px;
+}
+
+.detail_item{
+    display: flex;
+    flex-direction: row;
+
+}
+.detail_item p:first-child{
+    width: 122px;
+}
+.detail_item p:first-child strong{
+    color: #1297e4;
+}
+.detail_item #film_actor,
+.detail_item #film_content,
+.detail_item #film_director{
+    margin-left: 30px;
     margin-top: 30px;
-   }
-    .detail-btn{
-        background-color: red;
-        width: 250px;
-        height: 80px;
-        border-radius: 30px;
-        font-size: 25px;
-        color: #fff;
-        float:right;
-        position: relative;
-        top: 0px;
-        outline: none;
-    }
-    .modal {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-        
-        border:none;
-        outline: none;
-        /* text-align: center; */
-    }
+    margin-bottom: -1px;
+}
+
+.detail-img h2{
+    margin: 0;
+}
+#button-booking-trailer{
+margin-top: 30px;
+}
+.detail-btn{
+    background-color: red;
+    width: 250px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 25px;
+    color: #fff;
+    float:right;
+    position: relative;
+    top: 0px;
+    outline: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
     
-    .modal.active {
-        display: block;
-    }
-    
-    /* CSS cho nút đóng modal */
-    .close {
-        position: absolute;
-        top: 20px;
-        right:40px;
-        color:white;
-        font-size: 24px;
-        cursor: pointer;
-    }
-    .close span{
-        margin-right: 20px;
-        justify-content: end;
-    }
-    
-    .close:hover {
-        color: #e74c3c;
-    }
-    
-    /* CSS cho nội dung modal (trong ví dụ này, iframe) */
-    .modal-content {
-        padding: 20px;
-        text-align: center;
-    }
-    
-    /* CSS cho trang chi tiết */
-    #main {
-        transition: opacity 0.3s; /* Hiệu ứng khi trang bị mờ đi */
-    }
-    
-    .detail-btn {
-        cursor: pointer;
-    }
-    /* Css footer */
-    footer{
-        position: relative;
-        top:100px;
-        height: 628px;
-        flex-shrink: 0;
-        background-color: #000000;
-        padding: 70px;
-        box-sizing: border-box;
-    }
-    .logo img{
-        width: 416.481px;
-        height: 141px;
-        flex-shrink: 0;
-        background: url(<path-to-image>),  cover no-repeat;
-    }
-    hr{
-        height: 1px;
-        width: 100%;
-        background-color: #ffffff;
-    }
-    .information{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        color: #FFF;
-    }
-    .footer-head{
-        color: #FFF;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .footer-paragrap{
-        color: #FFF;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .about,
-    .infor,
-    .Contact{
-        padding: 10px  50px;
-        box-sizing: border-box;
-    }
+    border:none;
+    outline: none;
+    /* text-align: center; */
+}
+
+.modal.active {
+    display: block;
+}
+
+/* CSS cho nút đóng modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right:40px;
+    color:white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.close span{
+    margin-right: 20px;
+    justify-content: end;
+}
+
+.close:hover {
+    color: #e74c3c;
+}
+
+/* CSS cho nội dung modal (trong ví dụ này, iframe) */
+.modal-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS cho trang chi tiết */
+#main {
+    transition: opacity 0.3s; /* Hiệu ứng khi trang bị mờ đi */
+}
+
+.detail-btn {
+    cursor: pointer;
+}
+/* Css footer */
+footer{
+    position: relative;
+    top:100px;
+    height: 628px;
+    flex-shrink: 0;
+    background-color: #000000;
+    padding: 70px;
+    box-sizing: border-box;
+}
+.logo img{
+    width: 416.481px;
+    height: 141px;
+    flex-shrink: 0;
+    background: url(<path-to-image>),  cover no-repeat;
+}
+hr{
+    height: 1px;
+    width: 100%;
+    background-color: #ffffff;
+}
+.information{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: #FFF;
+}
+.footer-head{
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.footer-paragrap{
+    color: #FFF;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.about,
+.infor,
+.Contact{
+    padding: 10px  50px;
+    box-sizing: border-box;
+}
 
 
 
 
-    
+@media (min-width: 801px) {
+    .d-ms-none{
+        display: none!important;
+    }
+}
+@media (max-width: 800px) {
+.img img{
+    width: 130px;
+    padding-left: 10px!important;
+}
+.d-mx-none{
+    display: none!important;
+}
+.input-container{
+    flex:1;   
+    text-align: end;
+    position: relative;
+    right: -38px;
+    top:-2px
+}
+.input-container input{
+    width: 65%!important;
+}
+#menu_profile{
+    margin-right: 0px;
+}
+.slideshow-container {
+
+    top: 110px;
+}
+.option-listproduct{
+    display: flex;
+    padding: 0 20px;
+}
+.option-listproduct input[type="button"] {
+    height: 50px;
+    border-radius: 10px;
+    border-color: red;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    margin-right: 0px;
+}.option-listproduct input[type="button"]:first-child{
+    margin-right: 10px;
+}
+.listproduct-1 .row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+.film-card {
+    height: 20%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.film-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    border: solid orangered;
+}
+.card-body {
+    font-size: 25px;
+}
+.card-body p{
+    font-size: 12px;
+}
+footer {
+    padding: 20px;
+}
+.logo img {
+    width: 250.481px;
+    height: 141px;
+    flex-shrink: 0;
+    background: url(<path-to-image>), cover no-repeat;
+}
+.information {
+    display: block;
+
+}
+ul{
+    padding-left: 0px;
+}
+li {
+    list-style: none;
+}
+.about, .infor, .Contact {
+    padding: 10px 10px;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+.footer-paragrap {
+    font-size: 15px;
+}
+
+.navbar a{
+    font-size: 15px;
+}
+
+
+
+.detail {
+    margin: 80px auto 0;
+    display: block;
+    padding: 20px 20px;
+    position: relative;
+    /* margin-left: -5px; */
+}
+.detail #film_name {
+    font-size: 25px;
+}
+.detail-content {
+    color: #fff;
+    font-size: 20px;
+}
+#button-booking-trailer{
+    display: flex;
+    width: 145%;
+}
+.detail-btn {
+    background-color: red;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 50%;
+}
+
+.detail-btn:first-child{
+    margin-right: 10px;
+}
+.footer-head{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.detail-img {
+    margin-right: 0px;
+}
+}

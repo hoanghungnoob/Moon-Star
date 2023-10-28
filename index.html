@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./src/styles/">
     <link rel="stylesheet" href="./src/styles/login.css">
     <link rel="stylesheet" href="./src/styles/register.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Moon Star</title>
 
 </head>
@@ -19,14 +19,14 @@
         <nav class="navbar" style="height:100px;">
             <div class="img"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
             <div class="input-container">
-                <input type="text" id="search" class="search" placeholder="Search">
+                <input type="text" id="search" class="search d-mx-none" placeholder="Search">
                 <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
-            <a id="listbooking">List Booking</a>
+            <a class="d-mx-none" id="listbooking">List Booking</a>
 
             <div class="login" style="padding-right: 50px;">
-                <button class="button-login" id="loginBtn">Login</button>
-                <button class="button-register" id="registerBtn">Register</button>
+                <button class="d-mx-none button-login" id="loginBtn">Login</button>
+                <button class="d-mx-none button-register" id="registerBtn">Register</button>
             </div>
             <div class="menu" id="menu_profile">
                 <span><i class="fa fa-solid fa-user"></i> </span>
@@ -36,7 +36,25 @@
 
                 </ul>
             </div>
+            <li class="nav-item d-ms-none">
+                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+                    <button class="button-menu"><i class="bi bi-three-dots"></i></button>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item"><a href="User/profileEdit.html" class="text-white"><i class="bi bi-inbox"></i> Home</a></li>
+                    <!-- <li class="dropdown-  divider"></li>
+                    <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li> -->
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item"><i class="bi bi-gear"></i> list booking</li>
+                    <li class="dropdown-divider"></li>
+                    <li id="logout" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Đăng ký</li>
+                    <li class="dropdown-divider"></li>
+                    <li id="logout" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Đăng nhập</li>  
+                </ul>
+            </li>
         </nav>
+ 
 
         <!-- Modal login -->
         <div id="loginModal" class="modal_login">
@@ -208,7 +226,7 @@
         </footer>
 
     </div>
-
+<!-- 
     <script src="./src/js/User/datalistfilm.js"></script>
     <script src="./src/js/User/slider.js"></script>
     <script src="./src/js/User/login.js"></script>
@@ -216,9 +234,25 @@
     <script src="./src/js/User/Select_seatModal.js"></script>
     <script src="./src/js/User/search.js"></script>
     <script src="./src/js/User/logout.js"></script>
-    <script src="./src/js/User/checkListBooking.js"></script>
+    <script src="./src/js/User/checkListBooking.js"></script> -->
 
+    <script>
+        document.querySelector(".dropdown-toggle").onclick = () => {
+    document.querySelector('.dropdown-menu-right').classList.toggle('show');
+}
+document.querySelector(".button-search").onclick = () => {
+    const button =  document.querySelector('.input-container input');
+    if(button.classList.contains('d-mx-none')){
+        document.querySelector('.input-container input').classList.remove('d-mx-none');
 
+    }else{
+        console.log(1);
+
+        document.querySelector('.input-container input').classList.add('d-mx-none');
+
+    }
+}
+    </script>
 </body>
 
 </html>

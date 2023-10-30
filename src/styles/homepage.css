@@ -271,6 +271,9 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #f13105;
 }
+.button-menu{
+    background-color: transparent!important;
+}
 .listproduct {
     margin-top: 50px;
     display: flex;
@@ -299,8 +302,10 @@ button[type="submit"]:hover {
 }
 
 .film-card img {
-    width: 100%;
-
+    width: 305px;
+    height: 435px;
+    border-radius: 15px;
+    border: solid orangered;
 }
 
 .card-body {
@@ -390,6 +395,161 @@ p {
     font-size: 25px;
 }
 
+@media (min-width: 801px) {
+    .d-ms-none{
+        display: none!important;
+    }
 
+}
+@media (max-width: 800px) {
+.navbar{
+    width: 100%;
+}
+.img img{
+    width: 130px;
+    padding-left: 10px!important;
+}
+.d-mx-none{
+    display: none!important;
+}
 
+.input-container{
+    flex:1;   
+    text-align: end;
+    position: relative;
+    right: -38px;
+    top:-2px
+}
+.input-container input{
+    width: 69%!important;
+}
 
+.slideshow-container {
+
+    top: 110px;
+}
+.option-listproduct{
+    display: flex;
+    padding: 0 20px;
+}
+.option-listproduct input[type="button"] {
+    height: 50px;
+    border-radius: 10px;
+    border-color: red;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    margin-right: 0px;
+}.option-listproduct input[type="button"]:first-child{
+    margin-right: 10px;
+}
+.listproduct-1 .row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+.film-card {
+    height: 20%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.film-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    border: solid orangered;
+}
+.card-body {
+    font-size: 25px;
+}
+.card-body p{
+    font-size: 12px;
+}
+footer {
+    padding: 20px;
+}
+.logo img {
+    width: 150.481px;
+    height: 100px;
+    flex-shrink: 0;
+    background: url(<path-to-image>), cover no-repeat;
+}
+.information {
+    display: block;
+
+}
+ul{
+    padding-left: 0px;
+}
+li {
+    list-style: none;
+}
+.about, .infor, .Contact {
+    padding: 10px 10px;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+.footer-paragrap {
+    font-size: 15px;
+}
+
+.dropdown-toggle button{
+ background-color: #000;
+ outline: none;
+ color: #fff;
+ border: none;
+ font-size: 20px;
+ position: relative;
+ top:-5px;
+}
+.dropdown-menu-right{
+    position: absolute;
+    right: 10px;
+    left: auto;
+}
+.dropdown-menu {
+	border: 0px solid rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08)!important;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08)!important;
+    font-size:15px;
+	background-color: #000;
+    color: #ffffff;
+}
+.dropdown-menu a{
+    text-decoration: none;
+}
+.dropdown-divider{
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.dropdown-item{
+	padding: .70rem 1.5rem;
+	color: #ffffff;
+}
+.dropdown-item a{
+    display: inline-block;
+    width: 100%;
+}
+.dropdown-item i{
+    margin-right: 10px;
+}
+.dropdown-toggle-nocaret::after{
+    display: none!important;;
+}
+.navbar a{
+    font-size: 15px;
+}
+.dropdown-toggle:hover .dropdown-menu-right{
+    display: block;
+}
+.dropdown-menu-right{
+    display: none;
+}
+.show{
+    display: block!important;
+}
+}

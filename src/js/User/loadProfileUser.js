@@ -1,4 +1,4 @@
-const usersAPI = "http://localhost:3000/user";
+const usersAPI = "https://foregoing-messy-freckle.glitch.me/user";
 
 async function getUser(id) {
 

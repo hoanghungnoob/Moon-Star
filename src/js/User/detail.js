@@ -1,12 +1,12 @@
 // Lấy các thông tin của bộ phim
-fetch("../../../database/data.json")
+fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
   .then((response) => response.json())
   .then((data) => {
     let url = window.location.href;
     var paramsString = url.split("?")[1];
     var filmIdex = paramsString.split("=")[1];
 
-    const listfilm = data.listfilm.find(film => {
+    const listfilm = data.find(film => {
       return film.id == filmIdex
     });
     const detailContainer = document.getElementById("main");
@@ -37,14 +37,14 @@ document.getElementById("trailer").addEventListener("click", openModal);
 
 function openModal() {
   // Lấy thông tin video từ dữ liệu JSON (sử dụng fetch)
-  fetch("../../../database/data.json")
+  fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
     .then((response) => response.json())
     .then((data) => {
       let url = window.location.href;
     var paramsString = url.split("?")[1];
     var filmIdex = paramsString.split("=")[1];
 
-    const listfilm = data.listfilm.find(film => {
+    const listfilm = data.find(film => {
       return film.id == filmIdex
     });
 

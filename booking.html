@@ -12,7 +12,7 @@
     <div class="containers">
         <nav class="navbar" style="height:100px;">
             <div class="img"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
-            <a href="#home">Home</a>
+            <a href="index.html">Home</a>
             <div class="input-container">
                 <input type="text" id="search" class="search" placeholder="Search">
                 <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -32,9 +32,30 @@
             </div>
         </nav>
        <div class="container-body">
-        
+            <div class="showlistbookingtable">
+                <h2>List Booking</h2>
+                <table id="returnValue">
+                    <thead>
+                        <tr>
+                            <th>UserName</th>
+                            <th>Phone</th>
+                            <th>Name Phim</th>
+                            <th>Date Booking</th>
+                            <th>Date Watching</th>
+                            <th>Time</th>
+                            <th>Char</th>
+                            <th>Money</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableshowlistbooking">
+
+                    </tbody>
+                </table>
+            </div>
        </div>
     </div>
+<script src="/src/js/User/booking.js"></script>
+<script src="/src/js/User/logout.js"></script>
 
 </body>
 </html>

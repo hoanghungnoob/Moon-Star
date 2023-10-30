@@ -1,10 +1,10 @@
 // Tạo một hàm để lấy dữ liệu từ tệp JSON
 function getListFilm(callback) {
-  fetch("../../../database/data.json") // Đường dẫn đến tệp JSON
+  fetch("https://foregoing-messy-freckle.glitch.me/listfilm") // Đường dẫn đến tệp JSON
     .then((response) => response.json())
     .then((data) => {
       // Lấy mảng "listfilm" từ dữ liệu JSON
-      const listfilm = data.listfilm;
+      const listfilm = data;
 
       // Gọi hàm callback và truyền giá trị "listfilm" vào nó
       callback(listfilm);
@@ -45,6 +45,12 @@ function listProduct(listfilm) {
     details.textContent = `${item.time} | ${item.date}`;
 
 
+    const detailButton = document.createElement("input");
+    detailButton.type = "button";
+    detailButton.value = "Detail";
+    detailButton.addEventListener("click", function () {
+      window.location.href = "detail.html" + `?idx=${item.id}`;
+    });
 
     cardBody.appendChild(title);
     cardBody.appendChild(details);

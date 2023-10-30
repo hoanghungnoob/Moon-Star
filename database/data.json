@@ -7,7 +7,7 @@
       "Actors": "Herimone Granger, Harry Potter, Lord Voldemort...",
       "Director": "J.K.Rowling, Rowli Ng J.K",
       "Content": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry",
-      "image": "/src/assets/image/Harry potter.png",
+      "image": "/src/assets/image/HarryPotter.jpg",
       "video": "/src/assets/trailer/Harry potter.mp4",
       "id": "1"
     },
@@ -201,7 +201,7 @@
       "name": "Trần",
       "lastname": "Hùng",
       "pnumber": "0382870032",
-      "email": "hung.tran25@student.passerellesnumeriques.org",
+      "email": "hung.tran25@gmail.org",
       "password": "123456",
       "gender": "Male"
     },
@@ -390,6 +390,20 @@
       "email": "hoanghung@gmail.com",
       "phoneNumber": "034567890",
       "filmName": "Harry Potter",
+      "dateBooking": "20/10/2023",
+      "dateWatch": "30/10/2023",
+      "time": "18:00",
+      "char": "A1",
+      "money": "90.000đ"
+    }
+    ,
+    {
+      "idBooking": "7",
+      "idUser": "5e68-afe2",
+      "nameUser": "Duc",
+      "email": "hung.tran25@student.passerellesnumeriques.org",
+      "phoneNumber": "034567890",
+      "filmName": "Morribius",
       "dateBooking": "20/10/2023",
       "dateWatch": "30/10/2023",
       "time": "18:00",

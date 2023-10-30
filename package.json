@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "json-server --watch ./database/data.json",
     "dev": "yarn dev"
   },
   "dependencies": {

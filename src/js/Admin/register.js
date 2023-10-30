@@ -71,8 +71,7 @@ function register() {
       gender: ""
     };
     console.log(userData);
-    // Make a POST request to http://localhost:3000/user
-    fetch("http://localhost:3000/user", {
+    fetch("https://foregoing-messy-freckle.glitch.me/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,6 +80,7 @@ function register() {
     })
       .then((data) => {
         console.log("Data sent successfully:", data);
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error:", error);

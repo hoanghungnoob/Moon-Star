@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles/homepage.css">
+    <link rel="stylesheet" href="./src/styles/listCardFilm.css">
+
+</head>
+<body>
+    <div class="listproduct">
+        <div class="option-listproduct">
+            <input type="button" value="Movie is showing">
+            <input type="button" value="Upcoming movie" onclick="window.location.href='Comingsoon.html'">
+        </div>
+        <div class="listproduct-1" onload="getFilm()">
+            <!-- <div >
+                <input type="button" value="More >>>" id="more" onclick="moreItem()">
+            </div> -->
+            <div class="row" id="item">
+
+            </div>
+
+        </div>
+        <div class="listproduct-2"></div>
+    </div>
+
+    <script src="./src/js/User/listCardFilm.js"></script>
+</body>
+</html>

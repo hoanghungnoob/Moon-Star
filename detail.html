@@ -67,11 +67,11 @@
         </div>
         <div class="Choose_hour">
             <input type="radio" id="hour" name="hour">
-            <label  for="hour">15:00</label>
+            <label for="hour">15:00</label>
             <input type="radio" id="hour1" name="hour">
-            <label  for="hour1">19:00</label>
+            <label for="hour1">19:00</label>
             <input type="radio" id="hour2" name="hour">
-            <label  for="hour2">21:00</label>
+            <label for="hour2">21:00</label>
         </div>
     </main>
 
@@ -94,7 +94,8 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Please enter your password!" required="">
+                    <input type="password" id="password" name="password" placeholder="Please enter your password!"
+                        required="">
                 </div>
                 <button type="submit">Log in</button>
             </form>
@@ -422,7 +423,7 @@
                             <h4>Ghế</h4>
                             <p id="seat"></p>
                         </div>
-    
+
                     </div>
                     <div class="film_room">
                         <div style="display: flex; flex-direction: column; margin-left:20px ">
@@ -433,7 +434,7 @@
                             <h4>Định dạng</h4>
                             <p>2D</p>
                         </div>
-    
+
                     </div>
                 </div>
                 <div class="section-2">
@@ -452,7 +453,7 @@
                     </table>
                 </div>
             </div>
-    
+
             <div class="section-3">
                 <h2>Phương thức thanh toán</h2>
                 <div class="payment-methods">
@@ -474,13 +475,13 @@
                         <h4 id="total">Tổng cộng</h4>
                         <p id="total_price"></p>
                     </div>
-    
+
                 </div>
                 <button class="button_payment" id="buttonPay">Thanh Toán</button>
 
             </div>
         </div>
-        
+
     </div>
     <div id="payModalMomo" class="payMomo_Modal">
         <div class="containers">
@@ -497,9 +498,9 @@
                     <p><strong>Bạn đã chọn ghế</strong></p>
                     <p id="choose_Seat">A1</p>
                 </div>
-                
+
             </div>
-            <div class="column_right" >
+            <div class="column_right">
                 <h2>Quét mã qua úng dụng thanh toán online</h2>
                 <p id="Qrcode"></p>
             </div>
@@ -542,18 +543,20 @@
 </body>
 
 </html>
-    <script>
+<script>
     document.querySelector(".button-search").onclick = () => {
-        const button =  document.querySelector('.input-container input');
-        if(button.classList.contains('d-mx-none')){
+        const button = document.querySelector('.input-container input');
+        if (button.classList.contains('d-mx-none')) {
             document.querySelector('.input-container input').classList.remove('d-mx-none');
-    
-        }else{
+
+        } else {
             search();
             document.querySelector('.input-container input').classList.add('d-mx-none');
-    
+
         }
     }
-        </script>
+</script>
 
-</body></html>
+</body>
+
+</html>

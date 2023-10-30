@@ -1,11 +1,12 @@
-document.getElementById("pay-button").addEventListener("click", () => {
-    window.location.href="pay.html";
+const payButton = document.getElementById("buttonPay");
+payButton.addEventListener("click", () => {
+  let modalMomo = document.getElementById("payModalMomo");
+
+  let modalPay = document.getElementById("payModal");
+  modalPay.style.display="none";
+  modalMomo.style.display="block";
 });
 
-document.getElementById("back-button").addEventListener("click", () => {
-    window.location.href="detail.html";
-});
-let price = JSON.parse(localStorage.getItem("cost"));
-console.log(price);
-// Gán giá trị vào phần tử HTML với id là "price"
-document.getElementById("price").innerText = price;
+
+
+

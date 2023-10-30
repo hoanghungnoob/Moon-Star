@@ -204,6 +204,27 @@
         top: 0px;
         outline: none;
     }
+    .Choose_hour{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        align-items: center;
+        border: 1px solid white;
+    }
+    .Choose_hour input[type='radio']{
+        display: none;
+       
+    }
+    .Choose_hour label{
+        display: flex;
+        justify-content: center;
+        border: 1px solid white;
+        width: 100px;
+        height: 40px ;
+        align-items: center;
+        margin-right: 50px;
+        border-radius: 50px;
+    }
     .modal {
         display: none;
         position: fixed;
@@ -211,7 +232,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1000;
-        
         border:none;
         outline: none;
         /* text-align: center; */

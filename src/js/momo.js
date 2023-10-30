@@ -1,3 +1,5 @@
+const { loadavg } = require("os");
+
 function Momo() {
 
     let partnerCode = "MOMO";
@@ -9,9 +11,10 @@ function Momo() {
     let redirectUrl = "http://127.0.0.1:5500/index.html";
     let ipnUrl = "http://127.0.0.1:5500/index.html";
     // let ipnUrl = redirectUrl = "https://webhook.site/454e7b77-f177-4ece-8236-ddf1c26ba7f8";
-    let amount = "50000";
-    let requestType = "payWithATM";
-    // let requestType = "captureWallet";
+    let amount = JSON.parse(localStorage.getItem("cost"));
+    console.log(amount);
+    // let requestType = "payWithATM";
+    let requestType = "captureWallet";
     let extraData = ""; //pass empty value if your merchant does not have stores
 
     //before sign HMAC SHA256 with format
@@ -101,3 +104,5 @@ function Momo() {
     reqq.end();
 
 }
+
+

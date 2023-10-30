@@ -1,56 +1,111 @@
-let bookingButton = document.getElementById("booking");
 
-let modal = document.getElementById("select_seat_modal");
+let checkHour = document.getElementsByName("hour");
+let selectedHours = [];
 
-bookingButton.addEventListener("click", () => {
-    modal.style.display = "block"; 
-});
+for (let i = 0; i < checkHour.length; i++) {
+    checkHour[i].addEventListener("change", function (event) {
+        if (checkHour[i].checked) {
+            const modal = document.getElementById("select_seat_modal");
+            modal.style.display = "block";
+            selectedHours = [checkHour[i].nextElementSibling.textContent];
 
-document.getElementById("booking").addEventListener("click", (e) => {
-    if (e.target === this){
-        
-        let modal = document.getElementById("select_seat_modal");
-        modal.style.display="none";
-    }
-});
+            // Xóa giá trị "selectedHour" khỏi localStorage và lưu giá trị mới
+            // localStorage.removeItem("selectedHour");
+            localStorage.setItem("selectedHour", JSON.stringify(selectedHours));
 
+            // Vô hiệu hóa tất cả các radio buttons khác
+            for (let j = 0; j < checkHour.length; j++) {
+                if (i !== j) {
+                    checkHour[j].disabled = true;
+                }
+            }
+        } else {
+            
+           
+        }
+    });
+}
 
 
 function changeSeatColor(seatId) {
     let seat = document.getElementById(seatId);
     let label = seat.nextElementSibling;
-    let cost = 0;
 
     if (seat.checked) {
         label.style.backgroundColor = "#ff0000"; // Màu ghế đã chọn
-
     } else {
         label.style.backgroundColor = "#ccc"; // Màu ghế mặc định
     }
 
-    let check = document.getElementsByName('chair'); // Đổi 'checkbox' thành 'chair'
-    let length = check.length;
+    // Tạo danh sách ghế đã chọn dựa trên trạng thái của checkbox
+    let check = document.getElementsByName('chair');
     let selectedSeats = [];
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < check.length; i++) {
         if (check[i].checked) {
             selectedSeats.push(check[i].nextElementSibling.textContent);
+            localStorage.setItem("Seat", JSON.stringify(selectedSeats));
+            localStorage.setItem("countSeat", selectedSeats.length);
         }
     }
 
-    cost = selectedSeats.length * 90000; // Tính giá vé dựa trên số ghế đã chọn
+    // Cập nhật danh sách ghế đã chọn vào localStorage
+
+    const constSeat = JSON.parse(localStorage.getItem("Seat"));
+    const countSeat = JSON.parse(localStorage.getItem("countSeat"));
+    document.getElementById("seat").innerHTML = constSeat.join(", ");
+    document.getElementById("count_seat").innerHTML = countSeat;
+    document.getElementById("choose_Seat").innerHTML=constSeat;
+    
+
+    // Tính giá vé dựa trên số ghế đã chọn
+    let cost = selectedSeats.length * 90000;
     localStorage.setItem("cost", JSON.stringify(cost));
+
+    // Hiển thị giá vé và ghế đã chọn
     document.getElementById("result").innerHTML = "Bạn đã mua vé với số tiền là: " + cost + " VND";
     document.getElementById("selected-seats").textContent = "Ghế đã chọn: " + selectedSeats.join(", ");
+    const Hours = JSON.parse(localStorage.getItem("selectedHour"));
+    // console.log(Hours);
+    const constMoney = JSON.parse(localStorage.getItem("cost"));
+    // Hiển thị dữ liệu lên trang
+    document.getElementById('film_date').innerHTML = Hours;
+    document.getElementById('price').innerHTML = constMoney;
+    document.getElementById('total').innerHTML = constMoney;
+    document.getElementById('total_price').innerHTML = constMoney;
+    document.getElementById('cost').innerHTML = constMoney;
 }
 
-const backButton = document.getElementById("back-button");
 
-backButton.addEventListener("click", () => {   
-    closeModal(); 
+const backButton = document.getElementById("back-button");
+// console.log(countSeat);
+backButton.addEventListener("click", () => {
+    closeModal();
+
 });
 
-function closeModal() { 
+function closeModal() {
     const modal = document.getElementById("select_seat_modal");
     modal.style.display = "none";
 }
+
+function selectedFilm(){
+    fetch('http://localhost:3000/listfilm')
+    .then(res=> res.json())
+    .then(data=>{
+        console.log(data);
+        let url = window.location.href;
+        var paramsString = url.split("?")[1];
+        var filmIdex = paramsString.split("=")[1];
+        const listfilm = data.find(film => {
+            return film.id == filmIdex
+          });
+        const letName = listfilm.name;
+        document.getElementById('film_name_pay').innerHTML = letName;
+    })
+
+    
+}
+selectedFilm();
+
+

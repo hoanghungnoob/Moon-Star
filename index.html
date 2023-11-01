@@ -39,22 +39,21 @@
             <li class="nav-item d-ms-none">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
                     <button class="button-menu"><i class="bi bi-three-dots"></i></button>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-right">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
                     <li class="dropdown-divider"></li>
-                    <li class="dropdown-item"><a href="User/profileEdit.html" class="text-white"><i class="bi bi-inbox"></i> Home</a></li>
-                    <!-- <li class="dropdown-  divider"></li>
-                    <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li> -->
+                    <li class="dropdown-item"><a href="index.html" class="text-white"><i
+                                class="bi bi-inbox"></i> Home</a></li>
                     <li class="dropdown-divider"></li>
-                    <li class="dropdown-item"><i class="bi bi-gear"></i> list booking</li>
+                    <li class="dropdown-item" id="listbookingRespon"><i class="bi bi-gear"></i> list booking</li>
                     <li class="dropdown-divider"></li>
-                    <li id="logout" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Đăng ký</li>
+                    <li id="registerResponBtn" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Đăng ký</li>
                     <li class="dropdown-divider"></li>
-                    <li id="logout" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Đăng nhập</li>  
+                    <li id="loginResponBtn" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Đăng nhập</li>
                 </ul>
             </li>
         </nav>
- 
+
 
         <!-- Modal login -->
         <div id="loginModal" class="modal_login">
@@ -237,21 +236,7 @@
     <script src="./src/js/User/checkListBooking.js"></script>
 
     <script>
-        document.querySelector(".dropdown-toggle").onclick = () => {
-    document.querySelector('.dropdown-menu-right').classList.toggle('show');
-}
-document.querySelector(".button-search").onclick = () => {
-    const button =  document.querySelector('.input-container input');
-    if(button.classList.contains('d-mx-none')){
-        document.querySelector('.input-container input').classList.remove('d-mx-none');
-
-    }else{
-        console.log(1);
-
-        document.querySelector('.input-container input').classList.add('d-mx-none');
-
-    }
-}
+      
     </script>
 </body>
 

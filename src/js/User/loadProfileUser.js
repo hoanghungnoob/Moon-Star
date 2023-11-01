@@ -1,4 +1,4 @@
-const usersAPI = "https://foregoing-messy-freckle.glitch.me/user";
+const usersAPI = "https://mor-start.onrender.com/user";
 
 async function getUser(id) {
 

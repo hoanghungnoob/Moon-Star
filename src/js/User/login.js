@@ -1,4 +1,6 @@
 document.getElementById("loginBtn").addEventListener("click", openLoginModal);
+// login khi responsive
+document.getElementById('loginResponBtn').addEventListener("click",openLoginModal);
 
 function openLoginModal() {
   let loginModal = document.getElementById("loginModal");
@@ -51,7 +53,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
   const emailInput = document.getElementById("Email").value;
   const passwordInput = document.getElementById("password").value;
 
-  fetch("https://foregoing-messy-freckle.glitch.me/user")
+  fetch("https://mor-start.onrender.com/user")
     .then(response => response.json())
     .then(data => {
       const user = data;
@@ -64,7 +66,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         document.getElementById("registerBtn").style.display = "none";
         document.getElementById("menu_profile").style.display = "inline-block";
       } else {
-        fetch("https://foregoing-messy-freckle.glitch.me/admin")
+        fetch("https://mor-start.onrender.com/admin")
           .then(response => response.json())
           .then(data => {
             const admin = data;

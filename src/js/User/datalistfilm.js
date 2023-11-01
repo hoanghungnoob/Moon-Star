@@ -1,6 +1,6 @@
 // Tạo một hàm để lấy dữ liệu từ tệp JSON
 function getListFilm(callback) {
-  fetch("https://foregoing-messy-freckle.glitch.me/listfilm") // Đường dẫn đến tệp JSON
+  fetch("https://mor-start.onrender.com/listfilm") // Đường dẫn đến tệp JSON
     .then((response) => response.json())
     .then((data) => {
       // Lấy mảng "listfilm" từ dữ liệu JSON

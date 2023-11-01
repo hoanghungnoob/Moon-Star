@@ -61,9 +61,9 @@ let btnEdits = document.querySelectorAll(".btn-edit");
         }
     }
 
-const usersAPI = `https://foregoing-messy-freckle.glitch.me/admin`;
+const usersAPI = `https://mor-start.onrender.com/admin`;
 
-fetch(`https://foregoing-messy-freckle.glitch.me/admin`)
+fetch(`https://mor-start.onrender.com/admin`)
 .then((response) => response.json())
 .then((data) => {
         for (const element of data) {

@@ -15,7 +15,7 @@ document.getElementById("registerBtn").addEventListener("click", function () {
       registerModal.style.display = "none";
     }
 });
-  
+
 
   showLoginModalLink.addEventListener("click", function (e) {
     e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
@@ -71,7 +71,7 @@ function register() {
       gender: ""
     };
     console.log(userData);
-    fetch("https://foregoing-messy-freckle.glitch.me/user", {
+    fetch("https://mor-start.onrender.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

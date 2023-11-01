@@ -112,7 +112,7 @@ function register() {
     };
 
     // Make a POST request to http://localhost:3000/user
-    fetch("https://foregoing-messy-freckle.glitch.me/user", {
+    fetch("https://mor-start.onrender.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -133,7 +133,7 @@ function register() {
   }
 }
 // get data user
-fetch("https://foregoing-messy-freckle.glitch.me/user")
+fetch("https://mor-start.onrender.com/user")
   .then((response) => response.json())
   .then((data) => {
     let html = ""; // Chuỗi HTML tổng hợp cho tất cả các người dùng
@@ -206,7 +206,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/user")
               gender: gender,
             };
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/user/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/user/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -245,7 +245,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/user")
           // Bắt sự kiện khi nút "Xác nhận" được nhấn
           confirmButton.addEventListener("click", () => {
             // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-            fetch(`https://foregoing-messy-freckle.glitch.me/user/${userId}`, {
+            fetch(`https://mor-start.onrender.com/user/${userId}`, {
               method: "DELETE",
             })
               .then((response) => {
@@ -289,7 +289,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/user")
 
 
 // get data list film
-fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
+fetch("https://mor-start.onrender.com/listfilm")
   .then((response) => response.json())
   .then((data) => {
     for (let index of data) {
@@ -355,7 +355,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
               video: element.video
             }
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -393,7 +393,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
               video: element.video
             }
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -431,7 +431,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
               video: `/src/assets/trailer/${nameVideo}`
             }
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -473,7 +473,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
               video: `/src/assets/trailer/${nameVideo}`
             }
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/listfilm/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -521,7 +521,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
         // Bắt sự kiện khi nút "Xác nhận" được nhấn
         confirmButton.addEventListener('click', () => {
           // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-          fetch(`https://foregoing-messy-freckle.glitch.me/listfilm/${filmId}`, {
+          fetch(`https://mor-start.onrender.com/listfilm/${filmId}`, {
             method: "DELETE", // Use the DELETE method to delete the film
           })
             .then((response) => {
@@ -649,7 +649,7 @@ function createfilm() {
       video: `/src/assets/trailer/${trailerFileName}`, // Store only the file name or relative path
     };
 
-    fetch("https://foregoing-messy-freckle.glitch.me/listfilm", {
+    fetch("https://mor-start.onrender.com/listfilm", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -670,7 +670,7 @@ function createfilm() {
 }
 
 // comingsoon
-fetch("https://foregoing-messy-freckle.glitch.me/comingSoon")
+fetch("https://mor-start.onrender.com/comingSoon")
   .then(response => response.json())
   .then((data) => {
     for (let index of data) {
@@ -740,7 +740,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/comingSoon")
               image: element.image
             }
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/comingSoon/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/comingSoon/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -779,7 +779,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/comingSoon")
               image: `/src/assets/imagecoming/${nameImage}`
             }
 
-            fetch(`https://foregoing-messy-freckle.glitch.me/comingSoon/${element.id}`, {
+            fetch(`https://mor-start.onrender.com/comingSoon/${element.id}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -823,7 +823,7 @@ fetch("https://foregoing-messy-freckle.glitch.me/comingSoon")
         // Bắt sự kiện khi nút "Xác nhận" được nhấn
         confirmButton.addEventListener('click', () => {
           // Thực hiện các hành động khi nút "Xác nhận" được nhấn
-          fetch(`https://foregoing-messy-freckle.glitch.me/comingSoon/${filmId}`, {
+          fetch(`https://mor-start.onrender.com/comingSoon/${filmId}`, {
             method: "DELETE", // Use the DELETE method to delete the film
           })
             .then((response) => {
@@ -900,7 +900,7 @@ function createFilmComing() {
       video: `/src/assets/trailer/${trailerFileName}`, // Store only the file name or relative path
     };
 
-    fetch("https://foregoing-messy-freckle.glitch.me/comingSoon", {
+    fetch("https://mor-start.onrender.com/comingSoon", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -921,7 +921,7 @@ function createFilmComing() {
 
 // show list booking
 
-fetch('https://foregoing-messy-freckle.glitch.me/listbooking')
+fetch('https://mor-start.onrender.com/listbooking')
   .then(res => res.json())
   .then(data => {
     let html = ''; // Khởi tạo chuỗi HTML bên ngoài vòng lặp

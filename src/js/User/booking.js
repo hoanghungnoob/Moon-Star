@@ -1,10 +1,11 @@
-fetch('https://foregoing-messy-freckle.glitch.me/listbooking')
+fetch('https://mor-start.onrender.com/listbooking')
   .then(res => res.json())
   .then(data => {
     let html = ``;
     for (const element of data) {
       const localName = localStorage.getItem('user_token_id');
       const concat = `"` + element.idUser + `"`;
+      console.log(localName==concat);
       if (localName == concat) {
         html += `
             <tr id="detailbooking${element.idBooking}">
@@ -23,7 +24,8 @@ fetch('https://foregoing-messy-freckle.glitch.me/listbooking')
     }
     if (html != ``) {
       document.getElementById('tableshowlistbooking').innerHTML = html;
-    } else {
+    } 
+    else {
       html = '<h1>You are not booking any film. Please booking to check it again';
       document.getElementById('returnValue').innerHTML = html;
     }

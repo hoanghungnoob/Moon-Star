@@ -1,5 +1,5 @@
 // Lấy các thông tin của bộ phim
-fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
+fetch("https://mor-start.onrender.com/listfilm")
   .then((response) => response.json())
   .then((data) => {
     let url = window.location.href;
@@ -37,7 +37,7 @@ document.getElementById("trailer").addEventListener("click", openModal);
 
 function openModal() {
   // Lấy thông tin video từ dữ liệu JSON (sử dụng fetch)
-  fetch("https://foregoing-messy-freckle.glitch.me/listfilm")
+  fetch("https://mor-start.onrender.com/listfilm")
     .then((response) => response.json())
     .then((data) => {
       let url = window.location.href;

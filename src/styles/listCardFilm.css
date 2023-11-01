@@ -1,5 +1,6 @@
 .film-card{
-    width: 100%;
+    width: 100%!important;
+    
 }
 .buttons-container input[type="button"]{
     width: 49%;

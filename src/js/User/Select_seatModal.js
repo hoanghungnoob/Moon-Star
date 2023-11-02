@@ -20,8 +20,8 @@ for (let i = 0; i < checkHour.length; i++) {
                 }
             }
         } else {
-            
-           
+
+
         }
     });
 }
@@ -55,8 +55,8 @@ function changeSeatColor(seatId) {
     const countSeat = JSON.parse(localStorage.getItem("countSeat"));
     document.getElementById("seat").innerHTML = constSeat.join(", ");
     document.getElementById("count_seat").innerHTML = countSeat;
-    document.getElementById("choose_Seat").innerHTML=constSeat;
-    
+    document.getElementById("choose_Seat").innerHTML = constSeat;
+
 
     // Tính giá vé dựa trên số ghế đã chọn
     let cost = selectedSeats.length * 90000;
@@ -89,22 +89,22 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-function selectedFilm(){
-    fetch('http://localhost:3000/listfilm')
-    .then(res=> res.json())
-    .then(data=>{
-        console.log(data);
-        let url = window.location.href;
-        var paramsString = url.split("?")[1];
-        var filmIdex = paramsString.split("=")[1];
-        const listfilm = data.find(film => {
-            return film.id == filmIdex
-          });
-        const letName = listfilm.name;
-        document.getElementById('film_name_pay').innerHTML = letName;
-    })
+function selectedFilm() {
+    fetch('https://mor-start.onrender.com/listfilm')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            let url = window.location.href;
+            var paramsString = url.split("?")[1];
+            var filmIdex = paramsString.split("=")[1];
+            const listfilm = data.find(film => {
+                return film.id == filmIdex
+            });
+            const letName = listfilm.name;
+            document.getElementById('film_name_pay').innerHTML = letName;
+        })
 
-    
+
 }
 selectedFilm();
 

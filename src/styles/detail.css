@@ -69,8 +69,76 @@ body {
 .input-container button{
     border: none;
     background: none;
-    
-}
+}  
+    .detail_item{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .detail_item #film_actor{
+        margin-left: 30px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
+    .detail_item #film_director{
+        margin-left: 30px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
+    .detail_item #film_content{
+        margin-left: 30px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+    }
+    .detail-img h2{
+        margin: 0;
+    }
+   
+    .detail-btn{
+        background-color: red;
+        width: 250px;
+        height: 80px;
+        border-radius: 30px;
+        font-size: 25px;
+        color: #fff;
+        float:right;
+        position: relative;
+        top: 0px;
+        outline: none;
+    }
+    .Choose_hour{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        align-items: center;
+        border: 1px solid white;
+    }
+    .Choose_hour input[type='radio']{
+        display: none;
+       
+    }
+    .Choose_hour label{
+        display: flex;
+        justify-content: center;
+        border: 1px solid white;
+        width: 100px;
+        height: 40px ;
+        align-items: center;
+        margin-right: 50px;
+        border-radius: 50px;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        border:none;
+        outline: none;
+        /* text-align: center; */
+    }
+
 .input-container i{
     box-sizing: border-box;
     margin: 5px; 

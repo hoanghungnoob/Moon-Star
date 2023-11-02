@@ -73,3 +73,16 @@ function closeModal() {
 }
 
 
+
+ let modal= document.getElementById("select_seat_modal");
+let modalPay = document.getElementById("payModal");
+document.getElementById("pay-button").addEventListener("click", () => {
+    modal.style.display="none";
+    modalPay.style.display="block"
+});
+
+
+
+
+
+

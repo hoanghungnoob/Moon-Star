@@ -1,8 +1,25 @@
-
-document.getElementById("pay-button").addEventListener("click", () => {
-    window.location.href="pay.html";
+const payButton = document.getElementById("buttonPay");
+payButton.addEventListener("click", () => {
+  fetch("http://localhost:4002/payment", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json(); // Chuyển đổi dữ liệu JSON
+    })
+    .then((data) => {
+      window.open(data.payUrl);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 });
 
-document.getElementById("back_button").addEventListener("click", () => {
-    console.log("1");
-})
+
+
+

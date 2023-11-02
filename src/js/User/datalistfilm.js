@@ -10,7 +10,7 @@ function getListFilm(callback) {
       callback(listfilm);
     })
     .catch((error) => {
-      console.error("Lỗi khi đọc tệp JSON:", error);
+      alert("Lỗi khi đọc tệp JSON:", error);
     });
 }
 // Hàm để hiển thị danh sách phim lên màn hình

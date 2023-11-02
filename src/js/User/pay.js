@@ -16,7 +16,7 @@ payButton.addEventListener("click", () => {
       window.open(data.payUrl);
     })
     .catch((error) => {
-      console.error("Error:", error);
+      alert("Error:", error);
     });
 });
 

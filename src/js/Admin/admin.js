@@ -120,11 +120,11 @@ function register() {
       body: JSON.stringify(userData),
     })
       .then((data) => {
-        console.log("Data sent successfully:", data);
+        alert("Data sent successfully:", data);
         window.location.reload();
       })
       .catch((error) => {
-        console.error("Error:", error);
+        alert("Error:", error);
       });
   } else {
     alert(
@@ -177,7 +177,6 @@ fetch("https://mor-start.onrender.com/user")
           const update_data = document.getElementById("update-submit");
           // add class show để show modal
           update_modal_container.classList.add("show");
-          console.log("update-user-" + userId);
           update_close.addEventListener("click", () => {
             update_modal_container.classList.remove("show");
           });
@@ -221,7 +220,7 @@ fetch("https://mor-start.onrender.com/user")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin người dùng đã được cập nhật:", data);
+                alert("Thông tin người dùng đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_modal_container.classList.remove("show");
@@ -229,7 +228,7 @@ fetch("https://mor-start.onrender.com/user")
 
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật người dùng:", error);
               });
           });
         });
@@ -256,7 +255,7 @@ fetch("https://mor-start.onrender.com/user")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi xóa thành công
-                console.log("Người dùng đã được xóa:", data);
+                alert("Người dùng đã được xóa:", data);
 
                 // Đóng modal sau khi xóa thành công
                 modal.classList.remove("show-modal-dl-user");
@@ -265,7 +264,7 @@ fetch("https://mor-start.onrender.com/user")
 
               })
               .catch((error) => {
-                console.error("Lỗi khi xóa người dùng:", error);
+                alert("Lỗi khi xóa người dùng:", error);
               });
             closeModal();
           });
@@ -284,7 +283,7 @@ fetch("https://mor-start.onrender.com/user")
     }
   })
   .catch((error) => {
-    console.error("Error:", error);
+    alert("Error:", error);
   });
 
 
@@ -341,7 +340,6 @@ fetch("https://mor-start.onrender.com/listfilm")
         document.getElementById('update-film-content').value = element.Content; // Set text content for description
         document.getElementById('update-film-trailer').src = element.video;
 
-        console.log(filmId);
         update_film_submit.addEventListener("click", () => {
           if (checkFileImage() == false && checkFileVideo() == false) {
             let updateFilm = {
@@ -370,17 +368,16 @@ fetch("https://mor-start.onrender.com/listfilm")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin người dùng đã được cập nhật:", data);
+                alert("Thông tin người dùng đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật người dùng:", error);
               });
           }// nut if
           else if (checkFileImage() != false && checkFileVideo() == false) {
-            console.log(checkFileImage());
             let nameImage = checkFileImage();
             let updateFilm = {
               name: document.getElementById('update-film-name').value,
@@ -408,13 +405,13 @@ fetch("https://mor-start.onrender.com/listfilm")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin film đã được cập nhật:", data);
+                alert("Thông tin film đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật người dùng:", error);
               });
 
           }
@@ -446,7 +443,7 @@ fetch("https://mor-start.onrender.com/listfilm")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin phim đã được cập nhật:", data);
+                alert("Thông tin phim đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
@@ -454,12 +451,10 @@ fetch("https://mor-start.onrender.com/listfilm")
 
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật người dùng:", error);
               });
           }
           else {
-            console.log(checkFileImage());
-            console.log(checkFileVideo());
             let nameImage = checkFileImage();
             let nameVideo = checkFileVideo();
             let updateFilm = {
@@ -482,13 +477,13 @@ fetch("https://mor-start.onrender.com/listfilm")
             })
               .then((response) => {
                 if (!response.ok) {
-                  throw new Error("Cập nhật người dùng thất bại.");
+                  throw new Error("Cập nhật phim thất bại.");
                 }
                 return response.json();
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin người dùng đã được cập nhật:", data);
+                alert("Thông tin phim đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
@@ -496,7 +491,7 @@ fetch("https://mor-start.onrender.com/listfilm")
 
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật phim:", error);
               });
 
           }
@@ -532,7 +527,7 @@ fetch("https://mor-start.onrender.com/listfilm")
             })
             .then((data) => {
               // Xử lý phản hồi từ API sau khi xóa thành công
-              console.log("Phim đã được xóa:", data);
+              alert("Phim đã được xóa:", data);
 
               // Đóng modal sau khi xóa thành công
               closeModal();
@@ -541,7 +536,7 @@ fetch("https://mor-start.onrender.com/listfilm")
 
             })
             .catch((error) => {
-              console.error("Lỗi khi xóa phim:", error);
+              alert("Lỗi khi xóa phim:", error);
             });
         });
 
@@ -561,7 +556,7 @@ fetch("https://mor-start.onrender.com/listfilm")
     }
   })
   .catch((error) => {
-    console.error("Error:", error);
+    alert("Error:", error);
   });
 
 
@@ -573,7 +568,6 @@ function checkFileImage() {
   if (file) {
     return file.name;
   } else {
-    console.log('Không có ảnh nào được chọn.');
     return false;
   }
 }
@@ -584,7 +578,6 @@ function checkFileVideo() {
   if (file) {
     return file.name;
   } else {
-    console.log('Không có video nào được chọn.');
     return false;
   }
 }
@@ -657,12 +650,12 @@ function createfilm() {
       body: JSON.stringify(listFilm),
     })
       .then((data) => {
-        console.log("Data sent successfully:", data);
+        alert("Phim đã được thêm:", data);
         window.location.reload();
 
       })
       .catch((error) => {
-        console.error("Error:", error);
+        alert("Error:", error);
       });
   } else {
     alert("Vui lòng nhập đầy đủ thông tin!");
@@ -755,19 +748,17 @@ fetch("https://mor-start.onrender.com/comingSoon")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin người dùng đã được cập nhật:", data);
+                alert("Thông tin phim đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
                 window.location.reload();
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật phim:", error);
               });
           }// nut if
           else {
-            console.log(checkFileImage());
-            console.log(checkFileVideo());
             let nameImage = checkFileImage();
             let updateFilm = {
               name: document.getElementById('update-film-name').value,
@@ -794,14 +785,14 @@ fetch("https://mor-start.onrender.com/comingSoon")
               })
               .then((data) => {
                 // Xử lý phản hồi từ API sau khi cập nhật thành công
-                console.log("Thông tin người dùng đã được cập nhật:", data);
+                alert("Thông tin phim đã được cập nhật:", data);
 
                 // Đóng modal sau khi cập nhật thành công
                 update_film_modal_container.classList.remove("show");
                 window.location.reload();
               })
               .catch((error) => {
-                console.error("Lỗi khi cập nhật người dùng:", error);
+                alert("Lỗi khi cập nhật phim:", error);
               });
 
           }
@@ -834,14 +825,14 @@ fetch("https://mor-start.onrender.com/comingSoon")
             })
             .then((data) => {
               // Xử lý phản hồi từ API sau khi xóa thành công
-              console.log("Phim đã được xóa:", data);
+              alert("Phim đã được xóa:", data);
 
               // Đóng modal sau khi xóa thành công
               closeModal();
               // Cập nhật giao diện hoặc làm bất kỳ điều gì bạn muốn sau khi xóa thành công
             })
             .catch((error) => {
-              console.error("Lỗi khi xóa phim:", error);
+              alert("Lỗi khi xóa phim:", error);
             });
         });
         cancelButton.addEventListener("click", () => {
@@ -908,11 +899,11 @@ function createFilmComing() {
       body: JSON.stringify(listFilm),
     })
       .then((data) => {
-        console.log("Data sent successfully:", data);
+        alert("Thêm phim thành công:", data);
         window.location.reload();
       })
       .catch((error) => {
-        console.error("Error:", error);
+        alert("Error:", error);
       });
   } else {
     alert("Vui lòng nhập đầy đủ thông tin!");
@@ -927,8 +918,6 @@ fetch('https://mor-start.onrender.com/listbooking')
     let html = ''; // Khởi tạo chuỗi HTML bên ngoài vòng lặp
 
     for (const item of data) {
-      const bookingId = item.id;
-
       // Sử dụng biến `item` để lấy thông tin từ mảng `data`
       html += `
     <tr>

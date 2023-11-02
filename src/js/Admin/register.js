@@ -43,16 +43,7 @@ function register() {
   let repassword = document.getElementById("repassword").value;
   let id =
     RandomHexString(4) + "-" + RandomHexString(4);
-
-  console.log(id);
-  console.log(fname);
-  console.log(lname);
-  console.log(email);
-  console.log(pnumber);
-  console.log(password);
-  console.log(repassword);
   // Create an object with the data
-  console.log(id);
   if (
     fname != "" &&
     lname != "" &&
@@ -70,7 +61,6 @@ function register() {
       password: password,
       gender: ""
     };
-    console.log(userData);
     fetch("https://mor-start.onrender.com/user", {
       method: "POST",
       headers: {
@@ -79,11 +69,11 @@ function register() {
       body: JSON.stringify(userData),
     })
       .then((data) => {
-        console.log("Data sent successfully:", data);
+        alert("Data sent successfully:", data);
         window.location.reload();
       })
       .catch((error) => {
-        console.error("Error:", error);
+        alert("Error:", error);
       });
   } else {
     alert(

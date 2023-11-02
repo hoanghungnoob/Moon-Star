@@ -66,7 +66,6 @@ function changeSeatColor(seatId) {
     document.getElementById("result").innerHTML = "Bạn đã mua vé với số tiền là: " + cost + " VND";
     document.getElementById("selected-seats").textContent = "Ghế đã chọn: " + selectedSeats.join(", ");
     const Hours = JSON.parse(localStorage.getItem("selectedHour"));
-    // console.log(Hours);
     const constMoney = JSON.parse(localStorage.getItem("cost"));
     // Hiển thị dữ liệu lên trang
     document.getElementById('film_date').innerHTML = Hours;
@@ -78,7 +77,6 @@ function changeSeatColor(seatId) {
 
 
 const backButton = document.getElementById("back-button");
-// console.log(countSeat);
 backButton.addEventListener("click", () => {
     closeModal();
 
@@ -93,7 +91,6 @@ function selectedFilm() {
     fetch('https://mor-start.onrender.com/listfilm')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             let url = window.location.href;
             var paramsString = url.split("?")[1];
             var filmIdex = paramsString.split("=")[1];

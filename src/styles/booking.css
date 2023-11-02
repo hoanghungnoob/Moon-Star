@@ -1,174 +1,297 @@
-
 * {
-    box-sizing: border-box
+  box-sizing: border-box;
 }
-html{
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-    font-feature-settings: normal;
-    font-variation-settings: normal;
-
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
 }
 body {
-    /* background-color: black; */
-    margin: 0
+  /* background-color: black; */
+  margin: 0;
 }
-.containers{
-    background-color: black;
+.containers {
+  background-color: black;
 }
 
 .navbar {
-    display: flex;
-    height:100px;
-    background-color: rgba(1, 1, 1, 1);
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
+  display: flex;
+  height: 100px;
+  background-color: rgba(1, 1, 1, 1);
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
 }
-.navbar::after{
-    content: "";
-    position: absolute; 
-    width: 100%;
-    height: 100%;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-    z-index: -1;
-
+.navbar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  z-index: -1;
 }
 .navbar a {
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
 }
-.navbar a:hover{
-    color:red;
+.navbar a:hover {
+  color: red;
 }
-.input-container{
-    display: flex-inline;
+.input-container {
+  display: flex-inline;
 }
-.input-container input[type="text"]{
-    border-radius: 5px;
-    height:40px;
-    width: 300px;
-    outline: none;
-    padding-left: 20px;
+.input-container input[type="text"] {
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+  outline: none;
+  padding-left: 20px;
 }
-.input-container button{
-    border: none;
-    background: none;
-    
+.input-container button {
+  border: none;
+  background: none;
 }
-.input-container i{
-    box-sizing: border-box;
-    margin: 5px; 
-    font-size: 25px;
-    color:white;
+.input-container i {
+  box-sizing: border-box;
+  margin: 5px;
+  font-size: 25px;
+  color: white;
 }
 .menu {
-    position: relative;
-    display: inline-block;
-    margin-right: 100px;
+  position: relative;
+  display: inline-block;
+  margin-right: 100px;
 }
 
 .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    z-index: 10;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  z-index: 10;
 }
 
 .menu:hover .submenu {
-    display: block;
+  display: block;
 }
-.submenu button{
-    background: none;
-    border: none;
-    outline: none;
+.submenu button {
+  background: none;
+  border: none;
+  outline: none;
+}
+.submenu button a {
+  color: white;
+  font-size: 25px;
+}
 
+.menu span i {
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-radius: 50%;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
 }
-.submenu button a{
-    color: white;
-    font-size: 25px;
+.container-body {
+  position: absolute;
+  background-color: white;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-
-.menu span i{
-    box-sizing: border-box;
-    border:1px solid white;
-    border-radius: 50%;
-    font-size: 25px;
-    width: 50px;
-    height: 50px;
-    padding-top: 10px;
-    text-align: center;
-
-}
-.container-body{
-    position: absolute;
-    background-color: white;
-    top: 150px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-.showlistbookingtable{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.showlistbookingtable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* Định dạng bảng */
 #returnValue {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
-    margin: 20px 0;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  margin: 20px 0;
 }
 
 /* Định dạng tiêu đề cột */
 #returnValue th {
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    text-align: left;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
 }
 
 /* Định dạng hàng chẵn */
 #returnValue tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 /* Định dạng hàng lẻ */
 #returnValue tr:nth-child(odd) {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 /* Định dạng ô dữ liệu */
 #returnValue td {
-    padding: 10px;
-    border: 1px solid #ccc;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
 /* Định dạng phần tử bên trong thẻ thead */
 #returnValue thead th {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 /* Định dạng phần tử bên trong tbody */
 #returnValue tbody td {
-    font-size: 14px;
+  font-size: 14px;
+}
+/* css modal */
+/* Add your CSS styles for the modal here */
+
+/* Modal container */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Để đảm bảo hình nền nằm trong modal và không lặp lại */
+  background-position: center; /* Để căn giữa hình nền */
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  z-index: 1;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* Hiển thị modal ở giữa trang */
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  max-width: 400px;
+  position: relative;
+  background-image: url("../assets/image/backgroundtiket.jpg"); /* Thay đổi đường dẫn ảnh nền theo yêu cầu */
+}
+
+/* Đóng modal button (×) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #000;
+}
+
+.close:hover {
+  color: #ff0000; /* Màu đỏ khi di chuột qua nút đóng */
+}
+
+/* Tiêu đề modal */
+h2 {
+  font-size: 24px;
+}
+
+#ticketModal .nameKH,
+#ticketModal .phonenumber,
+.datebook {
+  display: flex;
+}
+.nameKH .fullname {
+  display: inline-block;
+}
+
+.nameKH .fullname p {
+  display: inline-block;
+  margin: 0;
+}
+
+#ticketModal .nameKH p,
+#ticketModal .phonenumber p {
+  margin-top: -0.5px;
+  box-sizing: border-box;
+  margin-left: 5px;
+  font-weight: 500;
+}
+.fullname p:first-child{
+    margin-right: 0px;
+}
+.phonenumber p {
+  display: inline-block;
+  margin: 0; /* Loại bỏ khoảng cách mặc định */
+}
+
+/* Các thông tin cụ thể trong modal */
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Địa chỉ công ty */
+p.company {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Địa chỉ công ty */
+p.address {
+  font-size: 14px;
+}
+
+/* Đường kẻ ngang */
+hr {
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/* Dữ liệu ngày đặt vé */
+.datebook label {
+  font-weight: bold;
+}
+.datebook #datebooking {
+  margin-top: -0.5px;
+  box-sizing: border-box;
+  margin-left: 15px;
+}
+
+/* Thông tin về ngày xem phim, giờ xem, ghế, và giá vé */
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .date,
+.info .time,
+.info .char,
+.info .money {
+  flex: 1;
+}
+
+.info label {
+  font-weight: bold;
 }

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Booking</title>
+    <!-- thêm thư viện jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="./src/styles/booking.css">
 </head>
+
 <body>
     <div class="containers">
         <nav class="navbar" style="height:100px;">
@@ -27,11 +29,11 @@
                             <a target="_self" href="index.html">Logout</a>
                         </button>
                     </li>
-                    
+
                 </ul>
             </div>
         </nav>
-       <div class="container-body">
+        <div class="container-body">
             <div class="showlistbookingtable">
                 <h2>List Booking</h2>
                 <table id="returnValue">
@@ -45,6 +47,7 @@
                             <th>Time</th>
                             <th>Char</th>
                             <th>Money</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="tableshowlistbooking">
@@ -52,10 +55,53 @@
                     </tbody>
                 </table>
             </div>
-       </div>
+            <!-- modal vé xem film -->
+            <div id="ticketModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2>Movie Ticket</h2>
+                    <div class="nameKH">
+                        <label for="">Tên khách hàng:</label>
+                        <div class="fullname">
+                            <p id="firstname">Hoàng</p>
+                            <p id="nameKH">HÙng</p>
+
+                        </div>
+                    </div>
+                    <div class="phonenumber">
+                        <label for="">Phone:</label>
+                        <p id="phoneNumber">097841634872</p>
+                    </div>
+                    <p class="company">CÔNG TY TNHH 3TV - CHI NHÁNH ĐÀ NẴNG</p>
+                    <p class="address">Địa chỉ: 99 Tô Hiến Thành - Sơn Trà - Đà Nẵng</p>
+                    <hr>
+                    <div class="datebook">
+                        <label>Date Booking:</label>
+                        <p id="datebooking">103-34-24</p>
+                    </div>
+                    <hr>
+                    <div class="info">
+                        <div class="datetime">
+                            <label>Date Watching & Time:</label>
+                            <p id="datewatch">20-06-2023</p>
+                            <p id="time">19:30</p>
+                        </div>
+                        <div class="seats-money">
+                            <label>Seats & Money:</label>
+                            <p id="char">A2</p>
+                            <p id="money">9000</p>
+                        </div>
+                    </div>
+                    <button id="exportPdfButton">Export file pdf</button>
+                </div>
+            </div>
+
+        </div>
     </div>
-<script src="/src/js/User/booking.js"></script>
-<script src="/src/js/User/logout.js"></script>
+    <script src="/src/js/User/booking.js"></script>
+    <script src="/src/js/User/logout.js"></script>
+
 
 </body>
+
 </html>

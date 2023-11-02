@@ -3,7 +3,6 @@ function getFilm(callback) {
     let url = window.location.href;
     var paramsString = url.split("?")[1];
     var id = paramsString.split("=")[1];
-    console.log(id);
     fetch("https://mor-start.onrender.com/listfilm" + "?id=" +id ) // Đường dẫn đến tệp JSON
       .then((response) => response.json())
       .then((data) => {
@@ -14,7 +13,7 @@ function getFilm(callback) {
         callback(data);
       })
       .catch((error) => {
-        console.error("Lỗi khi đọc tệp JSON:", error);
+        alert("Lỗi khi đọc tệp JSON:", error);
       });
   }
   // Hàm để hiển thị danh sách phim lên màn hình

@@ -56,6 +56,10 @@ fetch('https://mor-start.onrender.com/listbooking')
 
       });
     }
+    else {
+      html = '<h1>You are not booking any film. Please booking to check it again';
+      document.getElementById('returnValue').innerHTML = html;
+    }
   })
   .catch(error => {
     console.error('Error:', error);

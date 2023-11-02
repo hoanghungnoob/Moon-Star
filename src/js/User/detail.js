@@ -57,7 +57,7 @@ function openModal() {
       document.getElementById("videoModal").style.display = "block";
     })
     .catch((error) => {
-      console.error("Lỗi khi tải dữ liệu JSON:", error);
+      alert("Lỗi khi tải dữ liệu JSON:", error);
     });
 }
 

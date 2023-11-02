@@ -29,11 +29,10 @@ fetch('https://mor-start.onrender.com/listbooking')
       document.getElementById('tableshowlistbooking').addEventListener('click', (event) => {
         if (event.target.classList.contains('show-detail-button')) {
           const idBooking = event.target.getAttribute('data-id');
-          console.log(idBooking);
           // dùng để so sánh 
           data.forEach(element => {
+            
             if (idBooking==element.idBooking) {
-              console.log(element);
               // xử lí để hiện nut export pdf và nút close sau khi export
                 const close = document.getElementById('closeModal');
                 const hidebuton = document.getElementById('exportPdfButton');
@@ -62,7 +61,7 @@ fetch('https://mor-start.onrender.com/listbooking')
     }
   })
   .catch(error => {
-    console.error('Error:', error);
+    alert(error);
   });
 
 // hàm gọi modal

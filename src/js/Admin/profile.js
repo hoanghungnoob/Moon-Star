@@ -5,13 +5,11 @@ let btnEdits = document.querySelectorAll(".btn-edit");
         element.onclick = handleEdit;
       });
       function savechange(){
-
         const admin_token = JSON.parse(localStorage.getItem("user_token_id"));
       // check dang nhap thanh cong hay chua
         if(!admin_token){
           return;
         }
-          console.log(admin_token);
           fetch(usersAPI +"/"+ admin_token, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
@@ -32,10 +30,10 @@ let btnEdits = document.querySelectorAll(".btn-edit");
                     }
                   })
                   .then(data => {
-                    console.log('Dữ liệu đã cập nhật thành công:', data);
+                    alert('Dữ liệu đã cập nhật thành công:', data);
                   })
                   .catch(error => {
-                    console.error('Lỗi:', error);
+                    alert('Lỗi:', error);
                   });
       
 

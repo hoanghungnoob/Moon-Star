@@ -5,12 +5,11 @@ function getListFilm(callback) {
     .then((data) => {
       // Lấy mảng "listfilm" từ dữ liệu JSON
       const comingSoon = data;
-      console.log(comingSoon);
       // Gọi hàm callback và truyền giá trị "listfilm" vào nó
       callback(comingSoon);
     })
     .catch((error) => {
-      console.error("Lỗi khi đọc tệp JSON:", error);
+      alert("Lỗi khi đọc tệp JSON:", error);
     });
 }
 

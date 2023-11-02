@@ -1,4 +1,7 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -6,13 +9,16 @@
     <link rel="stylesheet" href="./src/styles/login.css">
     <link rel="stylesheet" href="./src/styles/register.css">
     <link rel="stylesheet" href="./src/styles/Select_seatModal.css">
+    <link rel="stylesheet" href="./src/styles/pay.css">
+    <link rel="stylesheet" href="./src/styles/payMomo.css">
     <title>Detail</title>
 </head>
 
 <body>
 
     <nav class="navbar" style="height:100px;">
-        <div class="img"><a href="index.html"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></a></div>
+        <div class="img"><a href="index.html"><img src="./src/assets/image/logo.png" alt=""
+                    style="padding-left: 50px;"></a></div>
         <div class="input-container">
             <input type="text" id="search" class="d-mx-none search" placeholder="Search">
             <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -28,10 +34,10 @@
             <span><i class="fa fa-solid fa-user"></i> </span>
             <ul class="submenu">
                 <li><a href="profileUser.html">Proflie</a></li>
-                
+
                 <li id="logout"><a href="index.html">Logout</a></li>
-                
-                
+
+
             </ul>
         </div>
     </nav>
@@ -55,14 +61,20 @@
                     <p id="film_content"></p>
                 </div>
                 <div id="button-booking-trailer">
-                    <button id="booking" class="detail-btn">Booking Now</button>
                     <button id="trailer" class="detail-btn">Watch the Trailer</button>
                 </div>
-                
-
             </div>
-    </div></main>
-    
+        </div>
+        <div class="Choose_hour">
+            <input type="radio" id="hour" name="hour">
+            <label for="hour">15:00</label>
+            <input type="radio" id="hour1" name="hour">
+            <label for="hour1">19:00</label>
+            <input type="radio" id="hour2" name="hour">
+            <label for="hour2">21:00</label>
+        </div>
+    </main>
+
     <!-- Modal -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
@@ -82,12 +94,14 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Please enter your password!" required="">
+                    <input type="password" id="password" name="password" placeholder="Please enter your password!"
+                        required="">
                 </div>
                 <button type="submit">Log in</button>
             </form>
             <p id="dontaccount">Don't have an account?
-                <b><a href="#" id="showRegisterModal"> Create Account</a></b></p>
+                <b><a href="#" id="showRegisterModal"> Create Account</a></b>
+            </p>
         </div>
     </div>
     <!-- Modal register -->
@@ -139,12 +153,12 @@
     <!-- Booking now -->
     <div id="bookModal" class="modal">
         <div class="modal-content">
-            
+
         </div>
     </div>
-     <!-- Selected seat -->
+    <!-- Selected seat -->
 
-     <div id="select_seat_modal" class="modal_seat">
+    <div id="select_seat_modal" class="modal_seat">
         <div class="head">
             <h1>Mời Bạn Chọn Ghế</h1>
         </div>
@@ -380,23 +394,120 @@
             </div>
         </div>
         <div id="selected-seats"> </div>
-        
         <div class="pay_item">
             <div id="result"></div>
             <div class="pay">
                 <button type="submit" id="pay-button">Thanh Toán</button>
                 <button type="submit" id="back-button">Quay Lại</button>
             </div>
-            
+
         </div>
-       
-        
+
+
 
     </div>
 
+    <div id="payModal" class="modal_pay">
+        <div class="container">
+            <div class="column_left">
+                <div class="section-1">
+                    <h2>Thông tin phim</h2>
+                    <h3>Phim</h3>
+                    <p id="film_name_pay">VẦNG TRĂNG MÁU - T18</p>
+                    <div class="film_detail">
+                        <div style="display: flex; flex-direction: column;margin-left:20px ">
+                            <h4>Ngày giờ chiếu</h4>
+                            <p id="film_date"></p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; margin-right: 50px;">
+                            <h4>Ghế</h4>
+                            <p id="seat"></p>
+                        </div>
 
-    
-<!-- Footer -->
+                    </div>
+                    <div class="film_room">
+                        <div style="display: flex; flex-direction: column; margin-left:20px ">
+                            <h4>Phòng chiếu</h4>
+                            <p id="room">1</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <h4>Định dạng</h4>
+                            <p>2D</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section-2">
+                    <h2 style="margin-bottom: 20px;">Thông tin thanh toán</h2>
+                    <table>
+                        <tr>
+                            <th>Danh mục</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                        <tr>
+                            <td>Ghế</td>
+                            <td id="count_seat"></td>
+                            <td id="total"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-3">
+                <h2>Phương thức thanh toán</h2>
+                <div class="payment-methods">
+                    <label>
+                        <input type="radio" name="payment" value="VNPAY" id="vnpay">VNPAY
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="Momo" id="momo">Momo
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="ZaloPay" id="zalopay">ZaloPay
+                    </label>
+                    <h2 id="expense">Chi phí</h2>
+                    <div class="paying" style="display: flex; justify-content: space-between; line-height: 15px;">
+                        <h4 id="pay">Thanh toán</h4>
+                        <p id="price"></p>
+                    </div>
+                    <div class="total" style="display: flex; justify-content: space-between; line-height: 15px;">
+                        <h4 id="total">Tổng cộng</h4>
+                        <p id="total_price"></p>
+                    </div>
+
+                </div>
+                <button class="button_payment" id="buttonPay">Thanh Toán</button>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="payModalMomo" class="payMomo_Modal">
+        <div class="containers">
+            <div class="column_lefts">
+                <h2 class="inforTicket">
+                    Thông tin đơn hàng
+                </h2>
+                <hr>
+                <div class="money">
+                    <p><strong>Số tiền thanh toán</strong></p>
+                    <p id="cost">100</p>
+                </div>
+                <div class="seats">
+                    <p><strong>Bạn đã chọn ghế</strong></p>
+                    <p id="choose_Seat">A1</p>
+                </div>
+
+            </div>
+            <div class="column_right">
+                <h2>Quét mã qua úng dụng thanh toán online</h2>
+                <p id="Qrcode"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <div class="logo">
             <img src="./src/assets/image/logo.png" alt="">
@@ -428,18 +539,24 @@
     <script src="./src/js/Admin/register.js"></script>
     <script src="./src/js/User/Select_seatModal.js"></script>
     <script src="./src/js/User/pay.js"></script>
-    <script>
+    <script src="./src/js/momo.js"></script>
+</body>
+
+</html>
+<script>
     document.querySelector(".button-search").onclick = () => {
-        const button =  document.querySelector('.input-container input');
-        if(button.classList.contains('d-mx-none')){
+        const button = document.querySelector('.input-container input');
+        if (button.classList.contains('d-mx-none')) {
             document.querySelector('.input-container input').classList.remove('d-mx-none');
-    
-        }else{
+
+        } else {
             search();
             document.querySelector('.input-container input').classList.add('d-mx-none');
-    
+
         }
     }
-        </script>
+</script>
 
-</body></html>
+</body>
+
+</html>

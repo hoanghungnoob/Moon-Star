@@ -1,17 +1,16 @@
 // Tạo một hàm để lấy dữ liệu từ tệp JSON
-function getListFilm(callback) {
+function getListFilm(callback, search) {
   fetch("https://mor-start.onrender.com/listfilm") // Đường dẫn đến tệp JSON
     .then((response) => response.json())
     .then((data) => {
       // Lấy mảng "listfilm" từ dữ liệu JSON
       const listfilm = data;
-
       // Gọi hàm callback và truyền giá trị "listfilm" vào nó
       callback(listfilm);
-    })
-    .catch((error) => {
-      alert("Lỗi khi đọc tệp JSON:", error);
     });
+//     .catch((error) => {
+//       alert("Lỗi khi đọc tệp JSON:", error);
+//     });
 }
 // Hàm để hiển thị danh sách phim lên màn hình
 function listProduct(listfilm) {

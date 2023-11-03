@@ -23,27 +23,26 @@ function RandomHexString(L) {
   let currentDate = getCurrentDate();
   let nameFilm = JSON.parse(localStorage.getItem('nameFilm'));
   let dateWatch = JSON.parse(localStorage.getItem(''))
-  let idUser = localStorage.getItem('user_token_id');
-  idUser = idUser.replace(/"/g, "");
-  fetch('https://mor-start.onrender.com/user')
-    .then(res => res.json())
-    .then(data => {
-      for (const item of data) {
-        if (item.id == idUser) {
-          let name = item.name;
-          let lastname = item.lastname;
-          let email = item.email;
-          let phoneNumber = item.pnumber;
-        }
-      }
-    })
-  // hàm lấy ngày giờ hiện tại
 
+  let idUser = JSON.parse(localStorage.getItem('user_token_id'));
+  console.log(idUser);
+  // idUser = idUser.replace(/"/g, "");
+  // fetch('https://mor-start.onrender.com/user')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     for (const item of data) {
+  //       if (item.id == idUser) {
+  //         let name = item.name;
+  //         let lastname = item.lastname;
+  //         let email = item.email;
+  //         let phoneNumber = item.pnumber;
+  //       }
+  //     }
+  //   })
+  // hàm lấy ngày giờ hiện tại
 let amount = localStorage.getItem('cost')
 
-let id = RandomHexString(4);
   let data = {
-    id,
     amount
   }
 

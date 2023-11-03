@@ -36,16 +36,18 @@ function changeSeatColor(seatId) {
     } else {
         label.style.backgroundColor = "#ccc"; // Màu ghế mặc định
     }
-
+    //lấy dữ liệu của data về bộ film được chọn
     // Tạo danh sách ghế đã chọn dựa trên trạng thái của checkbox
     let check = document.getElementsByName('chair');
     let selectedSeats = [];
-
+    // tạo tên film trong localstoge
+    let name = document.getElementById('film_name_pay').textContent;
     for (let i = 0; i < check.length; i++) {
         if (check[i].checked) {
             selectedSeats.push(check[i].nextElementSibling.textContent);
             localStorage.setItem("Seat", JSON.stringify(selectedSeats));
             localStorage.setItem("countSeat", selectedSeats.length);
+            localStorage.setItem("nameFilm",JSON.stringify(name));
         }
     }
 

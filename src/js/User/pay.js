@@ -39,9 +39,7 @@ function RandomHexString(L) {
   //     }
   //   })
   // hàm lấy ngày giờ hiện tại
-
 let amount = localStorage.getItem('cost')
-
 let id = RandomHexString(4);
   let data = {
     amount

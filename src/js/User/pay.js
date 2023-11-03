@@ -25,42 +25,40 @@ function RandomHexString(L) {
   let dateWatch = JSON.parse(localStorage.getItem(''))
 
   let idUser = JSON.parse(localStorage.getItem('user_token_id'));
-  console.log(idUser);
-  // idUser = idUser.replace(/"/g, "");
-  // fetch('https://mor-start.onrender.com/user')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     for (const item of data) {
-  //       if (item.id == idUser) {
-  //         let name = item.name;
-  //         let lastname = item.lastname;
-  //         let email = item.email;
-  //         let phoneNumber = item.pnumber;
-  //       }
-  //     }
-  //   })
-  // hàm lấy ngày giờ hiện tại
-let amount = JSON.parse(localStorage.getItem('cost'));
 
-  let data = {
-    amount
-  }
-console.log(data);
+  fetch('https://mor-start.onrender.com/user')
+    .then(res => res.json())
+    .then(data => {
+      for (const item of data) {     
+        if (item.id == idUser) {
+          nameUser = item.name;
+          let lastname = item.lastname;
+          let email = item.email;
+          let phoneNumber = item.pnumber;
+        }
+      }
+    })
+
+
 const payButton = document.getElementById("buttonPay");
 payButton.addEventListener("click", () => {
-  fetch("https://mor-start.onrender.com/payment", {
+  fetch("http://localhost:4002/payment", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body : JSON.stringify(data)
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json(); // Chuyển đổi dữ liệu JSON
+    body : JSON.stringify({
+      idBooking: RandomHexString(4),
+      idUser : idUser,
+      filmName: localStorage.getItem('nameFilm'),
+      dateBooking: currentDate,
+      dateWatch: localStorage.getItem('dateWatch'),
+      time: localStorage.getItem('selectedHour'),
+      char: localStorage.getItem('Seat'),
+      amount: localStorage.getItem('cost')
     })
+  })
+
     .then((data) => {
       window.open(data.payUrl);
     })

@@ -40,12 +40,12 @@ function RandomHexString(L) {
   //     }
   //   })
   // hàm lấy ngày giờ hiện tại
-let amount = localStorage.getItem('cost')
+let amount = JSON.parse(localStorage.getItem('cost'));
 
   let data = {
     amount
   }
-
+console.log(data);
 const payButton = document.getElementById("buttonPay");
 payButton.addEventListener("click", () => {
   fetch("https://mor-start.onrender.com/payment", {

@@ -23,6 +23,7 @@ function RandomHexString(L) {
   let currentDate = getCurrentDate();
   let nameFilm = JSON.parse(localStorage.getItem('nameFilm'));
   let dateWatch = JSON.parse(localStorage.getItem(''))
+
   let idUser = JSON.parse(localStorage.getItem('user_token_id'));
   console.log(idUser);
   // idUser = idUser.replace(/"/g, "");
@@ -40,7 +41,7 @@ function RandomHexString(L) {
   //   })
   // hàm lấy ngày giờ hiện tại
 let amount = localStorage.getItem('cost')
-let id = RandomHexString(4);
+
   let data = {
     amount
   }

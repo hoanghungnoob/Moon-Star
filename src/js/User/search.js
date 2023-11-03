@@ -10,6 +10,7 @@ document.querySelector(".button-search").onclick = () => {
         const contentSearch = document.querySelector("#search");
 
         if(contentSearch.value){
+            getListFilm()
             fetch("https://mor-start.onrender.com/listfilm")
             .then(
                 respone => respone.json()

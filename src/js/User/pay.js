@@ -48,7 +48,7 @@ payButton.addEventListener("click", () => {
       lastname : JSON.parse(localStorage.getItem('lastname_user')),
       email: JSON.parse(localStorage.getItem('email_user')),
       phoneNumber:JSON.parse(localStorage.getItem('phone_user')),
-      nameFilm : JSON.parse(localStorage.getItem('nameFilm')),
+      filmName : JSON.parse(localStorage.getItem('nameFilm')),
       dateBooking: currentDate,
       dateWatch :JSON.parse(localStorage.getItem('dateWatch')),
       time: JSON.parse(localStorage.getItem('selectedHour')),

@@ -77,8 +77,16 @@ function closeModal() {
  let modal= document.getElementById("select_seat_modal");
 let modalPay = document.getElementById("payModal");
 document.getElementById("pay-button").addEventListener("click", () => {
+  // kiểm tra user đăng nhập
+  const user = localStorage.getItem('user_token_id');
+  if (user) {
     modal.style.display="none";
-    modalPay.style.display="block"
+    modalPay.style.display="block"  
+  } else {
+    alert("Please login to booking");
+    window.location.href = 'https://gentle-klepon-9b14a9.netlify.app';
+  }
+
 });
 
 

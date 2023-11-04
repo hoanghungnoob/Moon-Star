@@ -42,12 +42,15 @@ function changeSeatColor(seatId) {
     let selectedSeats = [];
     // tạo tên film trong localstoge
     let name = document.getElementById('film_name_pay').textContent;
+    // tạo ngày xem trong localstoge
+    let dateWatch = document.getElementById('film_datetime').textContent;
     for (let i = 0; i < check.length; i++) {
         if (check[i].checked) {
             selectedSeats.push(check[i].nextElementSibling.textContent);
             localStorage.setItem("Seat", JSON.stringify(selectedSeats));
             localStorage.setItem("countSeat", selectedSeats.length);
             localStorage.setItem("nameFilm",JSON.stringify(name));
+            localStorage.setItem("dateWatch",JSON.stringify(dateWatch));
         }
     }
 
@@ -63,7 +66,6 @@ function changeSeatColor(seatId) {
     // Tính giá vé dựa trên số ghế đã chọn
     let cost = selectedSeats.length * 90000;
     localStorage.setItem("cost", JSON.stringify(cost));
-
     // Hiển thị giá vé và ghế đã chọn
     document.getElementById("result").innerHTML = "Bạn đã mua vé với số tiền là: " + cost + " VND";
     document.getElementById("selected-seats").textContent = "Ghế đã chọn: " + selectedSeats.join(", ");
@@ -101,6 +103,7 @@ function selectedFilm() {
             });
             const letName = listfilm.name;
             document.getElementById('film_name_pay').innerHTML = letName;
+            document.getElementById('film_datetime').innerHTML = listfilm.date
         })
 
 

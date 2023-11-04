@@ -61,6 +61,10 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
       if (loggedInUser) {
         // Lưu thông tin người dùng đã đăng nhập vào local storage
         localStorage.setItem("user_token_id", JSON.stringify(loggedInUser.id));
+        localStorage.setItem("name_user",JSON.stringify(loggedInUser.name));
+        localStorage.setItem("lastname_user",JSON.stringify(loggedInUser.lastname));
+        localStorage.setItem("phone_user",JSON.stringify(loggedInUser.pnumber));
+        localStorage.setItem("email_user",JSON.stringify(loggedInUser.email));
         // Ẩn nút đăng nhập và đăng ký, hiển thị hình profile
         document.getElementById("loginBtn").style.display = "none";
         document.getElementById("registerBtn").style.display = "none";

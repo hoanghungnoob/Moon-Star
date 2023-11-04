@@ -977,3 +977,10 @@ li {
     margin-right: 0px;
 }
 }
+
+/* bổ sung cái modal thanh toán */
+.datetime{
+    display: flex;
+    flex-direction: row;
+    gap:  20px;
+}

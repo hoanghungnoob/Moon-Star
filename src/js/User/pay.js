@@ -22,13 +22,13 @@ function RandomHexString(L) {
   // Gọi hàm để lấy ngày hiện tại
   let currentDate = getCurrentDate();
   let nameFilm = JSON.parse(localStorage.getItem('nameFilm'));
-  let dateWatch = JSON.parse(localStorage.getItem(''))
+  let dateWatch = JSON.parse(localStorage.getItem('dateWatch'))
   let idUser = JSON.parse(localStorage.getItem('user_token_id'));
 
 
 let amount = localStorage.getItem('cost')
 
-let id = RandomHexString(4);
+let id = RandomHexString(1);
   let data = {
     amount
   }
@@ -41,9 +41,19 @@ payButton.addEventListener("click", () => {
       "Content-Type": "application/json",
     },
     body : JSON.stringify({
-      amount: localStorage.getItem('cost'),
-      idUser,
-      dateBooking: currentDate
+      id,
+      idBooking : RandomHexString(4),
+      idUser : JSON.parse(localStorage.getItem('user_token_id')),
+      nameUser: JSON.parse(localStorage.getItem('name_user')),
+      lastname : JSON.parse(localStorage.getItem('lastname_user')),
+      email: JSON.parse(localStorage.getItem('email_user')),
+      phoneNumber:JSON.parse(localStorage.getItem('phone_user')),
+      nameFilm : JSON.parse(localStorage.getItem('nameFilm')),
+      dateBooking: currentDate,
+      dateWatch :JSON.parse(localStorage.getItem('dateWatch')),
+      time: JSON.parse(localStorage.getItem('selectedHour')),
+      char : JSON.parse(localStorage.getItem('Seat')),
+      money: localStorage.getItem('cost'),
     })
   })
     .then((response) => {

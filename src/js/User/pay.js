@@ -35,7 +35,7 @@ let id = RandomHexString(1);
 
 const payButton = document.getElementById("buttonPay");
 payButton.addEventListener("click", () => {
-  fetch("http://localhost:4002/payment", {
+  fetch("https://mor-start.onrender.com/payment", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

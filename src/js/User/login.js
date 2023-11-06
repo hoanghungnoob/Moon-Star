@@ -1,6 +1,6 @@
 document.getElementById("loginBtn").addEventListener("click", openLoginModal);
 // login khi responsive
-document.getElementById('loginResponBtn').addEventListener("click",openLoginModal);
+// document.getElementById('loginResponBtn').addEventListener("click",openLoginModal);
 
 function openLoginModal() {
   let loginModal = document.getElementById("loginModal");

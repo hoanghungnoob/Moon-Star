@@ -13,23 +13,23 @@
 <body>
     <div class="containers">
         <nav class="navbar" style="height:100px;">
-            <div class="img"><img src="./src/assets/image/logo.png" alt="" style="padding-left: 50px;"></div>
-            <a href="index.html">Home</a>
+            <div class="img"><a href="index.html"><img src="./src/assets/image/logo.png" alt=""
+                        style="padding-left: 50px;"></a></div>
             <div class="input-container">
-                <input type="text" id="search" class="search" placeholder="Search">
+                <input type="text" id="search" class="d-mx-none search" placeholder="Search">
                 <button class="button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
-            <a href="#listbooking">List Booking</a>
-            <div class="menu">
+            <a class="d-mx-none" id="listbooking">List Booking</a>
+
+    
+            <div class="menu" id="menu_profile">
                 <span><i class="fa fa-solid fa-user"></i> </span>
                 <ul class="submenu">
                     <li><a href="profileUser.html">Proflie</a></li>
-                    <li>
-                        <button id="logout">
-                            <a target="_self" href="index.html">Logout</a>
-                        </button>
-                    </li>
-
+    
+                    <li id="logout"><a href="index.html">Logout</a></li>
+    
+    
                 </ul>
             </div>
         </nav>

@@ -193,7 +193,7 @@ body {
 
 }
 
-.input-container button {
+/* .input-container button {
     border: none;
     background: none;
 
@@ -201,11 +201,35 @@ body {
 
 .input-container i {
     box-sizing: border-box;
-    margin: 5px;
+    margin: 10px 5px 5px 5px;
     font-size: 25px;
     color: white;
-}
-
+} */
+.input-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+  }
+  
+  .input-container input {
+    flex: 1; /* Mở rộng input để điền hết phần còn lại */
+    padding: 10px; /* Padding để tạo khoảng cách bên trong */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 4px; /* Bo góc */
+  }
+  
+  .input-container button {
+    background: transparent;
+    color: white; /* Màu chữ trắng */
+    border: none; /* Loại bỏ đường viền */
+    border-radius: 4px; /* Bo góc */
+    padding: 10px; /* Padding để tạo khoảng cách bên trong */
+    cursor: pointer; /* Biến đổi con trỏ khi trỏ vào nút */
+    font-size: 20px; /* Điều chỉnh kích thước của biểu tượng */
+  }
+  
+  /* Các thuộc tính khác tùy chỉnh theo ý muốn của bạn */
+  
+  
 .login .button-login {
     height: 40px;
     border-radius: 20px;
@@ -324,7 +348,7 @@ button[type="submit"]:hover {
 }
 
 footer {
-    height: 628px;
+    height: 500px;
     flex-shrink: 0;
     background-color: #000000;
     padding: 70px;
@@ -332,8 +356,8 @@ footer {
 }
 
 .logo img {
-    width: 416.481px;
-    height: 141px;
+    width: calc(416.481-50)px;
+    height: calc(141-50)px;
     flex-shrink: 0;
     background: url(<path-to-image>), cover no-repeat;
 }

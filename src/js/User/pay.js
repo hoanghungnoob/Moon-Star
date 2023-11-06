@@ -12,7 +12,7 @@ function getCurrentDate() {
   var month = currentDate.getMonth() + 1; // Tháng bắt đầu từ 0
   var day = currentDate.getDate();
   // Định dạng lại ngày thành một chuỗi "YYYY-MM-DD"
-  var formattedDate = year + "-" + padZero(month) + "-" + padZero(day);
+  var formattedDate =  padZero(day)+ "/" + padZero(month) + "/" +year ;
   return formattedDate;
 }
 // Hàm này để đảm bảo rằng số tháng và ngày luôn có hai chữ số
@@ -53,7 +53,7 @@ payButton.addEventListener("click", () => {
       dateWatch: JSON.parse(localStorage.getItem('dateWatch')),
       time: JSON.parse(localStorage.getItem('selectedHour')),
       char: JSON.parse(localStorage.getItem('Seat')),
-      money: localStorage.getItem('cost'),
+      money: localStorage.getItem('cost')+"VND",
     })
   })
     .then((response) => {

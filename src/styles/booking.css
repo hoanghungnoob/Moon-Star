@@ -24,7 +24,7 @@ body {
 .navbar {
   display: flex;
   height: 100px;
-  background-color: rgba(1, 1, 1, 1);
+  background-color: rgba(16,20,27, 1);
   color: white;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +35,7 @@ body {
   z-index: 999;
   /* background-image: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(255,255,255,0.7)); */
 }
+
 .navbar::after {
   content: "";
   position: absolute;
@@ -43,35 +44,42 @@ body {
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   z-index: -1;
+
 }
+
 .navbar a {
   text-decoration: none;
   font-size: 25px;
   color: white;
 }
+
 .navbar a:hover {
   color: red;
 }
+
 .input-container {
-  display: flex-inline;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
 }
-.input-container input[type="text"] {
-  border-radius: 5px;
-  height: 40px;
+
+.input-container input {
+  flex: 1; /* Mở rộng input để điền hết phần còn lại */
+  padding: 10px; /* Padding để tạo khoảng cách bên trong */
+  border: 1px solid #ccc; /* Đường viền */
+  border-radius: 4px; /* Bo góc */
   width: 300px;
-  outline: none;
-  padding-left: 20px;
 }
+
 .input-container button {
-  border: none;
-  background: none;
+  background: transparent;
+  color: white; /* Màu chữ trắng */
+  border: none; /* Loại bỏ đường viền */
+  border-radius: 4px; /* Bo góc */
+  padding: 10px; /* Padding để tạo khoảng cách bên trong */
+  cursor: pointer; /* Biến đổi con trỏ khi trỏ vào nút */
+  font-size: 20px; /* Điều chỉnh kích thước của biểu tượng */
 }
-.input-container i {
-  box-sizing: border-box;
-  margin: 5px;
-  font-size: 25px;
-  color: white;
-}
+
 .menu {
   position: relative;
   display: inline-block;

@@ -6,53 +6,53 @@ function RandomHexString(L) {
   return hexstring;
 }
 
-  function getCurrentDate() {
-    var currentDate = new Date();
-    var year = currentDate.getFullYear();
-    var month = currentDate.getMonth() + 1; // Tháng bắt đầu từ 0
-    var day = currentDate.getDate();
-    // Định dạng lại ngày thành một chuỗi "YYYY-MM-DD"
-    var formattedDate = year + "-" + padZero(month) + "-" + padZero(day);
-    return formattedDate;
-  }
-  // Hàm này để đảm bảo rằng số tháng và ngày luôn có hai chữ số
-  function padZero(value) {
-    return value < 10 ? "0" + value : value;
-  }
-  // Gọi hàm để lấy ngày hiện tại
-  let currentDate = getCurrentDate();
-  let nameFilm = JSON.parse(localStorage.getItem('nameFilm'));
-  let dateWatch = JSON.parse(localStorage.getItem('dateWatch'))
-  let idUser = JSON.parse(localStorage.getItem('user_token_id'));
+function getCurrentDate() {
+  var currentDate = new Date();
+  var year = currentDate.getFullYear();
+  var month = currentDate.getMonth() + 1; // Tháng bắt đầu từ 0
+  var day = currentDate.getDate();
+  // Định dạng lại ngày thành một chuỗi "YYYY-MM-DD"
+  var formattedDate = year + "-" + padZero(month) + "-" + padZero(day);
+  return formattedDate;
+}
+// Hàm này để đảm bảo rằng số tháng và ngày luôn có hai chữ số
+function padZero(value) {
+  return value < 10 ? "0" + value : value;
+}
+// Gọi hàm để lấy ngày hiện tại
+let currentDate = getCurrentDate();
+let nameFilm = JSON.parse(localStorage.getItem('nameFilm'));
+let dateWatch = JSON.parse(localStorage.getItem('dateWatch'))
+let idUser = JSON.parse(localStorage.getItem('user_token_id'));
 
 
 let amount = localStorage.getItem('cost')
 
 let id = RandomHexString(1);
-  let data = {
-    amount
-  }
+let data = {
+  amount
+}
 
 const payButton = document.getElementById("buttonPay");
 payButton.addEventListener("click", () => {
-  fetch("http://localhost:4002/payment", {
+  fetch("https://mor-start.onrender.com/payment", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body : JSON.stringify({
+    body: JSON.stringify({
       id,
-      idBooking : RandomHexString(4),
-      idUser : JSON.parse(localStorage.getItem('user_token_id')),
+      idBooking: RandomHexString(4),
+      idUser: JSON.parse(localStorage.getItem('user_token_id')),
       nameUser: JSON.parse(localStorage.getItem('name_user')),
-      lastname : JSON.parse(localStorage.getItem('lastname_user')),
+      lastname: JSON.parse(localStorage.getItem('lastname_user')),
       email: JSON.parse(localStorage.getItem('email_user')),
-      phoneNumber:JSON.parse(localStorage.getItem('phone_user')),
-      filmName : JSON.parse(localStorage.getItem('nameFilm')),
+      phoneNumber: JSON.parse(localStorage.getItem('phone_user')),
+      filmName: JSON.parse(localStorage.getItem('nameFilm')),
       dateBooking: currentDate,
-      dateWatch :JSON.parse(localStorage.getItem('dateWatch')),
+      dateWatch: JSON.parse(localStorage.getItem('dateWatch')),
       time: JSON.parse(localStorage.getItem('selectedHour')),
-      char : JSON.parse(localStorage.getItem('Seat')),
+      char: JSON.parse(localStorage.getItem('Seat')),
       money: localStorage.getItem('cost'),
     })
   })

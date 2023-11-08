@@ -1,4 +1,5 @@
-document.getElementById("registerBtn").addEventListener("click", function () {
+document.getElementById("registerBtn").addEventListener("click", function (e) {
+  e.preventDefault();
   let registerModal = document.getElementById("registerModal");
   let loginModal = document.getElementById("loginModal");
   let registerBtn = document.getElementById("registerBtn");
@@ -82,8 +83,9 @@ function register() {
   }
 }
 
-// let regis = document.getElementById('register-user');
-// regis.addEventListener('click',(e)=>{
-//   e.preventDefault();
-//   register();
-// })
+let regis = document.getElementById('register-user');
+regis.addEventListener('click',(e)=>{
+  e.preventDefault();
+  register();
+})
+

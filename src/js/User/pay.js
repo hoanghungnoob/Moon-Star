@@ -28,11 +28,6 @@ let idUser = JSON.parse(localStorage.getItem('user_token_id'));
 
 let amount = localStorage.getItem('cost')
 
-let id = RandomHexString(1);
-let data = {
-  amount
-}
-
 const payButton = document.getElementById("buttonPay");
 payButton.addEventListener("click", () => {
   fetch("https://mor-start.onrender.com/payment", {
@@ -41,8 +36,7 @@ payButton.addEventListener("click", () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      id,
-      idBooking: RandomHexString(4),
+      id: RandomHexString(12),
       idUser: JSON.parse(localStorage.getItem('user_token_id')),
       nameUser: JSON.parse(localStorage.getItem('name_user')),
       lastname: JSON.parse(localStorage.getItem('lastname_user')),

@@ -41,7 +41,6 @@ payButton.addEventListener("click", () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      id,
       idBooking: RandomHexString(4),
       idUser: JSON.parse(localStorage.getItem('user_token_id')),
       nameUser: JSON.parse(localStorage.getItem('name_user')),

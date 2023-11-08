@@ -32,7 +32,7 @@ fetch('https://mor-start.onrender.com/listbooking')
           // dùng để so sánh 
           data.forEach(element => {
             
-            if (idBooking==element.idBooking) {
+            if (idBooking==element.id) {
               // xử lí để hiện nut export pdf và nút close sau khi export
                 const close = document.getElementById('closeModal');
                 const hidebuton = document.getElementById('exportPdfButton');

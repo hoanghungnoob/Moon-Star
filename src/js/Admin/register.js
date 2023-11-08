@@ -83,9 +83,9 @@ function register() {
   }
 }
 
+
 let regis = document.getElementById('register-user');
 regis.addEventListener('click',(e)=>{
   e.preventDefault();
   register();
 })
-

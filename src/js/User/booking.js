@@ -8,7 +8,7 @@ fetch('https://mor-start.onrender.com/listbooking')
       const concat = `"${element.idUser}"`;
       if (localName == concat) {
         html += `
-          <tr id="detailbooking${element.idBooking}">
+          <tr id="detailbooking${element.id}">
             <td>${element.nameUser}</td>
             <td>${element.phoneNumber}</td>
             <td>${element.filmName}</td>
@@ -17,7 +17,7 @@ fetch('https://mor-start.onrender.com/listbooking')
             <td>${element.time}</td>
             <td>${element.char}</td>
             <td>${element.money}</td>
-            <td><button class="show-detail-button" data-id="${element.idBooking}"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
+            <td><button class="show-detail-button" data-id="${element.id}"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
           </tr>
         `;
       }

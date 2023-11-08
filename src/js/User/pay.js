@@ -47,7 +47,7 @@ payButton.addEventListener("click", () => {
       dateWatch: JSON.parse(localStorage.getItem('dateWatch')),
       time: JSON.parse(localStorage.getItem('selectedHour')),
       char: JSON.parse(localStorage.getItem('Seat')),
-      money: localStorage.getItem('cost')+"VND",
+      money: localStorage.getItem('cost'),
     })
   })
     .then((response) => {

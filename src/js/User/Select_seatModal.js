@@ -19,9 +19,10 @@ for (let i = 0; i < checkHour.length; i++) {
 
 
         }
+        const Hours=JSON.parse(localStorage.getItem("selectedHour"));
+        document.getElementById('film_date').innerHTML=Hours;
     });
-    const Hours=JSON.parse(localStorage.getItem("selectedHour"));
-    document.getElementById('film_date').innerHTML=Hours;
+    
 }
 
 function changeSeatColor(seatId) {

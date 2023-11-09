@@ -98,6 +98,7 @@
                         required="">
                 </div>
                 <button type="submit">Log in</button>
+                <button type="submit" id ="forgotpass" value="sendEmail" onclick="forgetpassword()">Forgot Password</button>
             </form>
             <p id="dontaccount">Don't have an account?
                 <b><a href="#" id="showRegisterModal"> Create Account</a></b>
@@ -414,31 +415,34 @@
                     <h2>Thông tin phim</h2>
                     <h3>Phim</h3>
                     <p id="film_name_pay">VẦNG TRĂNG MÁU - T18</p>
-                    <div class="film_detail">
-                        <div style="display: flex; flex-direction: column;margin-left:20px ">
-                            <h4>Ngày giờ chiếu</h4>
-                            <div class="datetime">
-                                <p id="film_date"></p>
-                                <p id="film_datetime"></p>
+                    <div class="infor_ticket">
+                        <div class="film_detail">
+                            <div>
+                                <h4>Ngày giờ chiếu</h4>
+                                <div class="datetime" style="display: flex; margin-top: -18px; margin-bottom: -10px;">
+                                    <p  id="film_date"></p>
+                                    <p id="film_datetime"></p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="margin-top: 15px;">Phòng chiếu</h4>
+                                <p id="room">1</p>
                             </div>
                         </div>
-                        <div style="display: flex; flex-direction: column; margin-right: 50px;">
-                            <h4>Ghế</h4>
-                            <p id="seat"></p>
-                        </div>
 
-                    </div>
-                    <div class="film_room">
-                        <div style="display: flex; flex-direction: column; margin-left:20px ">
-                            <h4>Phòng chiếu</h4>
-                            <p id="room">1</p>
+                        <div class="film_room">
+                            <div >
+                                <h4>Ghế</h4>
+                                <p id="seat"></p>
+                            </div>
+                            
+                            <div>
+                                <h4>Định dạng</h4>
+                                <p>2D</p>
+                            </div>
                         </div>
-                        <div style="display: flex; flex-direction: column;">
-                            <h4>Định dạng</h4>
-                            <p>2D</p>
-                        </div>
-
                     </div>
+                    
                 </div>
                 <div class="section-2">
                     <h2 style="margin-bottom: 20px;">Thông tin thanh toán</h2>
@@ -543,6 +547,7 @@
     <script src="./src/js/User/Select_seatModal.js"></script>
     <script src="./src/js/User/pay.js"></script>
     <script src="./src/js/User/checkUser.js"></script>
+    <script src="./src/js/User/forgetPass.js"></script>
 </body>
 
 </html>

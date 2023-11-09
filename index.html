@@ -71,6 +71,7 @@
                             required>
                     </div>
                     <button type="submit">Log in</button>
+                    <button type="submit" id ="forgotpass" value="sendEmail" onclick="forgetpassword()">Forgot Password</button>
                 </form>
                 <p id="dontaccount">Don't have an account?
                     <b><a href="#" id="showRegisterModal"> Create Account</a></b>
@@ -222,7 +223,7 @@
         </footer>
 
     </div>
-
+    
     <script src="./src/js/User/datalistfilm.js"></script>
     <script src="./src/js/User/slider.js"></script>
     <script src="./src/js/User/login.js"></script>
@@ -231,10 +232,17 @@
     <script src="./src/js/User/search.js"></script>
     <script src="./src/js/User/logout.js"></script>
     <script src="./src/js/User/checkListBooking.js"></script>
-
-    <script>
-      
+    <script src="./src/js/User/forgetPass.js"></script>
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
+
+    <script type="text/javascript">
+        (function(){
+        emailjs.init("8sXQ9P4ti61KBeoeh");
+    })();
+</script>
 </body>
 
 </html>

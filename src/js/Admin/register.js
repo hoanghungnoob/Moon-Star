@@ -72,6 +72,7 @@ function register() {
       .then((data) => {
         alert("Data sent successfully:", data);
         window.location.reload();
+        
       })
       .catch((error) => {
         alert("Error:", error);

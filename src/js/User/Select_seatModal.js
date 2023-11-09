@@ -8,11 +8,7 @@ for (let i = 0; i < checkHour.length; i++) {
             const modal = document.getElementById("select_seat_modal");
             modal.style.display = "block";
             selectedHours = [checkHour[i].nextElementSibling.textContent];
-
-            // Xóa giá trị "selectedHour" khỏi localStorage và lưu giá trị mới
-            // localStorage.removeItem("selectedHour");
             localStorage.setItem("selectedHour", JSON.stringify(selectedHours));
-
             // Vô hiệu hóa tất cả các radio buttons khác
             for (let j = 0; j < checkHour.length; j++) {
                 if (i !== j) {
@@ -23,9 +19,11 @@ for (let i = 0; i < checkHour.length; i++) {
 
 
         }
+        const Hours=JSON.parse(localStorage.getItem("selectedHour"));
+        document.getElementById('film_date').innerHTML=Hours;
     });
+    
 }
-
 
 function changeSeatColor(seatId) {
     let seat = document.getElementById(seatId);
@@ -69,10 +67,7 @@ function changeSeatColor(seatId) {
     // Hiển thị giá vé và ghế đã chọn
     document.getElementById("result").innerHTML = "Bạn đã mua vé với số tiền là: " + cost + " VND";
     document.getElementById("selected-seats").textContent = "Ghế đã chọn: " + selectedSeats.join(", ");
-    const Hours = JSON.parse(localStorage.getItem("selectedHour"));
     const constMoney = JSON.parse(localStorage.getItem("cost"));
-    // Hiển thị dữ liệu lên trang
-    document.getElementById('film_date').innerHTML = Hours;
     document.getElementById('price').innerHTML = constMoney;
     document.getElementById('total').innerHTML = constMoney;
     document.getElementById('total_price').innerHTML = constMoney;

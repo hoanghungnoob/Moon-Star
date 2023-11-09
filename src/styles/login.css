@@ -92,6 +92,20 @@ button[type="submit"] {
     color: red;
     text-decoration: none;
 }
+#forgotpass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    height: 40px;
+    color:white;
+    font-size: 20px;
+    background-color: transparent;
+    width: 250px;
+}
 
 
 
